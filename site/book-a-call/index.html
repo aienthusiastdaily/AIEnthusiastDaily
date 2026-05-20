@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book a Call | Tung Nguyen</title>
+    <meta
+      name="description"
+      content="Tell Tung Nguyen about a workflow, document process, or computer vision system you want to explore."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/book-a-call.css" />
+  </head>
+  <body class="call-page">
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="container topbar-inner">
+          <a class="brand" href="/">Tung Nguyen</a>
+          <nav class="topnav" aria-label="Primary">
+            <a href="/#capabilities">Services</a>
+            <a href="/#use-cases">Use cases</a>
+            <a href="/#waitlist">Waitlist</a>
+            <a class="button button-ghost button-small" href="/book-a-call/" aria-current="page">Book a call</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="container reveal">
+            <p class="eyebrow">Potential customer intake</p>
+            <h1>Tell me about the workflow.</h1>
+            <p class="page-hero-text">
+              Use this page when there is a real process, document queue, visual-data problem,
+              or operational bottleneck worth discussing.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container call-page-grid">
+            <article class="contact-card reveal">
+              <div class="signup-copy">
+                <p class="eyebrow">Book a call</p>
+                <h2>Share enough context to make the first conversation useful.</h2>
+                <p>
+                  Keep it rough. A few concrete details about the workflow are more useful than
+                  a polished brief.
+                </p>
+              </div>
+
+              <form
+                class="signup-form"
+                data-signup-form
+                data-form-name="book_a_call_request"
+                data-success-message="Thanks. I received your call request."
+                action="https://formspree.io/f/xzdogvwp"
+                method="POST"
+              >
+                <label class="form-honeypot" aria-hidden="true">
+                  <span>Leave this field empty</span>
+                  <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </label>
+                <label class="field">
+                  <span>Name</span>
+                  <input type="text" name="name" placeholder="Your name" autocomplete="name" />
+                </label>
+                <label class="field">
+                  <span>Email</span>
+                  <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required />
+                </label>
+                <label class="field">
+                  <span>Company</span>
+                  <input type="text" name="company" placeholder="Company or team" autocomplete="organization" />
+                </label>
+                <label class="field">
+                  <span>What should we talk about?</span>
+                  <textarea
+                    name="workflow"
+                    placeholder="Describe the workflow, documents, images, video, or operational process you want to improve."
+                    rows="5"
+                  ></textarea>
+                </label>
+
+                <fieldset class="choice-group">
+                  <legend>I am interested in</legend>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="workflow_automation" />
+                    <span>Workflow automation</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="document_ai" />
+                    <span>Document AI</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="computer_vision" />
+                    <span>Computer vision</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="not_sure" />
+                    <span>Not sure yet</span>
+                  </label>
+                </fieldset>
+
+                <fieldset class="choice-group">
+                  <legend>Estimated budget</legend>
+                  <label class="checkbox-field">
+                    <input type="radio" name="budget" value="under_5k" />
+                    <span>Under $5k</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="radio" name="budget" value="5k_15k" />
+                    <span>$5k-$15k</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="radio" name="budget" value="15k_50k" />
+                    <span>$15k-$50k</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="radio" name="budget" value="50k_plus" />
+                    <span>$50k+</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="radio" name="budget" value="still_scoping" />
+                    <span>Still scoping</span>
+                  </label>
+                </fieldset>
+
+                <label class="field">
+                  <span>Timeline</span>
+                  <input type="text" name="timeline" placeholder="Now, this quarter, exploring, etc." />
+                </label>
+                <input type="hidden" name="_subject" value="New landing page call request" />
+                <input type="hidden" name="source" value="book_a_call_page" />
+                <input type="hidden" name="form_name" value="book_a_call_request" />
+                <input type="hidden" name="submitted_from" data-current-url />
+                <input type="hidden" name="submitted_at" data-submitted-at />
+                <button class="button button-submit" type="submit" data-submit-label="Request a call">Request a call</button>
+                <p class="form-status" data-form-status aria-live="polite"></p>
+              </form>
+            </article>
+
+            <aside class="case-aside">
+              <div class="case-aside-card reveal">
+                <h2>Good fit</h2>
+                <ul class="case-list">
+                  <li>You have repetitive review, routing, extraction, or validation work.</li>
+                  <li>The workflow depends on documents, images, video, or messy operational data.</li>
+                  <li>You want a practical system, not just a model demo.</li>
+                </ul>
+              </div>
+              <div class="case-aside-card reveal">
+                <h2>Not ready?</h2>
+                <p>
+                  If you only want to follow along for now, join the waitlist instead.
+                </p>
+                <div class="case-links">
+                  <a class="button button-ghost" href="/#waitlist">Join waitlist</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>Tung Nguyen</strong>
+            <p>AI systems for workflows, documents, and visual intelligence.</p>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/#use-cases">Use cases</a>
+            <a href="/#waitlist">Waitlist</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

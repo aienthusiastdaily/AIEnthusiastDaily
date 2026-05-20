@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Healthcare Operations AI | Tung Nguyen</title>
+    <meta
+      name="description"
+      content="Use-case writeup for AI systems that help healthcare operations teams process intake packets, supporting documents, and exception queues."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="container topbar-inner">
+          <a class="brand" href="/">Tung Nguyen</a>
+          <nav class="topnav" aria-label="Primary">
+            <a href="/#capabilities">Services</a>
+            <a href="/#use-cases">Use cases</a>
+            <a href="/#waitlist">Contact</a>
+            <a class="button button-ghost button-small" href="/book-a-call/">Book a call</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="container reveal">
+            <p class="eyebrow">Use case</p>
+            <h1>Healthcare operations</h1>
+            <p class="page-hero-text">
+              AI systems for intake packets, supporting documents, and operational exceptions
+              that should not sit in manual queues forever.
+            </p>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container case-layout">
+            <div class="case-main">
+              <article class="case-block reveal">
+                <h2>The problem</h2>
+                <p>
+                  Healthcare operations teams often receive messy packets, screenshots, PDFs,
+                  portal exports, and follow-up documents. Humans still spend too much time
+                  opening files, checking fields, and deciding which queue should handle the
+                  next step.
+                </p>
+              </article>
+
+              <article class="case-block reveal">
+                <h2>What the system does</h2>
+                <ul class="case-list">
+                  <li>Ingests uploaded packets, forms, letters, or portal exports.</li>
+                  <li>Extracts patient, provider, date, policy, and workflow-specific fields.</li>
+                  <li>Validates extracted facts against required rules and evidence.</li>
+                  <li>Routes clean cases forward and flags exceptions for human review.</li>
+                </ul>
+              </article>
+
+              <article class="case-block reveal">
+                <h2>Business value</h2>
+                <p>
+                  The goal is not to remove all human judgment. The goal is to reduce low-value
+                  review, make exceptions clearer, and give teams a more reliable path from
+                  incoming documents to operational action.
+                </p>
+              </article>
+            </div>
+
+            <aside class="case-aside">
+              <div class="case-aside-card reveal">
+                <h2>System shape</h2>
+                <dl class="case-meta">
+                  <div>
+                    <dt>Inputs</dt>
+                    <dd>PDFs, forms, screenshots, portal exports</dd>
+                  </div>
+                  <div>
+                    <dt>Outputs</dt>
+                    <dd>Structured fields, validation status, exception route</dd>
+                  </div>
+                  <div>
+                    <dt>Human role</dt>
+                    <dd>Review edge cases, not every case</dd>
+                  </div>
+                </dl>
+              </div>
+              <div class="case-aside-card reveal">
+                <h2>Next step</h2>
+                <p>Have a healthcare workflow with too much document handling?</p>
+                <div class="case-links">
+                  <a class="button" href="/book-a-call/">Book a call</a>
+                  <a class="button button-ghost" href="/#waitlist">Join waitlist</a>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

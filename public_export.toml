@@ -1,0 +1,59 @@
+[export]
+name = "tung-nguyen-ai"
+description = "Allowlisted public snapshot derived from the private/internal personal landing page repo."
+
+include = [
+  "README.md",
+  "public_export.toml",
+  "scripts/public_export.py",
+  "site/**",
+]
+
+exclude = [
+  ".contexts/**",
+  ".env",
+  ".env.*",
+  ".git/**",
+  ".github/**",
+  ".pytest_cache/**",
+  ".ruff_cache/**",
+  ".venv/**",
+  "**/.DS_Store",
+  "**/__pycache__/**",
+  "**/*.pyc",
+  "*.db",
+  "*.sqlite",
+  "*.sqlite3",
+  "docs/**",
+  "plans/**",
+  "site/*.png",
+  "site/layout-preview.html",
+  "site/service-overview-preview.html",
+  "site/visual-directions.html",
+]
+
+[verification]
+forbidden_paths = [
+  ".contexts",
+  ".env",
+  ".github",
+  ".venv",
+  "docs",
+  "plans",
+]
+
+secret_patterns = [
+  "sk-[A-Za-z0-9_-]{20,}",
+  "gho_[A-Za-z0-9_]+",
+  "OPENAI_API_KEY\\s*=",
+  "ANTHROPIC_API_KEY\\s*=",
+  "GOOGLE_API_KEY\\s*=",
+  "VERCEL_TOKEN\\s*=",
+  "SECRET\\s*=",
+  "TOKEN\\s*=",
+  "PASSWORD\\s*=",
+]
+
+secret_scan_exclude = [
+  "public_export.toml",
+]
