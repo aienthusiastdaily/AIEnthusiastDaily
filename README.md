@@ -1,6 +1,8 @@
-# Tung Nguyen AI
+# AI Enthusiast Daily
 
-Static landing page for Tung Nguyen's applied AI systems work across workflow automation, document understanding, and computer vision.
+Static landing page for AI Enthusiast Daily, focused on applied AI systems across workflow automation, document understanding, and computer vision.
+
+Production domain target: `aienthusiastdaily.com`
 
 ## Site
 
