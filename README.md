@@ -26,9 +26,18 @@ Then open `http://localhost:8000`.
 
 ## Deploy
 
-This repo can be deployed as a static site on Vercel.
+This repo is currently planned for static hosting on Netlify while the production
+domain remains registered and DNS-managed in Wix.
 
-Use `site/` as the Vercel project root.
+Netlify settings:
+
+- Base directory: `site`
+- Build command: leave blank
+- Publish directory: `.`
+
+After deploy, add `aienthusiastdaily.com` and `www.aienthusiastdaily.com` in
+Netlify and point the Wix DNS website records to Netlify. Preserve Google
+Workspace/Mailbox MX and TXT records.
 
 ## Notes
 
