@@ -1,8 +1,9 @@
 {
-  "export_id": "pex-20260527-031732-d131724",
-  "exported_at": "2026-05-27T03:17:32Z",
+  "export_id": "pex-20260528-031142-9f44a88",
+  "exported_at": "2026-05-28T03:11:42Z",
   "exported_paths": [
     "README.md",
+    ".github/workflows/public-ci.yml",
     "netlify.toml",
     "site/**",
     "export-metadata.json"
