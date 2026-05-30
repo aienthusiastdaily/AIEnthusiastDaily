@@ -636,7 +636,7 @@ img {
     box-shadow var(--transition);
 }
 
-.article-card:hover {
+a.article-card:hover {
   transform: translateY(-4px);
   border-color: rgba(72, 109, 255, 0.24);
   box-shadow: var(--shadow);
@@ -665,6 +665,10 @@ img {
   margin-top: 0.8rem;
   font-weight: 800;
   color: #3557e6;
+}
+
+.article-card-static .article-link {
+  color: var(--muted);
 }
 
 .signup-panel {
