@@ -1,0 +1,17 @@
+{
+  "export_id": "pex-20260528-125929-8502d60",
+  "exported_at": "2026-05-28T12:59:29Z",
+  "exported_paths": [
+    "README.md",
+    ".github/workflows/public-ci.yml",
+    "netlify.toml",
+    "site/**",
+    "export-metadata.json"
+  ],
+  "source": "private-public-export",
+  "source_branch_class": "sprint",
+  "verification": {
+    "forbidden_paths_absent": true,
+    "secret_scan_passed": true
+  }
+}
