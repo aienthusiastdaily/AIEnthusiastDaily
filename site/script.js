@@ -2,12 +2,72 @@ document.documentElement.classList.add("js-enabled");
 
 const forms = document.querySelectorAll("[data-signup-form]");
 const revealNodes = document.querySelectorAll(".reveal");
+const serviceIntents = {
+  "agent-harness-build": {
+    label: "Agent Harness Build",
+    summary:
+      "A controlled workflow harness with typed output, validation, repair paths, telemetry, and downstream handoff.",
+  },
+  "workflow-diagnosis": {
+    label: "Workflow Diagnosis",
+    summary:
+      "A focused scoping pass for the workflow boundary, AI step, failure modes, and first useful build slice.",
+  },
+  "production-hardening": {
+    label: "Production Hardening",
+    summary:
+      "Reliability, cost, tracing, and escalation improvements for an existing AI workflow.",
+  },
+};
 
 const hasPlaceholderEndpoint = (url) =>
   !url ||
   url.includes("your_form_id") ||
   url.includes("replace_") ||
   url.includes("example.com");
+
+const bookingParams = new URLSearchParams(window.location.search);
+const selectedServiceKey = bookingParams.get("service") || "";
+const selectedService = serviceIntents[selectedServiceKey];
+const bookingSource = bookingParams.get("source");
+
+document.querySelectorAll("[data-booking-source]").forEach((input) => {
+  if (input instanceof HTMLInputElement && bookingSource) {
+    input.value = bookingSource;
+  }
+});
+
+document.querySelectorAll("[data-booking-service]").forEach((input) => {
+  if (input instanceof HTMLInputElement && selectedService) {
+    input.value = selectedServiceKey;
+  }
+});
+
+document.querySelectorAll("[data-booking-service-label]").forEach((input) => {
+  if (input instanceof HTMLInputElement && selectedService) {
+    input.value = selectedService.label;
+  }
+});
+
+if (selectedService) {
+  document.querySelectorAll("[data-service-intent]").forEach((panel) => {
+    panel.hidden = false;
+  });
+
+  document.querySelectorAll("[data-service-intent-title]").forEach((node) => {
+    node.textContent = selectedService.label;
+  });
+
+  document.querySelectorAll("[data-service-intent-copy]").forEach((node) => {
+    node.textContent = selectedService.summary;
+  });
+
+  document.querySelectorAll(`[data-service-interest="${selectedServiceKey}"]`).forEach((input) => {
+    if (input instanceof HTMLInputElement) {
+      input.checked = true;
+    }
+  });
+}
 
 forms.forEach((form) => {
   const status = form.querySelector("[data-form-status]");
