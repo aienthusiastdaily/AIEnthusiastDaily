@@ -25,8 +25,8 @@
           <nav class="topnav" aria-label="Primary">
             <a href="#capabilities">Services</a>
             <a href="#use-cases">Use cases</a>
-            <a href="#waitlist">Contact</a>
-            <a class="button button-ghost button-small" href="/book-a-call/">Book a call</a>
+            <a href="/articles/">Articles</a>
+            <a class="button button-ghost button-small" href="/book-a-call/?source=homepage_nav">Book a call</a>
           </nav>
         </div>
       </header>
@@ -39,13 +39,13 @@
             <div class="hero-grid">
               <div class="hero-copy reveal">
                 <p class="eyebrow">Applied AI systems from AI Enthusiast Daily</p>
-                <h1>AI systems that turn complex inputs into operational advantage.</h1>
+                <h1>Controlled AI workflows for teams moving past demos.</h1>
                 <p class="hero-text">
-                  I help teams automate document workflows, extract signal from video,
-                  and make better decisions from messy operational data.
+                  I help teams turn brittle AI steps into workflow maps, typed harnesses,
+                  validation checks, repair behavior, and production guardrails.
                 </p>
                 <div class="hero-actions">
-                  <a class="button" href="/book-a-call/">Book a call</a>
+                  <a class="button" href="/book-a-call/?source=homepage_hero">Book a call</a>
                   <a class="button button-ghost" href="#waitlist">Join waitlist</a>
                 </div>
               </div>
@@ -66,24 +66,6 @@
                 </div>
               </aside>
             </div>
-
-            <div class="hero-service-cards">
-              <a class="hero-service-card reveal" href="/book-a-call/">
-                <span>01</span>
-                <h3>Workflow automation</h3>
-                <p>Reduce manual review, exception handling, and repetitive operational checks.</p>
-              </a>
-              <a class="hero-service-card reveal" href="/book-a-call/">
-                <span>02</span>
-                <h3>Document AI</h3>
-                <p>Extract, validate, and route information from healthcare, insurance, and compliance-style packets.</p>
-              </a>
-              <a class="hero-service-card reveal" href="/book-a-call/">
-                <span>03</span>
-                <h3>Computer vision</h3>
-                <p>Track players, classify visual signals, and optimize physical environments.</p>
-              </a>
-            </div>
           </div>
         </section>
 
@@ -93,34 +75,35 @@
               <p class="eyebrow">Services</p>
               <h2>Three entry points from real project work.</h2>
               <p>
-                Start with the input type or workflow pain. The underlying pattern stays
-                practical: perceive, interpret, validate, and act with control.
+                Start with the stage you are actually in: diagnosis, build, or
+                hardening. Each path keeps the system practical: typed output,
+                validation, repair behavior, and safe downstream action.
               </p>
             </div>
-            <div class="card-grid card-grid-3">
-              <a class="content-card content-card-link reveal" href="/book-a-call/">
-                <h3>Workflow automation</h3>
-                <p>
-                  Multi-step systems for teams stuck in manual review, status checks,
-                  handoffs, and exception routing.
-                </p>
-                <span>Discuss a workflow</span>
+            <div class="service-path-list reveal" aria-label="Service paths">
+              <a class="service-path-row" href="/services/workflow-diagnosis/">
+                <span class="service-path-index">01</span>
+                <span class="service-path-copy">
+                  <strong>Workflow diagnosis</strong>
+                  <span>For teams that need the workflow map, failure modes, and first safe build slice before implementation.</span>
+                </span>
+                <span class="service-path-action">Read diagnosis brief</span>
               </a>
-              <a class="content-card content-card-link reveal" href="/book-a-call/">
-                <h3>Document understanding</h3>
-                <p>
-                  Extraction and validation for packets, forms, evidence, claims, and
-                  other messy operational documents.
-                </p>
-                <span>Explore document AI</span>
+              <a class="service-path-row" href="/services/agent-harness-build/">
+                <span class="service-path-index">02</span>
+                <span class="service-path-copy">
+                  <strong>Agent harness build</strong>
+                  <span>For teams ready to wrap one AI step in typed output, validation, repair behavior, and handoff.</span>
+                </span>
+                <span class="service-path-action">Read build brief</span>
               </a>
-              <a class="content-card content-card-link reveal" href="/book-a-call/">
-                <h3>Computer vision</h3>
-                <p>
-                  Player tracking, visual classification, and spatial analysis for
-                  sports, telecom-style, and field environments.
-                </p>
-                <span>Explore visual systems</span>
+              <a class="service-path-row" href="/services/production-hardening/">
+                <span class="service-path-index">03</span>
+                <span class="service-path-copy">
+                  <strong>Production hardening</strong>
+                  <span>For teams with a working automation that needs reliability, observability, and operating guardrails.</span>
+                </span>
+                <span class="service-path-action">Read hardening brief</span>
               </a>
             </div>
             <div class="method-strip reveal" aria-label="Compact methodology">
@@ -180,6 +163,34 @@
           </div>
         </section>
 
+        <section class="section proof-section" id="proof">
+          <div class="container proof-layout">
+            <div class="section-head reveal">
+              <p class="eyebrow">Proof and articles</p>
+              <h2>Read before you book.</h2>
+              <p>
+                Use cases and articles help visitors understand the work without forcing
+                another choice layer into the hero. The next action should say exactly
+                where it goes.
+              </p>
+            </div>
+            <div class="proof-link-list reveal" aria-label="Proof and article links">
+              <a class="proof-link-row" href="#use-cases">
+                <span>Use cases</span>
+                <strong>See applied workflow examples</strong>
+              </a>
+              <a class="proof-link-row" href="/articles/">
+                <span>Articles</span>
+                <strong>Read articles</strong>
+              </a>
+              <a class="proof-link-row" href="#capabilities">
+                <span>Service outputs</span>
+                <strong>Compare service paths</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section class="section" id="waitlist">
           <div class="container">
             <div class="signup-panel reveal">
@@ -191,7 +202,7 @@
                   document understanding, computer vision, and operations. If you already
                   have a concrete project, book a call instead.
                 </p>
-                <a class="button button-ghost" href="/book-a-call/">Book a call</a>
+                <a class="button button-ghost" href="/book-a-call/?source=homepage_final">Book a call</a>
               </div>
 
               <form
@@ -236,7 +247,8 @@
           <div class="footer-links">
             <a href="#capabilities">Services</a>
             <a href="#use-cases">Use cases</a>
-            <a href="/book-a-call/">Book a call</a>
+            <a href="/articles/">Articles</a>
+            <a href="/book-a-call/?source=homepage_footer">Book a call</a>
           </div>
         </div>
       </footer>
