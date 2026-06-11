@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Production Hardening | AI Enthusiast Daily</title>
+    <meta
+      name="description"
+      content="Harden an existing AI workflow with reliability checks, tracing, cost and latency guardrails, fallback paths, and safe review boundaries."
+    />
+    <link rel="canonical" href="https://aienthusiastdaily.com/services/production-hardening/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="service-page service-production-hardening">
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="container topbar-inner">
+          <a class="brand" href="/">AI Enthusiast Daily</a>
+          <nav class="topnav" aria-label="Primary">
+            <a href="/#capabilities">Services</a>
+            <a href="/#use-cases">Use cases</a>
+            <a href="/articles/">Articles</a>
+            <a class="button button-ghost button-small" href="/book-a-call/?service=production-hardening&source=service_nav">Book a call</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="service-brief-hero">
+          <div class="service-hero-copy reveal">
+            <div class="container service-hero-inner">
+              <div class="service-hero-main">
+                <p class="eyebrow">Production hardening</p>
+                <h1>Make an existing AI workflow reliable enough to operate.</h1>
+                <p class="service-hero-text">
+                  For teams with an automation that works in demos or light usage, but
+                  needs guardrails before it handles real volume, exceptions, and
+                  downstream consequences.
+                </p>
+                <div class="hero-actions">
+                  <a class="button" href="/book-a-call/?service=production-hardening&source=service_page">Stabilize the workflow</a>
+                  <a class="button button-ghost" href="#hardening-output">See hardening scope</a>
+                </div>
+                <div class="intent-chips" aria-label="Booking metadata">
+                  <span>service=production-hardening</span>
+                  <span>source=service_page</span>
+                </div>
+              </div>
+              <aside class="fit-panel" aria-label="Best fit">
+                <div class="mini-bars" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                </div>
+                <h2>Best fit when</h2>
+                <ul class="plain-list">
+                  <li>The automation already produces useful output.</li>
+                  <li>Failures are hard to inspect or reproduce.</li>
+                  <li>Cost, latency, or retries are starting to matter.</li>
+                  <li>Human escalation rules are not explicit enough.</li>
+                </ul>
+                <p class="fit-note">Not a fit if there is no working workflow or testable example yet.</p>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section-muted" id="hardening-output">
+          <div class="container service-split">
+            <article class="service-copy-block reveal">
+              <p class="eyebrow">The problem</p>
+              <h2>A working demo is not the same as an operating system.</h2>
+              <p>
+                Once a workflow meets real inputs, the hard questions become repeatability,
+                observability, cost control, fallback behavior, and whether the system can
+                explain why it accepted, repaired, or escalated an output.
+              </p>
+            </article>
+
+            <article class="service-box reveal">
+              <h2>What gets hardened</h2>
+              <ul class="plain-list">
+                <li>Validation checks and repair conditions.</li>
+                <li>Retry, fallback, and timeout behavior.</li>
+                <li>Tracing and event logs for each workflow run.</li>
+                <li>Cost, latency, and model-routing guardrails.</li>
+                <li>Human escalation and safe-handoff rules.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container service-split service-build-split">
+            <article class="service-copy-block reveal">
+              <p class="eyebrow">What I deliver</p>
+              <h2>A tighter operating loop around the workflow you already have.</h2>
+              <p>
+                The work focuses on the parts that make production painful: knowing what
+                happened, limiting waste, catching unsafe outputs, and giving humans a
+                clear place to intervene.
+              </p>
+              <p class="outcome-callout">
+                Buyer outcome: the system is easier to inspect, safer to run, and less
+                expensive to operate under real conditions.
+              </p>
+            </article>
+
+            <article class="boundary-panel reveal">
+              <h2>Hardening boundary</h2>
+              <div class="boundary-grid">
+                <ul class="boundary-list">
+                  <li>input quality checks</li>
+                  <li>model route controls</li>
+                  <li>schema validation</li>
+                  <li>repair and retry rules</li>
+                  <li>cost and latency logs</li>
+                  <li>fallback path</li>
+                  <li>review queue</li>
+                  <li>release notes</li>
+                </ul>
+                <div class="boundary-outcomes">
+                  <div class="boundary-outcome boundary-accepted">
+                    <strong>Operate</strong>
+                    <span>known-good path with traceable output</span>
+                  </div>
+                  <div class="boundary-outcome boundary-repair">
+                    <strong>Escalate</strong>
+                    <span>unsafe or expensive path enters review</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="service-cta">
+          <div class="container service-cta-inner reveal">
+            <div>
+              <h2>Bring the fragile workflow. I will help make it inspectable and safer to run.</h2>
+              <p>
+                The call starts with what is already working, where it fails, and what
+                production behavior you need before wider use.
+              </p>
+            </div>
+            <div class="service-cta-action">
+              <a class="button" href="/book-a-call/?service=production-hardening&source=service_page">Stabilize the workflow</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>AI Enthusiast Daily</strong>
+            <p>Applied AI systems for controlled workflow automation.</p>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/#capabilities">Services</a>
+            <a href="/book-a-call/?service=production-hardening&source=service_footer">Book a call</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

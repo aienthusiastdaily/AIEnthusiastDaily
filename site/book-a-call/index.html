@@ -56,6 +56,15 @@
                 </p>
               </div>
 
+              <div class="service-intent" data-service-intent hidden>
+                <p class="eyebrow">Selected service</p>
+                <h3 data-service-intent-title>Agent Harness Build</h3>
+                <p data-service-intent-copy>
+                  I will use this context to frame the call around the workflow slice,
+                  failure cases, and handoff requirements.
+                </p>
+              </div>
+
               <form
                 class="signup-form"
                 data-signup-form
@@ -91,6 +100,18 @@
 
                 <fieldset class="choice-group">
                   <legend>I am interested in</legend>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="workflow_diagnosis" data-service-interest="workflow-diagnosis" />
+                    <span>Workflow diagnosis</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="agent_harness_build" data-service-interest="agent-harness-build" />
+                    <span>Agent harness build</span>
+                  </label>
+                  <label class="checkbox-field">
+                    <input type="checkbox" name="interest" value="production_hardening" data-service-interest="production-hardening" />
+                    <span>Production hardening</span>
+                  </label>
                   <label class="checkbox-field">
                     <input type="checkbox" name="interest" value="workflow_automation" />
                     <span>Workflow automation</span>
@@ -138,7 +159,9 @@
                   <input type="text" name="timeline" placeholder="Now, this quarter, exploring, etc." />
                 </label>
                 <input type="hidden" name="_subject" value="New landing page call request" />
-                <input type="hidden" name="source" value="book_a_call_page" />
+                <input type="hidden" name="source" value="book_a_call_page" data-booking-source />
+                <input type="hidden" name="service" value="" data-booking-service />
+                <input type="hidden" name="service_label" value="" data-booking-service-label />
                 <input type="hidden" name="form_name" value="book_a_call_request" />
                 <input type="hidden" name="submitted_from" data-current-url />
                 <input type="hidden" name="submitted_at" data-submitted-at />
