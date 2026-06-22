@@ -17,7 +17,7 @@ permissions:
 jobs:
   validate:
     name: Validate public snapshot
-    if: github.repository == 'txnguyen292/AIEnthusiastDaily'
+    if: github.repository == 'aienthusiastdaily/AIEnthusiastDaily'
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
