@@ -44,3 +44,51 @@ Workspace/Mailbox MX and TXT records.
 - Forms submit to hosted Formspree endpoints.
 - No private API keys or backend credentials are required for the static site.
 - Article cards can link out to Medium or another external publishing platform.
+
+## Packages
+
+### `aienthusiastdaily-fixtures`
+
+Reusable AI Enthusiast Daily fixture package for synthetic healthcare-like PDFs.
+The package source and releases live in the separate public repository:
+[aienthusiastdaily/aienthusiastdaily-fixtures](https://github.com/aienthusiastdaily/aienthusiastdaily-fixtures).
+
+Install the tagged package from GitHub:
+
+```bash
+pip install "aienthusiastdaily-fixtures @ git+https://github.com/aienthusiastdaily/aienthusiastdaily-fixtures.git@v0.1.0"
+```
+
+Or add it to a `uv` project:
+
+```bash
+uv add "aienthusiastdaily-fixtures @ git+https://github.com/aienthusiastdaily/aienthusiastdaily-fixtures.git@v0.1.0"
+```
+
+List available templates:
+
+```bash
+aienthusiastdaily-fixtures templates
+```
+
+Generate fixtures:
+
+```bash
+aienthusiastdaily-fixtures generate \
+  --template healthcare/prior_auth \
+  --count 5 \
+  --out fixtures \
+  --seed 42 \
+  --variants text-layer,scanned
+```
+
+Run without installing into the current environment:
+
+```bash
+uvx --from "aienthusiastdaily-fixtures @ git+https://github.com/aienthusiastdaily/aienthusiastdaily-fixtures.git@v0.1.0" \
+  aienthusiastdaily-fixtures generate --template healthcare/prior_auth --count 1 --out fixtures --seed 42
+```
+
+Package design notes, safety rules, and public blank-form reference sources are
+documented in
+[AI Enthusiast Daily Fixture Templates](./docs/05-aienthusiastdaily-fixture-templates.md).
