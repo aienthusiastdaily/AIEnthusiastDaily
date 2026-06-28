@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">AI Enthusiast Daily brand mark</title>
+  <desc id="desc">A routed workflow mark with validation nodes.</desc>
+  <defs>
+    <linearGradient id="mark-bg" x1="8" x2="58" y1="6" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#081224" />
+      <stop offset="0.58" stop-color="#12224a" />
+      <stop offset="1" stop-color="#0d9488" />
+    </linearGradient>
+    <linearGradient id="mark-route" x1="14" x2="50" y1="44" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2dd4bf" />
+      <stop offset="1" stop-color="#c8f2ea" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#mark-bg)" />
+  <path d="M18 43c8 0 8-22 19-22 6 0 7 6 12 6" fill="none" stroke="url(#mark-route)" stroke-width="6" stroke-linecap="round" />
+  <circle cx="18" cy="43" r="6" fill="#2dd4bf" />
+  <circle cx="37" cy="21" r="6" fill="#ffffff" />
+  <circle cx="49" cy="27" r="6" fill="#c8f2ea" />
+  <path d="m34.7 21.1 1.8 1.8 4.1-4.5" fill="none" stroke="#081224" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
