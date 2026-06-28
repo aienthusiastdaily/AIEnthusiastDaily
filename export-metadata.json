@@ -1,6 +1,6 @@
 {
-  "export_id": "pex-20260623-081916-c1d019c",
-  "exported_at": "2026-06-23T08:19:16Z",
+  "export_id": "pex-20260628-040551-e6485d9",
+  "exported_at": "2026-06-28T04:05:51Z",
   "exported_paths": [
     "README.md",
     ".github/workflows/public-ci.yml",
@@ -9,7 +9,7 @@
     "export-metadata.json"
   ],
   "source": "private-public-export",
-  "source_branch_class": "dev",
+  "source_branch_class": "sprint",
   "verification": {
     "forbidden_paths_absent": true,
     "secret_scan_passed": true
