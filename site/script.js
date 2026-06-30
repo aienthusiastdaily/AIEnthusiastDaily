@@ -2,6 +2,9 @@ document.documentElement.classList.add("js-enabled");
 
 const forms = document.querySelectorAll("[data-signup-form]");
 const revealNodes = document.querySelectorAll(".reveal");
+const topbar = document.querySelector("[data-topbar]");
+const navToggle = document.querySelector("[data-nav-toggle]");
+const primaryNav = document.querySelector("[data-primary-nav]");
 const serviceIntents = {
   "agent-harness-build": {
     label: "Agent Harness Build",
@@ -30,6 +33,27 @@ const bookingParams = new URLSearchParams(window.location.search);
 const selectedServiceKey = bookingParams.get("service") || "";
 const selectedService = serviceIntents[selectedServiceKey];
 const bookingSource = bookingParams.get("source");
+
+if (topbar && navToggle && primaryNav) {
+  const setNavOpen = (isOpen) => {
+    topbar.classList.toggle("nav-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  };
+
+  navToggle.addEventListener("click", () => {
+    setNavOpen(!topbar.classList.contains("nav-open"));
+  });
+
+  primaryNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setNavOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      setNavOpen(false);
+    }
+  });
+}
 
 document.querySelectorAll("[data-booking-source]").forEach((input) => {
   if (input instanceof HTMLInputElement && bookingSource) {
@@ -144,6 +168,38 @@ forms.forEach((form) => {
     }
   });
 });
+
+const harness = document.getElementById("harness");
+
+if (harness) {
+  const lines = Array.from(harness.querySelectorAll(".h-line"));
+  const status = document.getElementById("harness-status");
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const settleHarness = () => {
+    harness.classList.remove("is-running");
+    harness.classList.add("is-done");
+
+    if (status) {
+      status.textContent = "done";
+    }
+  };
+
+  if (prefersReducedMotion) {
+    lines.forEach((line) => line.classList.add("in"));
+    settleHarness();
+  } else {
+    harness.classList.add("is-running");
+
+    const delays = [180, 360, 560, 720, 880, 1020, 1180, 1480, 1820, 2160, 2480];
+
+    lines.forEach((line, index) => {
+      window.setTimeout(() => line.classList.add("in"), delays[index] ?? index * 220);
+    });
+
+    window.setTimeout(settleHarness, 2760);
+  }
+}
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(

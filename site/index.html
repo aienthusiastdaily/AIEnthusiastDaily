@@ -12,17 +12,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body class="home-page">
     <div class="site-shell">
-      <header class="topbar">
+      <header class="topbar" data-topbar>
         <div class="container topbar-inner">
-          <a class="brand" href="/">AI Enthusiast Daily</a>
-          <nav class="topnav" aria-label="Primary">
+          <a class="brand" href="/" aria-label="AI Enthusiast Daily home">
+            <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="34" height="34" />
+            <span>AI Enthusiast Daily</span>
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle primary navigation"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            data-nav-toggle
+          >
+            <svg aria-hidden="true" focusable="false">
+              <use href="/assets/interface-icons.svg#menu"></use>
+            </svg>
+          </button>
+          <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
             <a href="#capabilities">Services</a>
             <a href="#use-cases">Use cases</a>
             <a href="/articles/">Articles</a>
@@ -38,11 +54,12 @@
           <div class="container">
             <div class="hero-grid">
               <div class="hero-copy reveal">
-                <p class="eyebrow">Applied AI systems from AI Enthusiast Daily</p>
-                <h1>Controlled AI workflows for teams moving past demos.</h1>
+                <p class="eyebrow">Applied AI systems · AI Enthusiast Daily</p>
+                <h1>AI that catches its own mistakes.</h1>
                 <p class="hero-text">
-                  I help teams turn brittle AI steps into workflow maps, typed harnesses,
-                  validation checks, repair behavior, and production guardrails.
+                  I help teams turn brittle AI steps into systems that
+                  <strong>flag what they get wrong before it reaches a customer</strong> —
+                  so you can see exactly where the model stopped, and why.
                 </p>
                 <div class="hero-actions">
                   <a class="button" href="/book-a-call/?source=homepage_hero">Book a call</a>
@@ -50,19 +67,28 @@
                 </div>
               </div>
 
-              <aside class="hero-panel workflow-signal reveal">
-                <div class="console-line" aria-hidden="true"></div>
-                <p class="panel-kicker">How I think about systems</p>
-                <h2>See the input, check the edge cases, route the next step.</h2>
-                <p>
-                  The work is not just model selection. It is designing the loop around
-                  perception, validation, human review, and downstream action.
-                </p>
-                <div class="signal-metrics" aria-label="System loop">
-                  <span>Perceive</span>
-                  <span>Interpret</span>
-                  <span>Validate</span>
-                  <span>Act</span>
+              <aside class="harness js reveal" id="harness" aria-label="Example harness run">
+                <div class="harness-bar">
+                  <span class="harness-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                  <span class="harness-title">harness · intake.referral</span>
+                  <span class="harness-status" id="harness-status">running</span>
+                </div>
+                <div class="harness-body">
+                  <code class="h-line h-cmd"><span class="sigil">$</span> harness run referral_packet.pdf</code>
+                  <code class="h-line dim">parse · 3 pages · 1 attachment</code>
+                  <code class="h-line"><span class="dim">emit typed →</span> {</code>
+                  <code class="h-line">  <span class="key">patient_id</span>: <span class="str">"PT-4471"</span>,</code>
+                  <code class="h-line">  <span class="key">dob</span>: <span class="dim">null</span>,</code>
+                  <code class="h-line">  <span class="key">plan</span>: <span class="str">"PPO"</span></code>
+                  <code class="h-line">}</code>
+                  <code class="h-line h-warn">validate → <span class="tag">1 issue</span> dob missing</code>
+                  <code class="h-line dim">repair → backfill dob from page 3</code>
+                  <code class="h-line h-ok">revalidate → ✓ all checks pass</code>
+                  <code class="h-line h-route"><span class="arr">→</span> route to review queue<span class="cursor" aria-hidden="true"></span></code>
+                </div>
+                <div class="harness-foot">
+                  <span>typed · validated · repaired · routed</span>
+                  <span class="loop">↻ ready for next run</span>
                 </div>
               </aside>
             </div>
@@ -82,7 +108,12 @@
             </div>
             <div class="service-path-list reveal" aria-label="Service paths">
               <a class="service-path-row" href="/services/workflow-diagnosis/">
-                <span class="service-path-index">01</span>
+                <span class="service-path-badge" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#magnifier"></use>
+                  </svg>
+                  <span>01</span>
+                </span>
                 <span class="service-path-copy">
                   <strong>Workflow diagnosis</strong>
                   <span>For teams that need the workflow map, failure modes, and first safe build slice before implementation.</span>
@@ -90,7 +121,12 @@
                 <span class="service-path-action">Read diagnosis brief</span>
               </a>
               <a class="service-path-row" href="/services/agent-harness-build/">
-                <span class="service-path-index">02</span>
+                <span class="service-path-badge" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#wrench"></use>
+                  </svg>
+                  <span>02</span>
+                </span>
                 <span class="service-path-copy">
                   <strong>Agent harness build</strong>
                   <span>For teams ready to wrap one AI step in typed output, validation, repair behavior, and handoff.</span>
@@ -98,7 +134,12 @@
                 <span class="service-path-action">Read build brief</span>
               </a>
               <a class="service-path-row" href="/services/production-hardening/">
-                <span class="service-path-index">03</span>
+                <span class="service-path-badge" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#shield"></use>
+                  </svg>
+                  <span>03</span>
+                </span>
                 <span class="service-path-copy">
                   <strong>Production hardening</strong>
                   <span>For teams with a working automation that needs reliability, observability, and operating guardrails.</span>
@@ -128,36 +169,56 @@
             </div>
             <div class="card-grid card-grid-4">
               <a class="content-card content-card-link reveal" href="/use-cases/healthcare-operations/">
+                <span class="card-icon" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#heart"></use>
+                  </svg>
+                </span>
                 <h3>Healthcare intake and exceptions</h3>
                 <p>
                   Turn packets, referrals, attachments, and follow-up notes into structured
                   fields, missing-item checks, and review queues.
                 </p>
-                <span>See healthcare workflow</span>
+                <span class="card-action">See healthcare workflow</span>
               </a>
               <a class="content-card content-card-link reveal" href="/use-cases/insurance-compliance/">
+                <span class="card-icon" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#file-check"></use>
+                  </svg>
+                </span>
                 <h3>Insurance evidence review</h3>
                 <p>
                   Extract claim details, compare supporting evidence against rules, and flag
                   cases that need human judgment.
                 </p>
-                <span>See review workflow</span>
+                <span class="card-action">See review workflow</span>
               </a>
               <a class="content-card content-card-link reveal" href="/use-cases/sports-analytics/">
+                <span class="card-icon" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#video"></use>
+                  </svg>
+                </span>
                 <h3>Basketball video intelligence</h3>
                 <p>
                   Track players across footage, convert movement into usable signals, and
                   support coaching or analytics workflows.
                 </p>
-                <span>See video workflow</span>
+                <span class="card-action">See video workflow</span>
               </a>
               <a class="content-card content-card-link reveal" href="/use-cases/telecom-optimization/">
+                <span class="card-icon" aria-hidden="true">
+                  <svg focusable="false">
+                    <use href="/assets/interface-icons.svg#signal-waves"></use>
+                  </svg>
+                </span>
                 <h3>Telecom-style placement optimization</h3>
                 <p>
                   Analyze rooms, obstructions, and placement options to improve equipment
                   coverage and installation decisions.
                 </p>
-                <span>See spatial workflow</span>
+                <span class="card-action">See spatial workflow</span>
               </a>
             </div>
           </div>
@@ -167,11 +228,10 @@
           <div class="container proof-layout">
             <div class="section-head reveal">
               <p class="eyebrow">Proof and articles</p>
-              <h2>Read before you book.</h2>
+              <h2>Inspect the work before you book.</h2>
               <p>
-                Use cases and articles help visitors understand the work without forcing
-                another choice layer into the hero. The next action should say exactly
-                where it goes.
+                Start with concrete examples, written breakdowns, and service outputs
+                when you want evidence before starting a call.
               </p>
             </div>
             <div class="proof-link-list reveal" aria-label="Proof and article links">
@@ -181,11 +241,11 @@
               </a>
               <a class="proof-link-row" href="/articles/">
                 <span>Articles</span>
-                <strong>Read articles</strong>
+                <strong>Read practical breakdowns</strong>
               </a>
               <a class="proof-link-row" href="#capabilities">
                 <span>Service outputs</span>
-                <strong>Compare service paths</strong>
+                <strong>Compare the three service paths</strong>
               </a>
             </div>
           </div>
@@ -241,7 +301,10 @@
       <footer class="footer">
         <div class="container footer-inner">
           <div>
-            <strong>AI Enthusiast Daily</strong>
+            <span class="footer-brand">
+              <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="30" height="30" />
+              <strong>AI Enthusiast Daily</strong>
+            </span>
             <p>Applied AI systems for documents, video, workflows, and visual intelligence.</p>
           </div>
           <div class="footer-links">
