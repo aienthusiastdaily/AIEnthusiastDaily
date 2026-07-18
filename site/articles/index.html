@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Articles | AI Enthusiast Daily</title>
+    <title>Notes | AI Enthusiast Daily</title>
     <meta
       name="description"
       content="Upcoming notes on AI systems, workflow automation, document understanding, and computer vision."
@@ -12,19 +12,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/assets/brand-mark-curious-a.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css?v=age-63-studio-site-2" />
   </head>
-  <body>
+  <body class="studio-site articles-page">
     <div class="site-shell">
       <header class="topbar" data-topbar>
         <div class="container topbar-inner">
           <a class="brand" href="/" aria-label="AI Enthusiast Daily home">
-            <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="34" height="34" />
-            <span>AI Enthusiast Daily</span>
+            <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="34" height="34" />
+            <span>AI Enthusiast Daily <small>— Practical AI systems</small></span>
           </a>
           <button
             class="nav-toggle"
@@ -39,10 +39,11 @@
             </svg>
           </button>
           <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
-            <a href="/">Home</a>
-            <a href="/#use-cases">Use cases</a>
-            <a href="/articles" aria-current="page">Articles</a>
-            <a class="button button-ghost button-small" href="/#waitlist">Contact</a>
+            <a href="/#selected-work">Work</a>
+            <a href="/#services">Services</a>
+            <a href="/articles/" aria-current="page">Notes</a>
+            <a href="/#about">About</a>
+            <a class="button button-small" href="/book-a-call/?source=notes_nav">Share a workflow</a>
           </nav>
         </div>
       </header>
@@ -50,10 +51,10 @@
       <main>
         <section class="page-hero">
           <div class="container reveal">
-            <p class="eyebrow">Article Showcase</p>
-            <h1>Articles</h1>
+            <p class="eyebrow">Field notes</p>
+            <h1>Notes</h1>
             <p class="page-hero-text">
-              Upcoming writing on AI systems that perceive, reason, and act across
+              Upcoming notes on AI systems that perceive, reason, and act across
               workflows, documents, and visual environments.
             </p>
           </div>
@@ -63,6 +64,7 @@
           <div class="container article-stack">
             <article class="article-card article-card-large article-card-static reveal">
               <span class="article-tag">Operations</span>
+              <p class="article-byline">By Tung Nguyen</p>
               <h2>When should an AI system act instead of just classify?</h2>
               <p>
                 A practical view of the jump from perception to decision and from decision to
@@ -73,6 +75,7 @@
 
             <article class="article-card article-card-large article-card-static reveal">
               <span class="article-tag">Computer Vision</span>
+              <p class="article-byline">By Tung Nguyen</p>
               <h2>What sports tracking teaches about real-world AI systems</h2>
               <p>
                 Tracking players is only one part of the challenge. Reliable systems need
@@ -83,6 +86,7 @@
 
             <article class="article-card article-card-large article-card-static reveal">
               <span class="article-tag">Infrastructure</span>
+              <p class="article-byline">By Tung Nguyen</p>
               <h2>How to think about AI decisions in telecom and infrastructure</h2>
               <p>
                 Spatial optimization and visual evidence create a useful lens for designing
@@ -97,7 +101,7 @@
           <div class="container signup-panel reveal signup-panel-compact">
             <div class="signup-copy">
               <p class="eyebrow">Next step</p>
-              <h2>Want the essays when they publish?</h2>
+              <h2>Want the notes when they publish?</h2>
               <p>
                 The use-case pages are live now. Join the waitlist for new essays and
                 practical notes as they publish.
@@ -105,11 +109,31 @@
             </div>
             <div class="hero-actions">
               <a class="button" href="/#waitlist">Join waitlist</a>
-              <a class="button button-ghost" href="/#use-cases">Browse use cases</a>
+              <a class="button button-ghost" href="/#selected-work">Browse selected work</a>
             </div>
           </div>
         </section>
       </main>
+
+      <footer class="footer studio-footer">
+        <div class="container footer-inner">
+          <div class="footer-brand-lockup">
+            <span class="footer-brand-tile" aria-hidden="true">
+              <img src="/assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
+            </span>
+            <div>
+              <strong>AI Enthusiast Daily</strong>
+              <p>Independent AI systems work for messy, real-world operations.</p>
+            </div>
+          </div>
+          <div class="footer-links">
+            <a href="/#selected-work">Work</a>
+            <a href="/#services">Services</a>
+            <a href="/articles/">Notes</a>
+            <a href="/book-a-call/">Share a workflow</a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="/script.js"></script>

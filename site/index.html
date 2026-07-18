@@ -3,28 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Enthusiast Daily | Applied AI Systems for Documents, Video, and Operations</title>
+    <title>AI Enthusiast Daily | Practical AI Systems</title>
     <meta
       name="description"
-      content="AI Enthusiast Daily builds applied AI systems for document-heavy operations, sports video, spatial optimization, and workflow automation."
+      content="AI Enthusiast Daily turns messy AI workflows into systems people can understand, trust, and run."
     />
     <link rel="canonical" href="https://aienthusiastdaily.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/assets/brand-mark.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="/assets/brand-mark-curious-a.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css?v=age-63-footer-contrast" />
   </head>
-  <body class="home-page">
+  <body class="home-page studio-home">
     <div class="site-shell">
-      <header class="topbar" data-topbar>
+      <header class="topbar studio-topbar" data-topbar>
         <div class="container topbar-inner">
-          <a class="brand" href="/" aria-label="AI Enthusiast Daily home">
-            <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="34" height="34" />
-            <span>AI Enthusiast Daily</span>
+          <a class="brand studio-brand" href="/" aria-label="AI Enthusiast Daily, home">
+            <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="34" height="34" />
+            <span>AI Enthusiast Daily <small>— Practical AI systems</small></span>
           </a>
           <button
             class="nav-toggle"
@@ -39,234 +39,155 @@
             </svg>
           </button>
           <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
-            <a href="#capabilities">Services</a>
-            <a href="#use-cases">Use cases</a>
-            <a href="/articles/">Articles</a>
-            <a class="button button-ghost button-small" href="/book-a-call/?source=homepage_nav">Book a call</a>
+            <a href="#selected-work">Work</a>
+            <a href="#services">Services</a>
+            <a href="/articles/">Notes</a>
+            <a href="#about">About</a>
+            <a class="button button-small" href="/book-a-call/?source=homepage_nav">Share a workflow</a>
           </nav>
         </div>
       </header>
 
       <main>
-        <section class="hero">
-          <div class="hero-gradient hero-gradient-left"></div>
-          <div class="hero-gradient hero-gradient-right"></div>
-          <div class="container">
-            <div class="hero-grid">
-              <div class="hero-copy reveal">
-                <p class="eyebrow">Applied AI systems · AI Enthusiast Daily</p>
-                <h1>AI that catches its own mistakes.</h1>
-                <p class="hero-text">
-                  I help teams turn brittle AI steps into systems that
-                  <strong>flag what they get wrong before it reaches a customer</strong> —
-                  so you can see exactly where the model stopped, and why.
-                </p>
-                <div class="hero-actions">
-                  <a class="button" href="/book-a-call/?source=homepage_hero">Book a call</a>
-                  <a class="button button-ghost" href="#waitlist">Join waitlist</a>
-                </div>
+        <section class="studio-hero" id="about" aria-labelledby="studio-hero-title">
+          <div class="container studio-hero-grid">
+            <aside class="studio-identity reveal" aria-label="About AI Enthusiast Daily">
+              <img
+                class="studio-monogram studio-brand-monogram"
+                src="/assets/brand-mark-curious-a.png"
+                alt=""
+                width="150"
+                height="150"
+              />
+              <p>
+                <span aria-hidden="true"></span>
+                Currently exploring: reliable agent harnesses, document-heavy operations,
+                and what makes human review actually useful.
+              </p>
+            </aside>
+
+            <div class="studio-hero-copy reveal">
+              <p class="studio-eyebrow">Applied AI systems studio</p>
+              <h1 id="studio-hero-title">AI Enthusiast Daily</h1>
+              <p class="studio-brand-promise">
+                Turning messy AI workflows into systems people can understand, trust, and run.
+              </p>
+              <p class="studio-intro">
+                Practical systems work for teams whose AI demos are becoming real
+                operations—mapping the workflow, adding typed outputs and guardrails, and making
+                the hard parts visible.
+              </p>
+              <div class="studio-actions">
+                <a class="studio-primary-action" href="/book-a-call/?source=homepage_hero">
+                  Share a workflow
+                  <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
+                </a>
+                <a class="studio-secondary-action" href="#services">See the approach</a>
               </div>
-
-              <aside class="harness js reveal" id="harness" aria-label="Example harness run">
-                <div class="harness-bar">
-                  <span class="harness-dots" aria-hidden="true"><span></span><span></span><span></span></span>
-                  <span class="harness-title">harness · intake.referral</span>
-                  <span class="harness-status" id="harness-status">running</span>
-                </div>
-                <div class="harness-body">
-                  <code class="h-line h-cmd"><span class="sigil">$</span> harness run referral_packet.pdf</code>
-                  <code class="h-line dim">parse · 3 pages · 1 attachment</code>
-                  <code class="h-line"><span class="dim">emit typed →</span> {</code>
-                  <code class="h-line">  <span class="key">patient_id</span>: <span class="str">"PT-4471"</span>,</code>
-                  <code class="h-line">  <span class="key">dob</span>: <span class="dim">null</span>,</code>
-                  <code class="h-line">  <span class="key">plan</span>: <span class="str">"PPO"</span></code>
-                  <code class="h-line">}</code>
-                  <code class="h-line h-warn">validate → <span class="tag">1 issue</span> dob missing</code>
-                  <code class="h-line dim">repair → backfill dob from page 3</code>
-                  <code class="h-line h-ok">revalidate → ✓ all checks pass</code>
-                  <code class="h-line h-route"><span class="arr">→</span> route to review queue<span class="cursor" aria-hidden="true"></span></code>
-                </div>
-                <div class="harness-foot">
-                  <span>typed · validated · repaired · routed</span>
-                  <span class="loop">↻ ready for next run</span>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
 
-        <section class="section" id="capabilities">
+        <section class="studio-services" id="services" aria-label="Ways to work together">
           <div class="container">
-            <div class="section-head reveal">
-              <p class="eyebrow">Services</p>
-              <h2>Three entry points from real project work.</h2>
-              <p>
-                Start with the stage you are actually in: diagnosis, build, or
-                hardening. Each path keeps the system practical: typed output,
-                validation, repair behavior, and safe downstream action.
-              </p>
-            </div>
-            <div class="service-path-list reveal" aria-label="Service paths">
-              <a class="service-path-row" href="/services/workflow-diagnosis/">
-                <span class="service-path-badge" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#magnifier"></use>
-                  </svg>
-                  <span>01</span>
-                </span>
-                <span class="service-path-copy">
+            <div class="studio-service-links reveal">
+              <a href="/services/workflow-diagnosis/">
+                <span>
                   <strong>Workflow diagnosis</strong>
-                  <span>For teams that need the workflow map, failure modes, and first safe build slice before implementation.</span>
+                  <small>Map the real process, expose failure points, and choose the first safe build slice.</small>
                 </span>
-                <span class="service-path-action">Read diagnosis brief</span>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
-              <a class="service-path-row" href="/services/agent-harness-build/">
-                <span class="service-path-badge" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#wrench"></use>
-                  </svg>
-                  <span>02</span>
-                </span>
-                <span class="service-path-copy">
+              <a href="/services/agent-harness-build/">
+                <span>
                   <strong>Agent harness build</strong>
-                  <span>For teams ready to wrap one AI step in typed output, validation, repair behavior, and handoff.</span>
+                  <small>Wrap one AI step in typed outputs, validation, repair behavior, and clear handoffs.</small>
                 </span>
-                <span class="service-path-action">Read build brief</span>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
-              <a class="service-path-row" href="/services/production-hardening/">
-                <span class="service-path-badge" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#shield"></use>
-                  </svg>
-                  <span>03</span>
-                </span>
-                <span class="service-path-copy">
+              <a href="/services/production-hardening/">
+                <span>
                   <strong>Production hardening</strong>
-                  <span>For teams with a working automation that needs reliability, observability, and operating guardrails.</span>
+                  <small>Add observability, operating guardrails, and resilient paths for the cases that fail.</small>
                 </span>
-                <span class="service-path-action">Read hardening brief</span>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
             </div>
-            <div class="method-strip reveal" aria-label="Compact methodology">
-              <span>Basketball player tracking</span>
-              <span>Telecom-style spatial optimization</span>
-              <span>Healthcare operations workflows</span>
-              <span>Insurance and compliance review</span>
-            </div>
+
+            <a class="studio-note-strip reveal" href="/articles/">
+              <span>From the field notes — Why deterministic guardrails still matter in agentic workflows</span>
+              <strong>
+                Read what’s coming
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
+              </strong>
+            </a>
           </div>
         </section>
 
-        <section class="section section-muted" id="use-cases">
+        <section class="studio-work" id="selected-work">
           <div class="container">
-            <div class="section-head reveal">
-              <p class="eyebrow">Use cases</p>
-              <h2>Where this work shows up in practice.</h2>
+            <div class="studio-section-heading reveal">
+              <p>Selected systems and field notes</p>
+              <h2>The work is technical. The outcome should still feel clear.</h2>
               <p>
-                These are the kinds of messy, high-variance problems I can help with:
-                documents that need review, video that needs interpretation, and physical
-                environments that need better decisions.
+                The focus is systems where judgment matters: messy documents, ambiguous evidence,
+                moving objects, and operations that cannot quietly fail.
               </p>
             </div>
-            <div class="card-grid card-grid-4">
-              <a class="content-card content-card-link reveal" href="/use-cases/healthcare-operations/">
-                <span class="card-icon" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#heart"></use>
-                  </svg>
-                </span>
-                <h3>Healthcare intake and exceptions</h3>
-                <p>
-                  Turn packets, referrals, attachments, and follow-up notes into structured
-                  fields, missing-item checks, and review queues.
-                </p>
-                <span class="card-action">See healthcare workflow</span>
+            <div class="studio-work-list reveal">
+              <a href="/use-cases/healthcare-operations/">
+                <span>01</span><strong>Healthcare intake and exceptions</strong><small>Documents into reviewable decisions</small>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
-              <a class="content-card content-card-link reveal" href="/use-cases/insurance-compliance/">
-                <span class="card-icon" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#file-check"></use>
-                  </svg>
-                </span>
-                <h3>Insurance evidence review</h3>
-                <p>
-                  Extract claim details, compare supporting evidence against rules, and flag
-                  cases that need human judgment.
-                </p>
-                <span class="card-action">See review workflow</span>
+              <a href="/use-cases/insurance-compliance/">
+                <span>02</span><strong>Insurance evidence review</strong><small>Rules, evidence, and human judgment</small>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
-              <a class="content-card content-card-link reveal" href="/use-cases/sports-analytics/">
-                <span class="card-icon" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#video"></use>
-                  </svg>
-                </span>
-                <h3>Basketball video intelligence</h3>
-                <p>
-                  Track players across footage, convert movement into usable signals, and
-                  support coaching or analytics workflows.
-                </p>
-                <span class="card-action">See video workflow</span>
+              <a href="/use-cases/sports-analytics/">
+                <span>03</span><strong>Basketball video intelligence</strong><small>Movement into usable signals</small>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
-              <a class="content-card content-card-link reveal" href="/use-cases/telecom-optimization/">
-                <span class="card-icon" aria-hidden="true">
-                  <svg focusable="false">
-                    <use href="/assets/interface-icons.svg#signal-waves"></use>
-                  </svg>
-                </span>
-                <h3>Telecom-style placement optimization</h3>
-                <p>
-                  Analyze rooms, obstructions, and placement options to improve equipment
-                  coverage and installation decisions.
-                </p>
-                <span class="card-action">See spatial workflow</span>
+              <a href="/use-cases/telecom-optimization/">
+                <span>04</span><strong>Placement optimization</strong><small>Physical constraints into better choices</small>
+                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
               </a>
             </div>
           </div>
         </section>
 
-        <section class="section proof-section" id="proof">
-          <div class="container proof-layout">
-            <div class="section-head reveal">
-              <p class="eyebrow">Proof and articles</p>
-              <h2>Inspect the work before you book.</h2>
-              <p>
-                Start with concrete examples, written breakdowns, and service outputs
-                when you want evidence before starting a call.
-              </p>
-            </div>
-            <div class="proof-link-list reveal" aria-label="Proof and article links">
-              <a class="proof-link-row" href="#use-cases">
-                <span>Use cases</span>
-                <strong>See applied workflow examples</strong>
-              </a>
-              <a class="proof-link-row" href="/articles/">
-                <span>Articles</span>
-                <strong>Read practical breakdowns</strong>
-              </a>
-              <a class="proof-link-row" href="#capabilities">
-                <span>Service outputs</span>
-                <strong>Compare the three service paths</strong>
-              </a>
+        <section class="studio-about" aria-labelledby="studio-about-title">
+          <div class="container studio-about-grid">
+            <p class="studio-eyebrow reveal">About the practice</p>
+            <div class="reveal">
+              <h2 id="studio-about-title">The work stays close to the point where a model’s answer becomes someone else’s work.</h2>
+              <div class="studio-about-copy">
+                <p>
+                  That means tracing the real workflow, making outputs explicit, testing the
+                  edges, and designing a useful handoff when the system is uncertain.
+                </p>
+                <p>
+                  The goal is not autonomy for its own sake. It is a system your team can
+                  operate, question, and improve without pretending the hard cases disappeared.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        <section class="section" id="waitlist">
+        <section class="studio-signup" id="waitlist">
           <div class="container">
-            <div class="signup-panel reveal">
-              <div class="signup-copy">
-                <p class="eyebrow">Join waitlist</p>
-                <h2>Want practical examples as I publish them?</h2>
+            <div class="studio-signup-panel reveal">
+              <div>
+                <p class="studio-eyebrow">Field notes</p>
+                <h2>Follow the practical work as it is published.</h2>
                 <p>
-                  I write about applied AI systems across workflow automation,
-                  document understanding, computer vision, and operations. If you already
-                  have a concrete project, book a call instead.
+                  Occasional notes on agent reliability, document-heavy operations, computer
+                  vision, and the boundaries that keep AI useful.
                 </p>
-                <a class="button button-ghost" href="/book-a-call/?source=homepage_final">Book a call</a>
               </div>
 
               <form
-                class="signup-form"
+                class="signup-form studio-signup-form"
                 data-signup-form
                 data-form-name="landing_page_waitlist"
                 data-success-message="Thanks. You are on the waitlist."
@@ -290,7 +211,7 @@
                 <input type="hidden" name="form_name" value="landing_page_waitlist" />
                 <input type="hidden" name="submitted_from" data-current-url />
                 <input type="hidden" name="submitted_at" data-submitted-at />
-                <button class="button button-submit" type="submit" data-submit-label="Join waitlist">Join waitlist</button>
+                <button class="button button-submit" type="submit" data-submit-label="Join the field notes">Join the field notes</button>
                 <p class="form-status" data-form-status aria-live="polite"></p>
               </form>
             </div>
@@ -298,20 +219,20 @@
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="footer studio-footer">
         <div class="container footer-inner">
           <div>
             <span class="footer-brand">
-              <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="30" height="30" />
+              <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
               <strong>AI Enthusiast Daily</strong>
             </span>
-            <p>Applied AI systems for documents, video, workflows, and visual intelligence.</p>
+            <p>Independent AI systems work for messy, real-world operations.</p>
           </div>
           <div class="footer-links">
-            <a href="#capabilities">Services</a>
-            <a href="#use-cases">Use cases</a>
-            <a href="/articles/">Articles</a>
-            <a href="/book-a-call/?source=homepage_footer">Book a call</a>
+            <a href="#selected-work">Work</a>
+            <a href="#services">Services</a>
+            <a href="/articles/">Notes</a>
+            <a href="/book-a-call/?source=homepage_footer">Share a workflow</a>
           </div>
         </div>
       </footer>
