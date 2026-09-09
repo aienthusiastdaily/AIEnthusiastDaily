@@ -1,0 +1,30 @@
+/* Shared article-series presentation ----------------------------------- */
+
+.studio-site .series-intro {
+  padding: clamp(2rem, 4vw, 3.2rem) 0;
+  border-bottom: 1px solid var(--studio-line);
+}
+
+.studio-site .series-intro h2 {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--studio-forest);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.25rem, 4vw, 3.8rem);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.studio-site .series-intro > p:last-child {
+  max-width: 48rem;
+  margin: 1rem 0 0;
+  color: var(--studio-muted);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.studio-site .article-card-featured {
+  background: var(--studio-stone);
+}

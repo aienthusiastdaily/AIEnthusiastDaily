@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "evidence_status": "recorded_run_verified",
+  "bounded_scope": "One recorded run against one frozen synthetic job-listing layout. This evidence does not establish broad website coverage, cross-model portability, or production readiness.",
+  "fixture": {
+    "identity": "itviec_ai_engineer_ha_noi",
+    "kind": "frozen_synthetic_job_listing_layout"
+  },
+  "model": {
+    "provider_route": "openai/responses/gpt-5.6-terra",
+    "runtime_identifier": "gpt-5.6-terra",
+    "public_display_name": "GPT-5.6 Terra",
+    "fallback_allowed": false
+  },
+  "runtime": {
+    "framework_name": "Google ADK",
+    "implementation_sha": "be0e7f2e980e4f8420fe83a4d569bccb15c0d9de",
+    "documentation_sha": "8343891727fd4a5b61b6a8304de98e5021b94972"
+  },
+  "timing": {
+    "recorded_date": "2026-08-02",
+    "recorded_display_date": "August 2, 2026",
+    "recorded_date_provenance": "AGE-76 provider-run lineage and implementation commit date",
+    "evidence_as_of_date": "2026-09-08",
+    "evidence_as_of_provenance": "R2 delivery headers and retained Git recovery object reverified on 2026-09-08"
+  },
+  "result": {
+    "preexisting_source_rows": 0,
+    "expected_count": 20,
+    "validated_count": 20,
+    "written_count": 20,
+    "independently_reread_count": 20,
+    "extractor_run_count": 1,
+    "repair_count": 0,
+    "cleanup_status": "passed",
+    "container_absence_verified": true
+  },
+  "integrity": {
+    "fixture_sha256": "f29423c48f253dd819412605f93380ed8ea17a7e376b6331ef0a6ca49054a093",
+    "mounted_fixture_sha256": "f29423c48f253dd819412605f93380ed8ea17a7e376b6331ef0a6ca49054a093"
+  },
+  "acceptance_contract": {
+    "required_fields": [
+      "title",
+      "company_name",
+      "job_url",
+      "location_raw"
+    ],
+    "path_arguments": true,
+    "network_code_absent": true,
+    "database_writes_absent": true,
+    "expected_job_literals_absent": true,
+    "accepted_run_command_observed": true
+  },
+  "recording": {
+    "url": "https://media.aienthusiastdaily.com/engineering-agent-loop-runtime-e2e-v1.mp4",
+    "object_key": "engineering-agent-loop-runtime-e2e-v1.mp4",
+    "content_type": "video/mp4",
+    "byte_size": 6607755,
+    "sha256": "5681e904159c469f64e425eb55d8b0293d7a7f66f7f219f833fa7685acda2e5d",
+    "verified_at": "2026-09-08T03:29:25Z",
+    "verification_method": "R2 HTTP headers for delivery metadata; SHA-256 matched the retained Git recovery blob",
+    "retention_owner": "AI Enthusiast Daily site operator",
+    "append_only_policy": "Published recording keys are immutable; replacement media uses a new versioned key and manifest entry."
+  },
+  "recovery": {
+    "source_commit": "b57bf63",
+    "blob_sha1": "c8ff696ef06f6fb808ac226b0b9c035a50edc037",
+    "expected_sha256": "5681e904159c469f64e425eb55d8b0293d7a7f66f7f219f833fa7685acda2e5d",
+    "retained_history_limitation": "Recovery depends on retained Git history; the redundant working-tree media copy is intentionally removed."
+  }
+}
