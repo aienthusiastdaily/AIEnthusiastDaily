@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engineering the Agent Loop | AI Enthusiast Daily</title>
+    <meta
+      name="description"
+      content="A recorded showcase of a custom agent harness built on Google ADK and designed to be model-agnostic, with GPT-5.6 Terra used for the demonstrated run."
+    />
+    <link
+      rel="canonical"
+      href="https://aienthusiastdaily.com/articles/engineering-the-agent-loop/"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../../assets/brand-mark-curious-a.png" type="image/png" />
+    <link rel="stylesheet" href="../../styles.css?v=7db45c240e04" />
+    <link rel="stylesheet" href="../articles.css?v=371dfede79ca" />
+    <link rel="stylesheet" href="./styles.css?v=48f7046da8f7" />
+  </head>
+  <body class="studio-site article-detail-page">
+    <div class="site-shell">
+      <header class="topbar" data-topbar>
+        <div class="container topbar-inner">
+          <a class="brand" href="../../" aria-label="AI Enthusiast Daily home">
+            <img
+              class="brand-mark"
+              src="../../assets/brand-mark-curious-a.png"
+              alt=""
+              width="34"
+              height="34"
+            />
+            <span>AI Enthusiast Daily <small>— Practical AI systems</small></span>
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Toggle primary navigation"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+            data-nav-toggle
+          >
+            <svg aria-hidden="true" focusable="false">
+              <use href="../../assets/interface-icons.svg#menu"></use>
+            </svg>
+          </button>
+          <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
+            <a href="../../#selected-work">Work</a>
+            <a href="../../#services">Services</a>
+            <a href="../" aria-current="page">Notes</a>
+            <a href="../../#about">About</a>
+            <a
+              class="button button-small"
+              href="../../book-a-call/?service=agent-harness-build&amp;source=engineering_agent_loop_nav"
+              >Share a workflow</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <article>
+          <header class="article-hero">
+            <div class="container article-hero-inner reveal">
+              <p class="eyebrow">Engineering a Reusable Custom Agent Loop · Series Preview</p>
+              <h1>Engineering the Agent Loop</h1>
+              <p class="article-deck">
+                A custom harness built on
+                <span data-evidence-key="runtime.framework_name">Google ADK</span> and designed to
+                be model-agnostic. It gives an agent room to inspect, create, run, and improve its
+                own approach inside a controlled environment—with stable interfaces designed for
+                reuse.
+              </p>
+              <div class="article-meta" aria-label="Article details">
+                <span>By Tung Nguyen</span>
+                <span>August 4, 2026</span>
+                <span>
+                  Recorded with
+                  <span data-evidence-key="model.public_display_name">GPT-5.6 Terra</span>
+                </span>
+              </div>
+              <a class="article-proof-jump" href="#demonstration-recording">
+                <span>Watch the workflow</span>
+                <strong>Discover → author → validate → persist → verify</strong>
+                <span>Play the recorded run ↓</span>
+              </a>
+            </div>
+          </header>
+
+          <div class="container article-layout">
+            <aside class="article-rail" aria-label="Experiment boundary">
+              <p class="article-rail-label">What I built</p>
+              <p>
+                A reusable harness for bounded autonomy: freedom inside the sandbox, stable
+                contracts outside it.
+              </p>
+              <p class="article-rail-label">What can evolve</p>
+              <p>Versioned skills and adapters that would absorb accepted approaches over time.</p>
+              <p class="article-rail-label">Framework / recorded model</p>
+              <p>
+                <span data-evidence-key="runtime.framework_name">Google ADK</span> /
+                <span data-evidence-key="model.public_display_name">GPT-5.6 Terra</span>
+              </p>
+              <p class="article-rail-label">Demonstrated scope</p>
+              <p>One recorded run against one frozen synthetic layout modeled on a job listing.</p>
+            </aside>
+
+            <div class="article-body">
+              <p class="article-lede">
+                I wanted to give the agent real freedom to work: inspect a task, create scripts,
+                run them, and revise the approach inside a controlled sandbox. The harness should
+                constrain where the work happens and what counts as acceptable—not prescribe one
+                fixed recipe. Its stable interfaces push the agent toward reusable solution shapes
+                instead of one-off answers.
+              </p>
+
+              <section
+                class="article-recording-showcase"
+                id="demonstration-recording"
+                aria-labelledby="recording-title"
+              >
+                <header>
+                  <span>Actual workflow recording</span>
+                  <h2 id="recording-title">Watch the loop complete</h2>
+                  <p>
+                    This is a fresh ADK Web capture of the controlled workflow—not a simulated
+                    animation or a replay labeled as a new run.
+                  </p>
+                </header>
+
+                <figure>
+                  <video
+                    controls
+                    playsinline
+                    preload="metadata"
+                    poster="./assets/current-workflow-runtime-poster.png"
+                    aria-describedby="recording-caption"
+                  >
+                    <source
+                      src="https://media.aienthusiastdaily.com/engineering-agent-loop-runtime-e2e-v1.mp4"
+                      type="video/mp4"
+                    />
+                    Your browser cannot play the embedded recording.
+                    <a
+                      href="https://media.aienthusiastdaily.com/engineering-agent-loop-runtime-e2e-v1.mp4"
+                      >Open the MP4 directly.</a
+                    >
+                  </video>
+                  <figcaption id="recording-caption">
+                    The recording follows one frozen synthetic page modeled on a job listing
+                    through skill activation, extractor execution, deterministic acceptance,
+                    persistence, and a fresh database reread by a separate host tool using its own
+                    connection.
+                  </figcaption>
+                </figure>
+
+                <div class="article-recording-watch" aria-label="What to watch for">
+                  <strong>What to watch for</strong>
+                  <ol>
+                    <li>The generic agent discovers and loads the job-extraction skill.</li>
+                    <li>The skill introduces task-scoped tools and the acceptance contract.</li>
+                    <li>Generated extraction code runs inside the isolated workspace.</li>
+                    <li>The host validates, persists, and rereads the accepted records.</li>
+                  </ol>
+                </div>
+              </section>
+
+              <h2>What I built</h2>
+              <p>
+                The custom loop gives one generic agent broad latitude inside the sandbox. It can
+                choose an approach, write and run task-specific code, inspect the result, and try
+                again. <span data-evidence-key="runtime.framework_name">Google ADK</span> supplies
+                the agent framework underneath, and
+                <span data-evidence-key="model.public_display_name">GPT-5.6 Terra</span> was the
+                model used for this recorded run. Model choice sits behind the runtime boundary,
+                so the host lifecycle is designed to remain model-agnostic; the harness supplies
+                the stable lifecycle, capability boundaries, and evidence contract around that
+                work.
+              </p>
+
+              <div class="article-loop-showcase" aria-label="Custom agent loop stages">
+                <div>
+                  <span>01</span>
+                  <strong>Generic agent</strong>
+                </div>
+                <div>
+                  <span>02</span>
+                  <strong>Runtime-loaded skill</strong>
+                </div>
+                <div>
+                  <span>03</span>
+                  <strong>Isolated execution</strong>
+                </div>
+                <div>
+                  <span>04</span>
+                  <strong>Host validation</strong>
+                </div>
+                <div>
+                  <span>05</span>
+                  <strong>Durable persistence</strong>
+                </div>
+                <div>
+                  <span>06</span>
+                  <strong>Fresh stored-state reread</strong>
+                </div>
+              </div>
+
+              <p>
+                Task knowledge lives in a versioned solution layer: activated skills, task
+                adapters, acceptance contracts, and allowed tools. That separation lets the root
+                agent and host lifecycle remain stable while a task solution becomes more capable.
+                Generated code stays inside an isolated sandbox with host-enforced boundaries, and
+                only work that passes the host's acceptance contract can cross into durable state.
+              </p>
+
+              <section
+                class="article-solution-evolution"
+                aria-labelledby="solution-evolution-title"
+              >
+                <header>
+                  <span>Designed evolution loop</span>
+                  <strong id="solution-evolution-title"
+                    >Keep the harness stable. Let the solution layer improve.</strong
+                  >
+                </header>
+                <div>
+                  <article>
+                    <span>01</span>
+                    <strong>A new task variant appears</strong>
+                  </article>
+                  <article>
+                    <span>02</span>
+                    <strong>The agent can propose and test a new approach</strong>
+                  </article>
+                  <article>
+                    <span>03</span>
+                    <strong>The host can validate the evidence</strong>
+                  </article>
+                  <article>
+                    <span>04</span>
+                    <strong>
+                      The agent could reconcile new and existing approaches into a more
+                      generalizable skill or adapter
+                    </strong>
+                  </article>
+                </div>
+                <p>
+                  This recording demonstrates the author–run–validate loop. Continuous cross-run
+                  updating is the next design layer: after the host validates a new approach, the
+                  agent would compare it with existing patterns, reconcile their shared logic and
+                  useful differences, and propose a more generalizable versioned skill or adapter.
+                  That update would still need host review and regression evidence before future
+                  agents inherit it.
+                </p>
+                <p>
+                  The long-term target is not one scraper. It is a reliable, reusable,
+                  generalizable, and secure agentic workflow for any task that can be expressed
+                  through a skill, allowed tools, an acceptance contract, and an evidence
+                  interface—then continuously updated through host-reviewed versions. This
+                  recording proves the loop for one job-listing task, not that universal reach.
+                </p>
+              </section>
+
+              <section
+                class="article-demonstration-proof"
+                id="demonstration-proof"
+                aria-labelledby="demonstration-proof-title"
+              >
+                <h2 id="demonstration-proof-title">What the recorded run demonstrates</h2>
+                <p>
+                  The clean recorded run finished with the exact chain I wanted the host to own:
+                  all <span data-evidence-key="result.validated_count">20</span> visible cards were
+                  extracted, <span data-evidence-key="result.written_count">20</span> accepted
+                  records were written, and all
+                  <span data-evidence-key="result.independently_reread_count">20</span> stored rows
+                  were reopened and compared field by field.
+                </p>
+
+                <div class="article-metrics" aria-label="Recorded run metrics">
+                  <div>
+                    <strong data-evidence-key="result.validated_count">20</strong>
+                    <span>extracted records validated</span>
+                  </div>
+                  <div>
+                    <strong data-evidence-key="result.written_count">20</strong>
+                    <span>accepted records persisted</span>
+                  </div>
+                  <div>
+                    <strong data-evidence-key="result.independently_reread_count">20</strong>
+                    <span>stored rows reread and verified</span>
+                  </div>
+                </div>
+
+                <div class="article-proof-record" aria-label="Recorded host verification result">
+                  <div class="article-proof-record-heading">
+                    <span>Host-written run manifest</span>
+                    <strong>Accepted</strong>
+                  </div>
+                  <dl>
+                    <div>
+                      <dt>Target before run</dt>
+                      <dd>
+                        <code
+                          >preexisting_source_rows:
+                          <span data-evidence-key="result.preexisting_source_rows">0</span></code
+                        >
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Fixture integrity</dt>
+                      <dd>Served-page hash matched the pinned fixture hash</dd>
+                    </div>
+                    <div>
+                      <dt>Accepted writes</dt>
+                      <dd>
+                        <code
+                          >written_count:
+                          <span data-evidence-key="result.written_count">20</span></code
+                        >
+                      </dd>
+                    </div>
+                    <div>
+                      <dt>Stored verification</dt>
+                      <dd>
+                        <code
+                          >stored_verified_count:
+                          <span data-evidence-key="result.independently_reread_count">20</span></code
+                        >
+                      </dd>
+                    </div>
+                  </dl>
+                  <a href="./assets/current-recorded-run-evidence.json" target="_blank" rel="noopener">
+                    Open the sanitized recorded-run manifest →
+                  </a>
+                </div>
+              </section>
+
+              <div class="article-scope-callout">
+                <strong>The boundary of the claim</strong>
+                <p>
+                  This demonstrates one production-oriented control loop on one frozen synthetic
+                  layout modeled on a job listing. It does not prove broad coverage across tasks or
+                  websites. Portability is a design claim that the later parts of this series will
+                  test rather than assume.
+                </p>
+              </div>
+
+              <section class="article-series-roadmap" aria-labelledby="series-roadmap-title">
+                <h2 id="series-roadmap-title">The problems I’ll unpack next</h2>
+                <p>
+                  This preview shows the finished loop. The next articles will slow down and
+                  explain the failures, tradeoffs, and implementation decisions behind it.
+                </p>
+                <div>
+                  <article data-series-id="part-2" data-series-status="planned">
+                    <span>Part 2 · Planned</span>
+                    <strong data-series-title>When hidden contracts break the repair loop</strong>
+                    <p>
+                      The required-versus-actual mismatch, why an earlier run stopped, and how I
+                      moved validator-owned rules into the loaded skill.
+                    </p>
+                  </article>
+                  <article data-series-id="part-3" data-series-status="planned">
+                    <span>Part 3 · Planned</span>
+                    <strong data-series-title>Why the host owns “done”</strong>
+                    <p>
+                      Sandboxing generated code, deterministic acceptance, persistence gates, and
+                      a fresh stored-state reread.
+                    </p>
+                  </article>
+                  <article data-series-id="part-4" data-series-status="planned">
+                    <span>Part 4 · Planned</span>
+                    <strong data-series-title>How the solution layer evolves across tasks</strong>
+                    <p>
+                      Turning accepted approaches into versioned task knowledge, then testing
+                      whether those updates generalize without weakening the host gates.
+                    </p>
+                  </article>
+                </div>
+              </section>
+
+              <section class="article-evidence-note" aria-labelledby="evidence-note-title">
+                <h2 id="evidence-note-title">Recorded scope</h2>
+                <dl class="article-evidence-snapshot">
+                  <div>
+                    <dt>Recorded run</dt>
+                    <dd data-evidence-key="timing.recorded_display_date">August 2, 2026</dd>
+                  </div>
+                  <div>
+                    <dt>Runtime</dt>
+                    <dd data-evidence-key="runtime.framework_name">Google ADK</dd>
+                  </div>
+                  <div>
+                    <dt>Recorded model</dt>
+                    <dd data-evidence-key="model.public_display_name">GPT-5.6 Terra</dd>
+                  </div>
+                  <div>
+                    <dt>Implementation</dt>
+                    <dd>
+                      <code data-evidence-key="runtime.implementation_sha"
+                        >be0e7f2e980e4f8420fe83a4d569bccb15c0d9de</code
+                      >
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Experiment</dt>
+                    <dd>One frozen synthetic layout modeled on a job listing</dd>
+                  </div>
+                </dl>
+              </section>
+            </div>
+          </div>
+
+          <section class="article-cta">
+            <div class="container article-cta-inner reveal">
+              <div>
+                <p class="eyebrow">Bring one agent workflow</p>
+                <h2>Start with the task. Engineer the loop around it.</h2>
+                <p>
+                  I can help turn a one-off agent into a reusable system with runtime-loaded
+                  skills, constrained execution, host-owned acceptance, and evidence that
+                  survives beyond the model's final response.
+                </p>
+              </div>
+              <div class="article-cta-actions">
+                <a
+                  class="button"
+                  href="../../book-a-call/?service=agent-harness-build&amp;source=engineering_agent_loop"
+                  >Book an agent harness review</a
+                >
+                <a class="button button-ghost" href="../#reliable-agent-harness-series"
+                  >Explore the series</a
+                >
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <footer class="footer studio-footer">
+        <div class="container footer-inner">
+          <div class="footer-brand-lockup">
+            <span class="footer-brand-tile" aria-hidden="true">
+              <img src="../../assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
+            </span>
+            <div>
+              <strong>AI Enthusiast Daily</strong>
+              <p>Independent AI systems work for messy, real-world operations.</p>
+            </div>
+          </div>
+          <div class="footer-links">
+            <a href="../../#selected-work">Work</a>
+            <a href="../../#services">Services</a>
+            <a href="../">Notes</a>
+            <a href="../../book-a-call/">Share a workflow</a>
+          </div>
+        </div>
+      </footer>
+    <script src="../../script.js"></script>
+  </body>
+</html>
