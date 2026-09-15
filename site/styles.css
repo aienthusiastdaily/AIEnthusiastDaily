@@ -65,9 +65,13 @@
   min-height: 92px;
 }
 
+.studio-home section[id] {
+  scroll-margin-top: 104px;
+}
+
 .studio-home .studio-brand {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   letter-spacing: -0.015em;
 }
@@ -155,7 +159,7 @@
   border-radius: 48% 52% 54% 46% / 47% 45% 55% 53%;
   color: var(--studio-paper);
   background: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 3.15rem;
   letter-spacing: -0.08em;
 }
@@ -226,7 +230,7 @@
 .studio-about h2,
 .studio-signup h2 {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.045em;
 }
@@ -243,7 +247,7 @@
   max-width: 760px;
   margin: 22px 0 0;
   color: var(--studio-charcoal);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: clamp(1.55rem, 2.2vw, 2.1rem);
   line-height: 1.24;
   text-wrap: balance;
@@ -350,7 +354,7 @@
 
 .studio-service-links strong {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.45rem;
   font-weight: 400;
   letter-spacing: -0.025em;
@@ -360,6 +364,13 @@
   color: var(--studio-muted);
   font-size: 0.82rem;
   line-height: 1.5;
+}
+
+.studio-service-quote {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--studio-coral);
 }
 
 .studio-service-links svg {
@@ -378,7 +389,7 @@
 }
 
 .studio-note-strip > span {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.08rem;
 }
 
@@ -454,7 +465,7 @@
 
 .studio-work-list strong {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.42rem;
   font-weight: 400;
 }
@@ -644,14 +655,15 @@
   }
 
   .studio-identity {
+    order: 2;
     min-height: auto;
     display: grid;
     grid-template-columns: 94px 1fr;
     gap: 25px;
     align-items: end;
     border-right: 0;
-    border-bottom: 1px solid var(--studio-line);
-    padding: 0 0 26px;
+    border-top: 1px solid var(--studio-line);
+    padding: 26px 0 0;
   }
 
   .studio-monogram {
@@ -2719,7 +2731,7 @@ a.article-card:focus-visible {
 
 .studio-site .brand {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   letter-spacing: -0.015em;
 }
@@ -2837,7 +2849,7 @@ a.article-card:focus-visible {
 .studio-site .case-block h2,
 .studio-site .case-aside-card h2 {
   color: var(--studio-forest);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.04em;
   line-height: 1.02;
@@ -3086,7 +3098,7 @@ a.article-card:focus-visible {
 }
 
 .studio-site .studio-footer strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
   font-weight: 400;
 }
