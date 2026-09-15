@@ -12,18 +12,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="/assets/brand-mark-curious-a.png" type="image/png" />
-    <link rel="stylesheet" href="/styles.css?v=age-63-studio-site-2" />
+    <link rel="icon" href="../assets/brand-mark-curious-a.png" type="image/png" />
+    <link rel="stylesheet" href="../styles.css?v=7db45c240e04" />
+    <link rel="stylesheet" href="./articles.css?v=371dfede79ca" />
   </head>
   <body class="studio-site articles-page">
     <div class="site-shell">
       <header class="topbar" data-topbar>
         <div class="container topbar-inner">
-          <a class="brand" href="/" aria-label="AI Enthusiast Daily home">
-            <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="34" height="34" />
+          <a class="brand" href="../" aria-label="AI Enthusiast Daily home">
+            <img class="brand-mark" src="../assets/brand-mark-curious-a.png" alt="" width="34" height="34" />
             <span>AI Enthusiast Daily <small>— Practical AI systems</small></span>
           </a>
           <button
@@ -35,15 +36,15 @@
             data-nav-toggle
           >
             <svg aria-hidden="true" focusable="false">
-              <use href="/assets/interface-icons.svg#menu"></use>
+              <use href="../assets/interface-icons.svg#menu"></use>
             </svg>
           </button>
           <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
-            <a href="/#selected-work">Work</a>
-            <a href="/#services">Services</a>
-            <a href="/articles/" aria-current="page">Notes</a>
-            <a href="/#about">About</a>
-            <a class="button button-small" href="/book-a-call/?source=notes_nav">Share a workflow</a>
+            <a href="../#selected-work">Work</a>
+            <a href="../#services">Services</a>
+            <a href="./" aria-current="page">Notes</a>
+            <a href="../#about">About</a>
+            <a class="button button-small" href="../book-a-call/?source=notes_nav">Share a workflow</a>
           </nav>
         </div>
       </header>
@@ -54,14 +55,96 @@
             <p class="eyebrow">Field notes</p>
             <h1>Notes</h1>
             <p class="page-hero-text">
-              Upcoming notes on AI systems that perceive, reason, and act across
-              workflows, documents, and visual environments.
+              Engineering field notes on the boundaries, evidence, and operating
+              decisions behind practical AI systems.
             </p>
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="reliable-agent-harness-series">
           <div class="container article-stack">
+            <div class="series-intro reveal">
+              <p class="eyebrow">Series · Engineering a Reusable Custom Agent Loop</p>
+              <h2>One controlled experiment. One reusable agent loop.</h2>
+              <p>
+                Start with the recorded showcase: a generic agent loads its task, works inside an
+                isolated boundary, and reaches host-verified storage. The following articles will
+                unpack the problems and engineering decisions behind that loop.
+              </p>
+            </div>
+
+            <a
+              class="article-card article-card-large article-card-featured reveal"
+              href="./engineering-the-agent-loop/"
+            >
+              <span class="article-tag">Agent engineering</span>
+              <p class="article-byline">By Tung Nguyen · Series preview · August 4, 2026</p>
+              <h2>Engineering the Agent Loop</h2>
+              <p>
+                Watch
+                <span data-evidence-key="model.public_display_name">GPT-5.6 Terra</span> perform
+                task-specific work through a harness built on
+                <span data-evidence-key="runtime.framework_name">Google ADK</span> and designed to
+                be model-agnostic, while the host validates the result, persists accepted records,
+                and verifies stored state.
+              </p>
+              <span class="article-link">Watch the showcase →</span>
+            </a>
+
+            <article
+              class="article-card article-card-large article-card-static reveal"
+              data-series-id="part-2"
+              data-series-status="planned"
+            >
+              <span class="article-tag">Part 2 · Planned</span>
+              <p class="article-byline">Contracts and repair</p>
+              <h2 data-series-title>When hidden contracts break the repair loop</h2>
+              <p>
+                The required-versus-actual mismatch, why an earlier run stopped, and how public
+                acceptance rules moved into the loaded skill.
+              </p>
+              <span class="article-link">Planned follow-up</span>
+            </article>
+
+            <article
+              class="article-card article-card-large article-card-static reveal"
+              data-series-id="part-3"
+              data-series-status="planned"
+            >
+              <span class="article-tag">Part 3 · Planned</span>
+              <p class="article-byline">Execution and completion</p>
+              <h2 data-series-title>Why the host owns “done”</h2>
+              <p>
+                Sandboxing generated code, deterministic acceptance, persistence gates, and a
+                fresh reread of stored state.
+              </p>
+              <span class="article-link">Planned follow-up</span>
+            </article>
+
+            <article
+              class="article-card article-card-large article-card-static reveal"
+              data-series-id="part-4"
+              data-series-status="planned"
+            >
+              <span class="article-tag">Part 4 · Planned</span>
+              <p class="article-byline">Solution evolution</p>
+              <h2 data-series-title>How the solution layer evolves across tasks</h2>
+              <p>
+                How accepted approaches become versioned skills and adapters—and the evaluation
+                needed before future agents inherit those updates.
+              </p>
+              <span class="article-link">Planned follow-up</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section-muted">
+          <div class="container article-stack">
+            <div class="series-intro reveal">
+              <p class="eyebrow">Other field notes</p>
+              <h2>Additional ideas remain in drafting.</h2>
+            </div>
+
             <article class="article-card article-card-large article-card-static reveal">
               <span class="article-tag">Operations</span>
               <p class="article-byline">By Tung Nguyen</p>
@@ -97,7 +180,7 @@
           </div>
         </section>
 
-        <section class="section section-muted">
+        <section class="section">
           <div class="container signup-panel reveal signup-panel-compact">
             <div class="signup-copy">
               <p class="eyebrow">Next step</p>
@@ -108,8 +191,8 @@
               </p>
             </div>
             <div class="hero-actions">
-              <a class="button" href="/#waitlist">Join waitlist</a>
-              <a class="button button-ghost" href="/#selected-work">Browse selected work</a>
+              <a class="button" href="../#waitlist">Join waitlist</a>
+              <a class="button button-ghost" href="../#selected-work">Browse selected work</a>
             </div>
           </div>
         </section>
@@ -119,7 +202,7 @@
         <div class="container footer-inner">
           <div class="footer-brand-lockup">
             <span class="footer-brand-tile" aria-hidden="true">
-              <img src="/assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
+              <img src="../assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
             </span>
             <div>
               <strong>AI Enthusiast Daily</strong>
@@ -127,15 +210,15 @@
             </div>
           </div>
           <div class="footer-links">
-            <a href="/#selected-work">Work</a>
-            <a href="/#services">Services</a>
-            <a href="/articles/">Notes</a>
-            <a href="/book-a-call/">Share a workflow</a>
+            <a href="../#selected-work">Work</a>
+            <a href="../#services">Services</a>
+            <a href="./">Notes</a>
+            <a href="../book-a-call/">Share a workflow</a>
           </div>
         </div>
       </footer>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="../script.js"></script>
   </body>
 </html>
