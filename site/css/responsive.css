@@ -1,0 +1,243 @@
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-enabled .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.js-enabled .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js-enabled .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .js-enabled .harness.js .h-line {
+    opacity: 1;
+    transform: none;
+  }
+
+  .cursor,
+  .harness.is-running .harness-status::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-grid,
+  .split-grid,
+  .case-layout,
+  .call-page-grid,
+  .contact-grid,
+  .proof-layout,
+  .signup-panel,
+  .signup-panel-compact,
+  .service-hero-inner,
+  .service-split,
+  .service-cta-inner,
+  .card-grid-3,
+  .card-grid-4,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-hero {
+    background: linear-gradient(180deg, #081224 0%, #081224 68%, #c8f2ea 68%, #c8f2ea 100%);
+  }
+
+  .section-head-inline {
+    align-items: start;
+  }
+}
+
+@media (max-width: 720px) {
+  section[id],
+  article[id] {
+    scroll-margin-top: 6rem;
+  }
+
+  .container {
+    width: min(100% - 1.4rem, 1160px);
+  }
+
+  .topbar-inner {
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    min-height: 64px;
+    padding: 0.7rem 0;
+  }
+
+  .footer-inner {
+    align-items: start;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+
+  .topnav {
+    display: grid;
+    gap: 0.45rem;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  .js-enabled .topnav {
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    right: 0;
+    z-index: 40;
+    width: min(19rem, calc(100vw - 1.4rem));
+    padding: 0.55rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background: rgba(8, 18, 36, 0.96);
+    box-shadow: 0 22px 48px rgba(4, 10, 24, 0.28);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition:
+      opacity var(--transition),
+      transform var(--transition),
+      visibility var(--transition);
+    visibility: hidden;
+  }
+
+  .topbar.nav-open .topnav {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .topnav a,
+  .topnav a:not(.button-small) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 44px;
+    padding: 0.75rem 0.85rem;
+    border-radius: 13px;
+    color: rgba(229, 237, 250, 0.9);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .topnav .button-small {
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 0.85rem;
+    color: #ffffff;
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .hero {
+    padding: 3rem 0 2.4rem;
+  }
+
+  .home-page .hero-copy h1,
+  .hero-copy h1 {
+    max-width: none;
+    font-size: clamp(2.4rem, 10vw, 3.6rem);
+    overflow-wrap: break-word;
+  }
+
+  .harness-body {
+    min-height: 0;
+    font-size: 0.86rem;
+  }
+
+  .hero-panel h2,
+  .section-head h2,
+  .signup-copy h2 {
+    overflow-wrap: break-word;
+  }
+
+  .home-page .topbar {
+    background: rgba(8, 18, 36, 0.9);
+  }
+
+  .workflow-signal {
+    min-height: auto;
+  }
+
+  .hero-panel {
+    padding: 1.2rem;
+  }
+
+  .workflow-signal p:not(.panel-kicker) {
+    font-size: 0.96rem;
+    line-height: 1.62;
+  }
+
+  .signal-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .loop-diagram,
+  .boundary-grid,
+  .project-steps,
+  .service-path-row,
+  .proof-link-row {
+    grid-template-columns: 1fr;
+  }
+
+  .service-path-row,
+  .proof-link-row {
+    gap: 0.55rem;
+  }
+
+  .service-path-action {
+    white-space: normal;
+  }
+
+  .signal-card,
+  .button-submit,
+  .button,
+  .button-ghost {
+    width: 100%;
+  }
+
+  .hero-actions,
+  .signal-row {
+    display: grid;
+  }
+
+  .section {
+    padding: 2.2rem 0;
+  }
+}
+
+/* Keep the selected studio palette above the legacy homepage header rules. */
+.studio-home .studio-topbar .studio-brand {
+  color: var(--studio-forest);
+}
+
+.studio-home .studio-topbar .topnav a {
+  color: #454a44;
+}
+
+.studio-home .studio-topbar .topnav .button {
+  color: var(--studio-paper);
+}
+
+@media (max-width: 720px) {
+  .studio-home .studio-topbar {
+    background: rgba(241, 239, 232, 0.96);
+  }
+}
+

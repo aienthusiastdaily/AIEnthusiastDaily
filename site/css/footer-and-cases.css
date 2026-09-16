@@ -1,0 +1,133 @@
+.footer {
+  padding: 2.4rem 0 3rem;
+  background: #ffffff;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.footer-brand .brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.footer p {
+  margin: 0.45rem 0 0;
+  max-width: 30rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: 1.3rem;
+  align-items: start;
+}
+
+.case-main,
+.case-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-block,
+.case-aside-card {
+  position: relative;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.case-block h2,
+.case-aside-card h2 {
+  margin: 0 0 0.85rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.case-block p,
+.case-aside-card p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.case-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.case-meta {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+}
+
+.case-meta div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.case-meta dt {
+  color: var(--accent-deep);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-meta dd {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.case-links {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.hero-gradient {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hero-gradient-left {
+  top: -1rem;
+  left: -6rem;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(13, 148, 136, 0.28);
+}
+
+.hero-gradient-right {
+  right: -5rem;
+  top: 2rem;
+  width: 20rem;
+  height: 20rem;
+  background: rgba(13, 148, 136, 0.24);
+}
+

@@ -1,0 +1,25 @@
+:root {
+  --bg: #f5f8ff;
+  --surface: #ffffff;
+  --surface-alt: #f2f6ff;
+  --surface-strong: #0d1730;
+  --ink: #081224;
+  --muted: #556177;
+  --muted-strong: #c8d3e9;
+  --accent: #0d9488;
+  --accent-deep: #0f766e;
+  --accent-bright: #2dd4bf;
+  --accent-soft: rgba(13, 148, 136, 0.12);
+  --warn: #b45309;
+  --warn-soft: #fde6cf;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --line: rgba(8, 18, 36, 0.1);
+  --line-strong: rgba(255, 255, 255, 0.12);
+  --shadow: 0 28px 70px rgba(11, 24, 54, 0.14);
+  --shadow-soft: 0 18px 40px rgba(11, 24, 54, 0.08);
+  --radius-xl: 30px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --transition: 180ms ease;
+}
+
