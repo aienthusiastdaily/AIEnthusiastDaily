@@ -1,0 +1,360 @@
+.signup-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: 1.3rem;
+  padding: 1.6rem;
+}
+
+.signup-panel-compact {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.signup-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.call-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr);
+  gap: 1.3rem;
+  align-items: start;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.78fr);
+  gap: 1.3rem;
+  align-items: stretch;
+}
+
+.contact-card {
+  display: grid;
+  gap: 1.2rem;
+  padding: 1.45rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-soft);
+}
+
+.service-split {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  align-items: center;
+}
+
+.service-build-split {
+  align-items: stretch;
+}
+
+.service-copy-block h2,
+.service-cta h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.service-copy-block p,
+.loop-panel p,
+.service-cta p,
+.service-intent p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.loop-panel,
+.service-box {
+  padding: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.loop-diagram {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 1.2rem 0 0.75rem;
+}
+
+.loop-node {
+  position: relative;
+  display: grid;
+  gap: 0.45rem;
+  min-height: 6rem;
+  padding: 1.1rem 0.9rem 0.9rem;
+  border: 1px solid rgba(8, 18, 36, 0.12);
+  border-radius: 8px;
+}
+
+.loop-node::before {
+  content: "";
+  width: 2.5rem;
+  height: 0.26rem;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.loop-node strong {
+  color: var(--ink);
+}
+
+.loop-node span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.loop-node-teal {
+  color: #0f766e;
+  background: #c8f2ea;
+}
+
+.loop-node-orange {
+  color: #115e59;
+  background: #99f6e4;
+}
+
+.boundary-panel {
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  border-radius: var(--radius-lg);
+  background: #081224;
+  color: #ffffff;
+}
+
+.boundary-panel h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+}
+
+.boundary-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(220px, 0.85fr);
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+
+.boundary-list {
+  display: grid;
+  gap: 0.42rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(229, 237, 250, 0.84);
+}
+
+.boundary-list li::before {
+  content: "-> ";
+  color: rgba(229, 237, 250, 0.66);
+}
+
+.boundary-outcomes {
+  display: grid;
+  gap: 1rem;
+}
+
+.boundary-outcome {
+  display: grid;
+  gap: 0.4rem;
+  min-height: 6rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--ink);
+}
+
+.boundary-outcome strong {
+  font-size: 1.1rem;
+}
+
+.boundary-outcome span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.boundary-accepted {
+  background: #c8f2ea;
+}
+
+.boundary-repair {
+  background: #ffd7bc;
+}
+
+.section-compact {
+  padding-top: 1rem;
+}
+
+.project-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: project-step;
+}
+
+.project-steps li {
+  counter-increment: project-step;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.project-steps li::before {
+  content: counter(project-step);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.project-steps li:nth-child(even)::before {
+  background: var(--accent);
+}
+
+.project-steps strong {
+  color: var(--ink);
+}
+
+.project-steps span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.service-cta {
+  padding: clamp(2.6rem, 5vw, 4rem) 0;
+  background: #081224;
+}
+
+.service-cta-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.32fr);
+  align-items: center;
+}
+
+.service-cta h2 {
+  color: #ffffff;
+}
+
+.service-cta p {
+  max-width: 48rem;
+  color: rgba(229, 237, 250, 0.78);
+}
+
+.service-cta-action {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.service-intent {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+}
+
+.service-intent[hidden] {
+  display: none;
+}
+
+.service-intent .eyebrow {
+  margin-bottom: 0.25rem;
+}
+
+.service-intent h3 {
+  font-size: 1.35rem;
+}
+
+.contact-card:first-child {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(13, 148, 136, 0.16), transparent 36%),
+    var(--surface);
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.45rem);
+  letter-spacing: -0.05em;
+}
+
+.field,
+.checkbox-field,
+.choice-group {
+  display: grid;
+  gap: 0.45rem;
+  font-weight: 700;
+}
+
+.field span,
+.choice-group legend {
+  font-size: 0.92rem;
+}
+
+.field input[type="email"],
+.field input[type="text"],
+.field textarea {
+  min-height: 54px;
+  padding: 0.95rem 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(8, 18, 36, 0.12);
+  background: #ffffff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input[type="email"]:focus,
+.field input[type="text"]:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(13, 148, 136, 0.14);
+  border-color: rgba(13, 148, 136, 0.42);
+}
+
+.checkbox-field {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.checkbox-field input {
+  margin-top: 0.18rem;
+}
+
+.choice-group {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.button-submit {
+  width: fit-content;
+}
+
+.form-status {
+  min-height: 1.5rem;
+  margin: 0;
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.form-status.is-error {
+  color: #c13c12;
+}
+
+.form-status.is-success {
+  color: #0f7f5a;
+}
+

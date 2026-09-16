@@ -29,181 +29,122 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="/assets/brand-mark-curious-a.png" type="image/png" />
-    <link rel="stylesheet" href="/styles.css?v=studio-refinements-1" />
+    <link rel="stylesheet" href="/styles.css?v=8071c2389caf" />
+    <link rel="stylesheet" href="/homepage.css?v=43927dccf539" />
   </head>
-  <body class="home-page studio-home">
+  <body class="consulting-site consulting-home">
     <div class="site-shell">
-      <header class="topbar studio-topbar" data-topbar>
+      <a class="home-skip" href="#main-content">Skip to content</a>
+      <header class="topbar home-topbar" data-topbar>
         <div class="container topbar-inner">
-          <a class="brand studio-brand" href="/" aria-label="AI Enthusiast Daily, home">
-            <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="34" height="34" />
-            <span>AI Enthusiast Daily <small>— Practical AI systems</small></span>
+          <a class="brand home-brand" href="/" aria-label="AI Enthusiast Daily, home">
+            <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="36" height="40" />
+            <span>AI Enthusiast Daily</span>
           </a>
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Toggle primary navigation"
-            aria-expanded="false"
-            aria-controls="primary-nav"
-            data-nav-toggle
-          >
-            <svg aria-hidden="true" focusable="false">
-              <use href="/assets/interface-icons.svg#menu"></use>
-            </svg>
+          <button class="nav-toggle" type="button" aria-label="Toggle primary navigation"
+            aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+            <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#menu"></use></svg>
           </button>
           <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav>
-            <a href="#selected-work">Work</a>
             <a href="#services">Services</a>
+            <a href="#selected-work">Work</a>
             <a href="/articles/">Notes</a>
             <a href="#about">About</a>
-            <a class="button button-small" href="/book-a-call/?source=homepage_nav">Share a workflow</a>
           </nav>
         </div>
       </header>
 
-      <main>
-        <section class="studio-hero" aria-labelledby="studio-hero-title">
-          <div class="container studio-hero-grid">
-            <aside class="studio-identity reveal" aria-label="About AI Enthusiast Daily">
-              <img
-                class="studio-monogram studio-brand-monogram"
-                src="/assets/brand-mark-curious-a.png"
-                alt=""
-                width="150"
-                height="150"
-              />
-              <p>
-                <span aria-hidden="true"></span>
-                Currently exploring: reliable agent harnesses, document-heavy operations,
-                and what makes human review actually useful.
-              </p>
-            </aside>
-
-            <div class="studio-hero-copy reveal">
-              <p class="studio-eyebrow">Applied AI systems studio</p>
-              <h1 id="studio-hero-title">AI Enthusiast Daily</h1>
-              <p class="studio-brand-promise">
-                Turning messy AI workflows into systems people can understand, trust, and run.
-              </p>
-              <p class="studio-intro">
-                Practical systems work for teams whose AI demos are becoming real
-                operations—mapping the workflow, adding typed outputs and guardrails, and making
-                the hard parts visible.
-              </p>
-              <div class="studio-actions">
-                <a class="studio-primary-action" href="/book-a-call/?source=homepage_hero">
-                  Share a workflow
+      <main id="main-content" tabindex="-1">
+        <section class="home-hero container" aria-labelledby="home-title">
+          <p class="home-eyebrow">Tung Nguyen / Independent AI engineer</p>
+          <div class="home-hero-grid">
+            <div class="home-hero-copy">
+              <h1 id="home-title">Make your AI<br class="home-desktop-break" /> workflow easier<br class="home-desktop-break" /> to run.</h1>
+              <p class="home-intro">From unclear processes to agent harnesses and operating guardrails. Practical engineering, starting with one workflow.</p>
+              <div class="home-actions">
+                <a class="home-primary" href="/book-a-call/?source=homepage_hero">
+                  Book a conversation
                   <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
                 </a>
-                <a class="studio-secondary-action" href="#services">See the approach</a>
+                <a class="home-text-link" href="#selected-work">See the recorded work</a>
               </div>
             </div>
+            <aside class="home-aside" aria-label="My approach">
+              <p>Better AI work happens when the hard parts are visible.</p>
+              <span>Tung Nguyen</span>
+            </aside>
           </div>
         </section>
 
-        <section class="studio-services" id="services" aria-label="Ways to work together">
-          <div class="container">
-            <div class="studio-service-links reveal">
-              <a href="/services/workflow-diagnosis/">
-                <span>
-                  <em class="studio-service-quote">“Nobody can explain why the result changed.”</em>
-                  <strong>Workflow diagnosis</strong>
-                  <small>Map the real process, expose failure points, and choose the first safe build slice.</small>
-                </span>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </a>
-              <a href="/services/agent-harness-build/">
-                <span>
-                  <em class="studio-service-quote">“It works in the demo. Then real data arrives.”</em>
-                  <strong>Agent harness build</strong>
-                  <small>Wrap one AI step in typed outputs, validation, repair behavior, and clear handoffs.</small>
-                </span>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </a>
-              <a href="/services/production-hardening/">
-                <span>
-                  <em class="studio-service-quote">“The safeguards live in someone’s head.”</em>
-                  <strong>Production hardening</strong>
-                  <small>Add observability, operating guardrails, and resilient paths for the cases that fail.</small>
-                </span>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </a>
-            </div>
-
-            <a class="studio-note-strip reveal" href="/articles/engineering-the-agent-loop/">
-              <span>From the field notes — Engineering the Agent Loop</span>
-              <strong>
-                Watch the recorded showcase
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </strong>
+        <section class="home-services container" id="services" aria-labelledby="services-title">
+          <p class="home-eyebrow">Services</p>
+          <h2 id="services-title">Where is the workflow getting stuck?</h2>
+          <p class="home-section-intro">Three ways I help teams move from brittle demos to systems they can run.</p>
+          <div class="home-service-list">
+            <a class="home-service" href="/services/workflow-diagnosis/">
+              <span class="home-service-number" aria-hidden="true">01</span>
+              <h3 class="home-problem">The process is<br /> hard to explain.</h3>
+              <div class="home-service-detail"><strong>Workflow diagnosis</strong><p>Map the workflow and identify a safe first build.</p></div>
+              <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
+            </a>
+            <a class="home-service" href="/services/agent-harness-build/">
+              <span class="home-service-number" aria-hidden="true">02</span>
+              <h3 class="home-problem">The demo breaks<br /> on real inputs.</h3>
+              <div class="home-service-detail"><strong>Agent harness build</strong><p>Add typed outputs, validation, repair paths,<br class="home-desktop-break" /> and clear handoffs.</p></div>
+              <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
+            </a>
+            <a class="home-service" href="/services/production-hardening/">
+              <span class="home-service-number" aria-hidden="true">03</span>
+              <h3 class="home-problem">Failures are<br /> hard to see.</h3>
+              <div class="home-service-detail"><strong>Production hardening</strong><p>Make failures visible and strengthen<br class="home-desktop-break" /> operating guardrails.</p></div>
+              <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
             </a>
           </div>
         </section>
 
-        <section class="studio-work" id="selected-work">
+        <section class="home-work" id="selected-work" aria-labelledby="work-title">
           <div class="container">
-            <div class="studio-section-heading reveal">
-              <p>Selected systems and field notes</p>
-              <h2>The work is technical. The outcome should still feel clear.</h2>
-              <p>
-                The focus is systems where judgment matters: messy documents, ambiguous evidence,
-                generated work, and operations that cannot quietly fail.
-              </p>
-            </div>
-            <div class="studio-work-list reveal">
-              <a href="/articles/engineering-the-agent-loop/">
-                <span>01</span><strong>Engineering the Agent Loop</strong><small>A custom harness with host-owned completion</small>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
+            <p class="home-eyebrow">Featured work</p>
+            <div class="home-work-grid">
+              <a class="home-recording" href="/articles/engineering-the-agent-loop/#demonstration-recording">
+                <img src="/articles/engineering-the-agent-loop/assets/current-workflow-runtime-poster.png"
+                  alt="Saved-records evidence from the Engineering the Agent Loop recording" width="1680" height="1000" loading="lazy" />
+                <span><svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#video"></use></svg> Recorded showcase</span>
               </a>
-              <a href="/use-cases/healthcare-operations/">
-                <span>02</span><strong>Healthcare intake and exceptions</strong><small>Documents into reviewable decisions</small>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </a>
-              <a href="/use-cases/insurance-compliance/">
-                <span>03</span><strong>Insurance evidence review</strong><small>Rules, evidence, and human judgment</small>
-                <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section class="studio-about" id="about" aria-labelledby="studio-about-title">
-          <div class="container studio-about-grid">
-            <p class="studio-eyebrow reveal">About the practice</p>
-            <div class="reveal">
-              <h2 id="studio-about-title">The work stays close to the point where a model’s answer becomes someone else’s work.</h2>
-              <div class="studio-about-copy">
-                <p>
-                  That means tracing the real workflow, making outputs explicit, testing the
-                  edges, and designing a useful handoff when the system is uncertain.
-                </p>
-                <p>
-                  The goal is not autonomy for its own sake. It is a system your team can
-                  operate, question, and improve without pretending the hard cases disappeared.
-                </p>
+              <div class="home-work-copy">
+                <h2 id="work-title"><a href="/articles/engineering-the-agent-loop/">Engineering the Agent Loop</a></h2>
+                <p class="home-work-subtitle">A custom harness with host-owned completion.</p>
+                <p class="home-evidence">20 records validated, saved, and independently verified from one fixed test page.</p>
+                <a class="home-watch" href="/articles/engineering-the-agent-loop/#demonstration-recording">Watch the showcase <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg></a>
+                <p class="home-scope">Edited walkthrough of a retained run. Broader generalization is future work.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section class="studio-signup" id="waitlist">
-          <div class="container">
-            <div class="studio-signup-panel reveal">
-              <div>
-                <p class="studio-eyebrow">Field notes</p>
-                <h2>Follow the practical work as it is published.</h2>
-                <p>
-                  Occasional notes on agent reliability, document-heavy operations, evidence
-                  boundaries, and the decisions that keep AI useful.
-                </p>
-              </div>
+        <section class="home-next container" aria-labelledby="next-title">
+          <div><p class="home-eyebrow">Next step</p><h2 id="next-title">Bring one workflow.<br /> Find a practical next step.</h2></div>
+          <div class="home-next-action"><a class="home-primary" href="/book-a-call/?source=homepage_footer">Book a conversation <svg aria-hidden="true" focusable="false"><use href="/assets/interface-icons.svg#arrow"></use></svg></a></div>
+        </section>
 
+        <section class="home-about container" id="about" aria-labelledby="about-title">
+          <div><p class="home-eyebrow">About the practice</p><h2 id="about-title">Close to the work.<br /> Clear about the limits.</h2></div>
+          <div class="home-about-copy">
+            <p>The work stays close to the point where a model’s answer becomes someone else’s work. That means tracing the real workflow, making outputs explicit, testing the edges, and designing a useful handoff when the system is uncertain.</p>
+            <p>The goal is not autonomy for its own sake. It is a system your team can operate, question, and improve without pretending the hard cases disappeared.</p>
+            <p class="home-example-label">Explore workflow examples</p>
+            <div class="home-examples"><a href="/use-cases/healthcare-operations/">Healthcare intake and exceptions</a><a href="/use-cases/insurance-compliance/">Insurance evidence review</a></div>
+          </div>
+        </section>
+
+        <section class="home-signup container" id="waitlist" aria-labelledby="notes-title">
+          <div><p class="home-eyebrow">Field notes</p><h2 id="notes-title">Follow the practical work.</h2><p>Occasional notes on agent reliability, document-heavy operations, evidence boundaries, and the decisions that keep AI useful.</p><a class="home-text-link" href="/articles/">Read the notes</a></div>
               <form
-                class="signup-form studio-signup-form"
+                class="signup-form home-signup-form"
                 data-signup-form
                 data-form-name="landing_page_waitlist"
                 data-success-message="Thanks. You are on the waitlist."
@@ -230,30 +171,18 @@
                 <button class="button button-submit" type="submit" data-submit-label="Join the field notes">Join the field notes</button>
                 <p class="form-status" data-form-status aria-live="polite"></p>
               </form>
-            </div>
-          </div>
         </section>
       </main>
 
-      <footer class="footer studio-footer">
-        <div class="container footer-inner">
-          <div>
-            <span class="footer-brand">
-              <img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="30" height="30" />
-              <strong>AI Enthusiast Daily</strong>
-            </span>
-            <p>Independent AI systems work for messy, real-world operations.</p>
-          </div>
-          <div class="footer-links">
-            <a href="#selected-work">Work</a>
-            <a href="#services">Services</a>
-            <a href="/articles/">Notes</a>
-            <a href="/book-a-call/?source=homepage_footer">Share a workflow</a>
-          </div>
+      <footer class="home-footer">
+        <div class="container home-footer-inner">
+          <a class="brand home-brand" href="/" aria-label="AI Enthusiast Daily, home"><img class="brand-mark" src="/assets/brand-mark-curious-a.png" alt="" width="28" height="30" /><span>AI Enthusiast Daily</span></a>
+          <span class="home-footer-tagline">Practical AI systems</span>
+          <nav aria-label="Footer"><a href="#services">Services</a><a href="#selected-work">Work</a><a href="/articles/">Notes</a><a href="#about">About</a></nav>
+          <small>© 2026 Tung Nguyen</small>
         </div>
       </footer>
     </div>
-
     <script src="/script.js"></script>
   </body>
 </html>
