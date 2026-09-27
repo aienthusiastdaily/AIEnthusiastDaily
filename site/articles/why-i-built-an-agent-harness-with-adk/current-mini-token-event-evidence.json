@@ -1,0 +1,739 @@
+{
+  "kind": "historical_single_agent_gpt54_mini_run",
+  "extracted_on": "2026-09-23",
+  "source": "Retained local ADK SQLite session database from the older general job_scraper app; not a newly executed run.",
+  "source_session": "age10-script-required-20260519-0808",
+  "run_date": "2026-05-19",
+  "model": "gpt-5.4-mini",
+  "outcome": "Stopped without accepted completion; final recorded host response says workflow_sandbox_still_active.",
+  "events_total_including_initial_user": 241,
+  "non_user_events": 240,
+  "plotted_model_usage_points": 119,
+  "last_plotted_event": 237,
+  "last_plotted_input_tokens": 114624,
+  "axes": {
+    "x": "ADK usage_metadata.prompt_token_count per model response, including cached input",
+    "y": "One-based ordinal of non-user ADK events in the session; initial user message excluded"
+  },
+  "limits": [
+    "Last plotted point is event 237; the session has 240 non-user events and ends with a tool response, not a final accepted result.",
+    "This older app used a different harness and task contract from AGE-76. The traces are historical observations, not a controlled model or harness comparison.",
+    "Input tokens are not billed cost. Points are model responses; the y-axis includes tool responses and other events."
+  ],
+  "points": [
+    {
+      "event": 1,
+      "event_id": "80122940-3abf-444b-b37c-f5b1e725bf61",
+      "input_tokens": 4179,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 3,
+      "event_id": "ebb13491-8c40-4102-bf92-1d224ae7ea78",
+      "input_tokens": 6160,
+      "cached_input_tokens": 4096
+    },
+    {
+      "event": 5,
+      "event_id": "5bdbe1ed-1a14-419d-8c43-9adfab0dc1a6",
+      "input_tokens": 10172,
+      "cached_input_tokens": 4096
+    },
+    {
+      "event": 7,
+      "event_id": "d56ab622-12b6-4b20-9ed5-690e5b71ee05",
+      "input_tokens": 6821,
+      "cached_input_tokens": 4096
+    },
+    {
+      "event": 9,
+      "event_id": "11c293ba-8d66-47c6-97cc-ccd60bd5f9e2",
+      "input_tokens": 9692,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 11,
+      "event_id": "c083ea95-7845-4c72-8acb-92dd1292d688",
+      "input_tokens": 8535,
+      "cached_input_tokens": 5632
+    },
+    {
+      "event": 13,
+      "event_id": "f9ab913b-21de-4796-a312-f5f2b7327e9b",
+      "input_tokens": 9975,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 15,
+      "event_id": "725105d7-3757-4540-a880-46c56bef6ee9",
+      "input_tokens": 9494,
+      "cached_input_tokens": 6656
+    },
+    {
+      "event": 17,
+      "event_id": "3c29f584-da1f-42a9-9cf6-7997ed8497b0",
+      "input_tokens": 10981,
+      "cached_input_tokens": 6656
+    },
+    {
+      "event": 19,
+      "event_id": "2fb31832-9ff1-49d0-aa09-43525b98e13c",
+      "input_tokens": 11473,
+      "cached_input_tokens": 8704
+    },
+    {
+      "event": 21,
+      "event_id": "b5555711-a8ab-42d9-996d-6fa1dccf3200",
+      "input_tokens": 12664,
+      "cached_input_tokens": 8704
+    },
+    {
+      "event": 23,
+      "event_id": "0b8c495f-1006-4d97-9b05-a4c45a93746b",
+      "input_tokens": 12075,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 25,
+      "event_id": "f427e16b-5b75-4be8-90ad-83f6590b1b9e",
+      "input_tokens": 14115,
+      "cached_input_tokens": 9728
+    },
+    {
+      "event": 27,
+      "event_id": "49ae6d68-cd07-47f6-83a9-4342c2fca5a6",
+      "input_tokens": 14126,
+      "cached_input_tokens": 9728
+    },
+    {
+      "event": 29,
+      "event_id": "9cb638f0-99ae-46a9-94aa-8591320cdd64",
+      "input_tokens": 15317,
+      "cached_input_tokens": 10752
+    },
+    {
+      "event": 31,
+      "event_id": "d251eceb-eb36-43f4-a0fe-7ff379e44777",
+      "input_tokens": 15799,
+      "cached_input_tokens": 11776
+    },
+    {
+      "event": 33,
+      "event_id": "15de571e-fb63-41e1-b4a5-74ca1a077196",
+      "input_tokens": 16368,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 35,
+      "event_id": "e821c740-0514-4e37-a9c9-1a5a33d4ab2d",
+      "input_tokens": 17351,
+      "cached_input_tokens": 11776
+    },
+    {
+      "event": 37,
+      "event_id": "dd683382-4fa7-429d-abcb-2b8bd187b21b",
+      "input_tokens": 18477,
+      "cached_input_tokens": 13824
+    },
+    {
+      "event": 39,
+      "event_id": "e427e0f5-bf67-44f0-9fdf-02b33c8f8566",
+      "input_tokens": 19668,
+      "cached_input_tokens": 14848
+    },
+    {
+      "event": 41,
+      "event_id": "efb2bf9a-c401-4618-a8ea-996f20d66cf4",
+      "input_tokens": 22059,
+      "cached_input_tokens": 15872
+    },
+    {
+      "event": 43,
+      "event_id": "23571085-7888-4408-a727-ad7cb3fff55e",
+      "input_tokens": 22488,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 45,
+      "event_id": "6b13629d-9dc0-47ef-a759-98fb200a8bc1",
+      "input_tokens": 22155,
+      "cached_input_tokens": 16896
+    },
+    {
+      "event": 47,
+      "event_id": "84e11607-f4e1-46e4-a509-e344b7acb792",
+      "input_tokens": 23685,
+      "cached_input_tokens": 17920
+    },
+    {
+      "event": 49,
+      "event_id": "f1bdaff3-517a-43fe-9c78-2cba55d7f408",
+      "input_tokens": 24903,
+      "cached_input_tokens": 18944
+    },
+    {
+      "event": 51,
+      "event_id": "359deec0-0f69-43e6-bcf7-0121b3df3c8a",
+      "input_tokens": 26512,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 53,
+      "event_id": "a7ddd704-3c8d-4b7e-ab1e-563cf289da02",
+      "input_tokens": 26199,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 55,
+      "event_id": "aebd1c35-3613-4b34-9499-5be86a146c31",
+      "input_tokens": 27317,
+      "cached_input_tokens": 20992
+    },
+    {
+      "event": 57,
+      "event_id": "a7c73ee0-d9bc-48b7-a590-f72e005fc47d",
+      "input_tokens": 27462,
+      "cached_input_tokens": 20992
+    },
+    {
+      "event": 59,
+      "event_id": "8587b826-9eb2-48e9-a1b7-9e9d5f232081",
+      "input_tokens": 28075,
+      "cached_input_tokens": 22016
+    },
+    {
+      "event": 61,
+      "event_id": "7d371e0f-468b-496f-a181-8658ece659ed",
+      "input_tokens": 29108,
+      "cached_input_tokens": 23040
+    },
+    {
+      "event": 63,
+      "event_id": "08667829-b6f4-4f8c-8fd0-76108a645473",
+      "input_tokens": 29650,
+      "cached_input_tokens": 24064
+    },
+    {
+      "event": 65,
+      "event_id": "aca4fbcb-609c-4167-964d-f25ace43f052",
+      "input_tokens": 30834,
+      "cached_input_tokens": 24064
+    },
+    {
+      "event": 67,
+      "event_id": "220c268d-5179-47ff-9b96-2e893c306d0c",
+      "input_tokens": 34525,
+      "cached_input_tokens": 26112
+    },
+    {
+      "event": 69,
+      "event_id": "a41692e0-3072-4dbb-8d62-332a2f27c6d3",
+      "input_tokens": 34010,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 71,
+      "event_id": "133a7a3b-c3c3-4cb9-ab70-24b2bc7ab62f",
+      "input_tokens": 37206,
+      "cached_input_tokens": 29184
+    },
+    {
+      "event": 73,
+      "event_id": "e171f48a-5163-4f5a-a903-5de5415d7785",
+      "input_tokens": 37648,
+      "cached_input_tokens": 31232
+    },
+    {
+      "event": 75,
+      "event_id": "bcdc6dae-6776-4df8-ae7f-614ff907bd3b",
+      "input_tokens": 39475,
+      "cached_input_tokens": 32256
+    },
+    {
+      "event": 77,
+      "event_id": "ed611eb2-c33a-4e71-aaf8-100208aa5c99",
+      "input_tokens": 39769,
+      "cached_input_tokens": 33280
+    },
+    {
+      "event": 79,
+      "event_id": "9464b91c-4d7d-49d6-b99d-80a3f8458bf8",
+      "input_tokens": 40778,
+      "cached_input_tokens": 34304
+    },
+    {
+      "event": 81,
+      "event_id": "75f82dab-9cb2-4165-b555-59b62092fa02",
+      "input_tokens": 41114,
+      "cached_input_tokens": 34304
+    },
+    {
+      "event": 83,
+      "event_id": "460a4159-0991-49ee-8f3b-76483f71219c",
+      "input_tokens": 43033,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 85,
+      "event_id": "ee126618-496c-4e72-85b0-ea36851ecb86",
+      "input_tokens": 44630,
+      "cached_input_tokens": 37376
+    },
+    {
+      "event": 87,
+      "event_id": "6632c6d4-31e4-447c-94a8-bbd4a95f9ba1",
+      "input_tokens": 47876,
+      "cached_input_tokens": 38400
+    },
+    {
+      "event": 89,
+      "event_id": "a18576eb-cae9-4d07-a666-cf4ea5c146c9",
+      "input_tokens": 49614,
+      "cached_input_tokens": 41472
+    },
+    {
+      "event": 91,
+      "event_id": "71c3b975-ab0f-42fc-a72e-11d4b5c231ec",
+      "input_tokens": 53379,
+      "cached_input_tokens": 43520
+    },
+    {
+      "event": 93,
+      "event_id": "2b97b1d0-6bb7-4a16-a9b7-92b47d65455e",
+      "input_tokens": 53391,
+      "cached_input_tokens": 46592
+    },
+    {
+      "event": 95,
+      "event_id": "8edc45a0-976f-4167-b5a7-0b39bd37ee0f",
+      "input_tokens": 54313,
+      "cached_input_tokens": 47616
+    },
+    {
+      "event": 97,
+      "event_id": "3d80a7c4-ec4f-4a90-ab45-4f848ae2a03d",
+      "input_tokens": 47177,
+      "cached_input_tokens": 25088
+    },
+    {
+      "event": 99,
+      "event_id": "e453a76c-e199-4248-bf11-9e5e4affeebc",
+      "input_tokens": 47776,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 101,
+      "event_id": "00f1d193-440c-4ef9-ae66-7bf73afc7a53",
+      "input_tokens": 49120,
+      "cached_input_tokens": 41472
+    },
+    {
+      "event": 103,
+      "event_id": "442793fd-13fd-40c1-8a21-823515d68bd8",
+      "input_tokens": 49071,
+      "cached_input_tokens": 48640
+    },
+    {
+      "event": 105,
+      "event_id": "41c37ca5-cbc9-4fe3-afda-7a2e275d085a",
+      "input_tokens": 49638,
+      "cached_input_tokens": 42496
+    },
+    {
+      "event": 107,
+      "event_id": "c6abe695-b53e-49ea-9d2a-ba9327a52549",
+      "input_tokens": 50168,
+      "cached_input_tokens": 43520
+    },
+    {
+      "event": 109,
+      "event_id": "cf328855-9444-4dce-970f-984bfd54aea0",
+      "input_tokens": 51982,
+      "cached_input_tokens": 44544
+    },
+    {
+      "event": 111,
+      "event_id": "e82f6854-c557-44fc-8515-d6c9a48ed12d",
+      "input_tokens": 52294,
+      "cached_input_tokens": 45568
+    },
+    {
+      "event": 113,
+      "event_id": "42bd7b67-5730-4dbf-8414-00050a1476eb",
+      "input_tokens": 54159,
+      "cached_input_tokens": 46592
+    },
+    {
+      "event": 115,
+      "event_id": "b2bb39ba-59e0-4f87-86e6-f71f893981af",
+      "input_tokens": 54753,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 117,
+      "event_id": "0473acd3-09af-4a8e-b653-0704e55c7510",
+      "input_tokens": 56064,
+      "cached_input_tokens": 48640
+    },
+    {
+      "event": 119,
+      "event_id": "d8345d47-871c-47b0-98bb-bf8da11c8186",
+      "input_tokens": 55944,
+      "cached_input_tokens": 48640
+    },
+    {
+      "event": 121,
+      "event_id": "64e5ecbe-74fd-42f6-bc66-ff49263d0ef0",
+      "input_tokens": 57503,
+      "cached_input_tokens": 49664
+    },
+    {
+      "event": 123,
+      "event_id": "6639bc5c-f769-4378-831c-437cb429afd2",
+      "input_tokens": 58036,
+      "cached_input_tokens": 50688
+    },
+    {
+      "event": 125,
+      "event_id": "4eda88c8-1e3e-4761-b2e0-e9348a9df6f4",
+      "input_tokens": 58896,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 127,
+      "event_id": "136db366-2091-4132-a346-56efc4042bd8",
+      "input_tokens": 59557,
+      "cached_input_tokens": 52736
+    },
+    {
+      "event": 129,
+      "event_id": "766ad355-155f-4379-b3ee-265f71b4e6a0",
+      "input_tokens": 59996,
+      "cached_input_tokens": 52736
+    },
+    {
+      "event": 131,
+      "event_id": "6d0b8683-7517-4dd0-967b-54fb11fa5c16",
+      "input_tokens": 60734,
+      "cached_input_tokens": 60416
+    },
+    {
+      "event": 133,
+      "event_id": "e6d20e43-bb72-4a9d-94f3-c5069e963615",
+      "input_tokens": 65009,
+      "cached_input_tokens": 54784
+    },
+    {
+      "event": 135,
+      "event_id": "409e5d07-04ae-493c-93f4-e70b6b350333",
+      "input_tokens": 65846,
+      "cached_input_tokens": 57856
+    },
+    {
+      "event": 137,
+      "event_id": "c98ec2f1-fbe9-4808-8dee-3089bff2511f",
+      "input_tokens": 69125,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 139,
+      "event_id": "da65d5fe-1e9b-4e86-98c8-00aaf62d086e",
+      "input_tokens": 69853,
+      "cached_input_tokens": 61952
+    },
+    {
+      "event": 141,
+      "event_id": "83b793e2-e731-446f-b51a-5d1fe3f9d888",
+      "input_tokens": 70120,
+      "cached_input_tokens": 61952
+    },
+    {
+      "event": 143,
+      "event_id": "144169c0-5124-48cc-89f5-7d97ee8dbdc4",
+      "input_tokens": 71495,
+      "cached_input_tokens": 62976
+    },
+    {
+      "event": 145,
+      "event_id": "8867bccf-61a5-40e5-a8c1-0a3bf0779b84",
+      "input_tokens": 71977,
+      "cached_input_tokens": 64000
+    },
+    {
+      "event": 147,
+      "event_id": "d494101b-4858-40eb-a8bc-5d13d91891b6",
+      "input_tokens": 75516,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 149,
+      "event_id": "51c8ccc9-de10-4ae9-a94c-0586a62e2fb9",
+      "input_tokens": 78364,
+      "cached_input_tokens": 68096
+    },
+    {
+      "event": 151,
+      "event_id": "ea246cf7-52af-4dcb-aba4-8e192ad81dea",
+      "input_tokens": 78971,
+      "cached_input_tokens": 71168
+    },
+    {
+      "event": 153,
+      "event_id": "64342e05-e7f9-4da6-88a5-58a366427634",
+      "input_tokens": 80803,
+      "cached_input_tokens": 72192
+    },
+    {
+      "event": 155,
+      "event_id": "bebca089-0343-4915-9127-ac3994ec61b9",
+      "input_tokens": 82395,
+      "cached_input_tokens": 73216
+    },
+    {
+      "event": 157,
+      "event_id": "5ee39946-fc6b-42ee-b3ba-3ed6b2354d9e",
+      "input_tokens": 84373,
+      "cached_input_tokens": 75264
+    },
+    {
+      "event": 159,
+      "event_id": "0719e5be-6e7a-41a2-8b37-2f73abd1530d",
+      "input_tokens": 84553,
+      "cached_input_tokens": 77312
+    },
+    {
+      "event": 161,
+      "event_id": "92a54b5c-26a3-46de-8997-48f266c94f04",
+      "input_tokens": 86458,
+      "cached_input_tokens": 77312
+    },
+    {
+      "event": 163,
+      "event_id": "7cb2a257-fe76-4a39-bb9b-45501ec73a4c",
+      "input_tokens": 87175,
+      "cached_input_tokens": 79360
+    },
+    {
+      "event": 165,
+      "event_id": "8d17dfae-f09b-40db-8eb6-7df1bb1134d2",
+      "input_tokens": 87527,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 167,
+      "event_id": "1f3301b6-7719-41bc-adef-b5bba272af77",
+      "input_tokens": 87754,
+      "cached_input_tokens": 80384
+    },
+    {
+      "event": 169,
+      "event_id": "c5688db1-d5b4-4bcc-bebf-efbab7ed02e0",
+      "input_tokens": 88618,
+      "cached_input_tokens": 80384
+    },
+    {
+      "event": 171,
+      "event_id": "4aaacc2f-e4cb-46cf-8cc2-75b7818fc621",
+      "input_tokens": 89329,
+      "cached_input_tokens": 81408
+    },
+    {
+      "event": 173,
+      "event_id": "3457ae2e-d93a-46e2-85d8-6987da950082",
+      "input_tokens": 90431,
+      "cached_input_tokens": 82432
+    },
+    {
+      "event": 175,
+      "event_id": "77a5c8ce-b33d-432e-a17b-6d39fab4f062",
+      "input_tokens": 91271,
+      "cached_input_tokens": 82432
+    },
+    {
+      "event": 177,
+      "event_id": "5b953269-44f4-4bfb-aca5-9f5beb9de5bf",
+      "input_tokens": 91974,
+      "cached_input_tokens": 84480
+    },
+    {
+      "event": 179,
+      "event_id": "3812124f-48c4-494e-ba24-c6d02f2edba1",
+      "input_tokens": 92998,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 181,
+      "event_id": "b9ad1821-f156-4385-bb1d-8aedb0e54bc3",
+      "input_tokens": 87596,
+      "cached_input_tokens": 26112
+    },
+    {
+      "event": 183,
+      "event_id": "42726356-0787-4b5f-9ed2-4defd3b95fc3",
+      "input_tokens": 87800,
+      "cached_input_tokens": 80384
+    },
+    {
+      "event": 185,
+      "event_id": "1a5e4ef4-c43c-493e-96d4-7f6d71138a6b",
+      "input_tokens": 89590,
+      "cached_input_tokens": 80384
+    },
+    {
+      "event": 187,
+      "event_id": "6dc85e72-f6b7-40a3-b1bf-54d226664c2a",
+      "input_tokens": 90170,
+      "cached_input_tokens": 81408
+    },
+    {
+      "event": 189,
+      "event_id": "026e1585-2c98-488b-b5b5-a1b73d56d885",
+      "input_tokens": 90903,
+      "cached_input_tokens": 82432
+    },
+    {
+      "event": 191,
+      "event_id": "bd51c45b-55ed-471c-9188-42680d6199f2",
+      "input_tokens": 91558,
+      "cached_input_tokens": 83456
+    },
+    {
+      "event": 193,
+      "event_id": "5727c3af-33d1-4b3a-b233-02f600e8ae47",
+      "input_tokens": 92763,
+      "cached_input_tokens": 84480
+    },
+    {
+      "event": 195,
+      "event_id": "f57cee9f-fc8b-457c-93d6-b0e79070dbb5",
+      "input_tokens": 94300,
+      "cached_input_tokens": 85504
+    },
+    {
+      "event": 197,
+      "event_id": "fca5cd4d-583f-405d-80df-8e1f6fc03717",
+      "input_tokens": 95238,
+      "cached_input_tokens": 0
+    },
+    {
+      "event": 199,
+      "event_id": "3e235c6f-5fc1-4eeb-abdc-3ffd2873bc15",
+      "input_tokens": 97038,
+      "cached_input_tokens": 88576
+    },
+    {
+      "event": 201,
+      "event_id": "00927a59-44f5-489f-9207-69bf9cd2c4f9",
+      "input_tokens": 97784,
+      "cached_input_tokens": 89600
+    },
+    {
+      "event": 203,
+      "event_id": "345d427c-71e2-4b36-af28-8609ae063e7c",
+      "input_tokens": 100017,
+      "cached_input_tokens": 90624
+    },
+    {
+      "event": 205,
+      "event_id": "2b0da153-a86c-42b0-b001-2d0df5940bf8",
+      "input_tokens": 100831,
+      "cached_input_tokens": 92672
+    },
+    {
+      "event": 207,
+      "event_id": "7c77ec0b-f9d5-4e53-8d99-428b120578a7",
+      "input_tokens": 102714,
+      "cached_input_tokens": 93696
+    },
+    {
+      "event": 209,
+      "event_id": "fa60cb4b-af47-4ef7-86d0-12cd5e363f3f",
+      "input_tokens": 103600,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 211,
+      "event_id": "89f8d7e3-bc76-443a-8a28-810105c546b2",
+      "input_tokens": 104331,
+      "cached_input_tokens": 95744
+    },
+    {
+      "event": 213,
+      "event_id": "e44682eb-ee04-4257-8342-879be4110616",
+      "input_tokens": 104985,
+      "cached_input_tokens": 96768
+    },
+    {
+      "event": 215,
+      "event_id": "bf722c26-89bf-4287-b9db-fe59093098b5",
+      "input_tokens": 106927,
+      "cached_input_tokens": 97792
+    },
+    {
+      "event": 217,
+      "event_id": "1b902db9-64e4-4ffc-bfe3-975ff22f077d",
+      "input_tokens": 108219,
+      "cached_input_tokens": 98816
+    },
+    {
+      "event": 219,
+      "event_id": "efc2a60d-3055-46b2-9373-3c347381bfc4",
+      "input_tokens": 108824,
+      "cached_input_tokens": 100864
+    },
+    {
+      "event": 221,
+      "event_id": "6dd1d587-b02a-48f6-aca7-b13366aff5b6",
+      "input_tokens": 109544,
+      "cached_input_tokens": 101888
+    },
+    {
+      "event": 223,
+      "event_id": "3d576f01-c52a-4df8-ba59-30712cdbb665",
+      "input_tokens": 109753,
+      "cached_input_tokens": 101888
+    },
+    {
+      "event": 225,
+      "event_id": "f0fe975f-b120-40cd-bd0e-34048e630b6b",
+      "input_tokens": 109844,
+      "cached_input_tokens": 5120
+    },
+    {
+      "event": 227,
+      "event_id": "2e016e78-8b88-4429-b8ac-c145575fe201",
+      "input_tokens": 110479,
+      "cached_input_tokens": 101888
+    },
+    {
+      "event": 229,
+      "event_id": "2dfa06be-e942-4250-8f50-36dd26dd3cb6",
+      "input_tokens": 111199,
+      "cached_input_tokens": 102912
+    },
+    {
+      "event": 231,
+      "event_id": "e1937a84-ee52-418f-8838-d74bb833ab78",
+      "input_tokens": 112185,
+      "cached_input_tokens": 103936
+    },
+    {
+      "event": 233,
+      "event_id": "c25d126f-1e40-4088-a714-eda1214597f6",
+      "input_tokens": 112672,
+      "cached_input_tokens": 104960
+    },
+    {
+      "event": 235,
+      "event_id": "a19142d0-7e50-4fc4-a66d-eb6a31654908",
+      "input_tokens": 113679,
+      "cached_input_tokens": 104960
+    },
+    {
+      "event": 237,
+      "event_id": "5ac171e2-fcb4-4733-8226-36d876aaa3c7",
+      "input_tokens": 114624,
+      "cached_input_tokens": 105984
+    }
+  ]
+}

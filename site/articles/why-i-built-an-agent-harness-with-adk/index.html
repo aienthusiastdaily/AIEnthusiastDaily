@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lessons in building an autonomous agent loop | AI Enthusiast Daily</title>
+    <meta name="description" content="Why I built a custom autonomous agent loop to experiment with context, compaction and delegation—and what I learned getting it to complete a task." />
+    <link rel="canonical" href="https://aienthusiastdaily.com/articles/why-i-built-an-agent-harness-with-adk/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link rel="icon" href="../../assets/brand-mark-curious-a.png" type="image/png" />
+    <link rel="stylesheet" href="../../styles.css?v=8071c2389caf" />
+    <link rel="stylesheet" href="../articles.css?v=46b479f98811" />
+    <link rel="stylesheet" href="../engineering-the-agent-loop/styles.css?v=24bfb1f8ddd3" />
+    <link rel="stylesheet" href="./styles.css?v=a414bfa465f5" />
+  </head>
+  <body class="consulting-site studio-site article-detail-page">
+    <div class="site-shell">
+      <a class="home-skip" href="#main-content">Skip to content</a>
+      <header class="topbar home-topbar" data-topbar>
+        <div class="container topbar-inner">
+          <a class="brand home-brand" href="/" aria-label="AI Enthusiast Daily, home"><img class="brand-mark" src="../../assets/brand-mark-curious-a.png" alt="" width="36" height="40" /><span>AI Enthusiast Daily</span></a>
+          <button class="nav-toggle" type="button" aria-label="Toggle primary navigation" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle><svg aria-hidden="true" focusable="false"><use href="../../assets/interface-icons.svg#menu"></use></svg></button>
+          <nav class="topnav" id="primary-nav" aria-label="Primary" data-primary-nav><a href="/#services">Services</a><a href="/#selected-work">Work</a><a href="/articles/" aria-current="location">Notes</a><a href="/#about">About</a></nav>
+        </div>
+      </header>
+      <main id="main-content" tabindex="-1">
+        <article>
+          <header class="article-hero">
+            <div class="container article-hero-inner illustrated-hero">
+              <div class="hero-copy">
+              <p class="eyebrow">Field notes · A personal companion to Engineering the Agent Loop</p>
+              <h1>Lessons in building an autonomous agent loop</h1>
+              <p class="article-deck">I wanted a loop I could change: what the agent sees, what gets compacted, and how its work is checked. First, I had to get it to finish a task.</p>
+              <div class="article-meta" aria-label="Article details"><span>By Tung Nguyen</span><span>Updated September 27, 2026</span></div>
+              </div>
+              <figure class="hero-art">
+                <a href="./current-agent-workflow.png" aria-label="View the agent workflow illustration at full size"><img src="./current-agent-workflow.png" width="1536" height="1024" alt="An application-owned workflow contains a goal-directed cycle of context, model, skills and tools, and observations. Candidate output passes through validation; passing completes the work, failure returns to the loop, and exhausted retry budget stops it." fetchpriority="high" /></a>
+                <figcaption class="source-note">Let the agent choose an approach. Keep acceptance in the application.<br />Conceptual illustration · <a href="./current-agent-workflow.png">View full size</a></figcaption>
+              </figure>
+            </div>
+          </header>
+          <div class="container article-layout">
+            <aside class="article-rail" aria-label="Article context">
+              <p class="article-rail-label">The question</p><p>Can I build a working autonomous loop that I can adapt as new ideas emerge?</p>
+              <p class="article-rail-label">The scope</p><p>A reusable sandbox-first loop. Job extraction from stored HTML is one worked example, not the whole system.</p>
+              <p class="article-rail-label">The evidence</p><p>A fresh successful demo, an earlier saved repair run, and small five-run comparisons.</p>
+              <p><a href="#lessons">The three lessons ↓</a></p><p><a href="#recorded-and-intended">The recorded example ↓</a></p>
+            </aside>
+            <div class="article-body">
+              <p class="article-lede">I’m building a custom autonomous agent loop because I want to experiment with the loop itself.</p>
+              <p>For most of my work, Codex or Claude Code would be the easier starting point. They already provide capable harnesses and extension points. <a class="citation" href="#source-6" aria-label="Source 6: Codex programmatic controls">[6]</a> <a class="citation" href="#source-7" aria-label="Source 7: Claude Agent SDK controls">[7]</a> But I wanted deeper control over context: what reaches the model, what gets compacted, and what survives between turns. I wanted to change those policies directly, without having to fit each experiment around an existing harness’s choices.</p>
+              <p>Building my own means more work, and it may be less capable. I accepted that tradeoff to have a place to try new ideas. First, though, I needed a loop that could finish a task. This article covers that baseline and the lessons from building it; experimenting with compaction comes next.</p>
+
+
+              <h2 id="why-a-harness">First, a working loop</h2>
+              <p>I give the agent a goal, tools and a sandbox. It chooses how to inspect the data, write code and solve the task. My code sets the access boundaries and validates the output, returning feedback for repair or stopping when the repair limit is reached.</p>
+              <p id="why-adk">I chose ADK because its Pythonic, object-oriented design fits how I work. Its callbacks, sessions and workflow building blocks gave me enough structure to build a reusable harness while keeping my own policies in code. <a class="citation" href="#source-8" aria-label="Source 8: ADK callbacks and orchestration">[8]</a> The aim is to reuse the loop with different goals, inputs, skills and validators.</p>
+
+              <details class="workflow-details implementation-note"><summary>How the pieces fit</summary>
+              <div class="ownership-stack" aria-label="Three layers of the custom harness">
+                <div><span class="owner-label">Capability</span><strong>Job extraction</strong><span>One skill, not the whole harness</span></div>
+                <div><span class="owner-label">My harness</span><strong>Autonomy inside a controlled sandbox</strong><span>Minimal tools to inspect, write and run · host-owned access, validation and completion</span></div>
+                <div><span class="owner-label">ADK foundation</span><strong>Callbacks · workflows · sessions · events</strong><span>Runtime building blocks in Python</span></div>
+              </div>
+              </details>
+
+              <h2 id="recorded-and-intended">The worked example: job extraction from HTML</h2>
+              <p>I tested the loop on a frozen, synthetic job-listing page. The agent had to work out how to extract the listings and write the code. I supplied checks for required fields, valid URLs and saved results.</p>
+              <figure class="harness-figure reusable-loop" id="reusable-loop">
+                <figcaption><span class="visual-label">Conceptual illustration · workflow capabilities and my host policies</span></figcaption>
+                <a class="evidence-image" href="./current-agent-host-boundaries.png">
+                  <img src="./current-agent-host-boundaries.png" width="1536" height="1024" loading="lazy" alt="Goal: extract valid jobs from HTML. The agent can inspect 496,280 characters of stored HTML and read, write, patch and run code in a sandbox, choosing the extraction method. My host policies control access, acceptance and repair: no sandbox network access, no direct extractor database writes, and up to three repair attempts before termination if still invalid. Candidate output goes to validation; errors and feedback return to the agent while attempts remain. Conceptual illustration of author-stated policies, not proof of isolation or a captured run. Open full size." />
+                </a>
+                <p class="figure-note">The agent creates <code>extractor.py</code>; I do not supply it. My host code owns the access boundaries, validation and three-repair-attempt limit. The earlier saved run shows one URL repair, not a test of isolation or retry exhaustion. <a class="citation" href="#source-9" aria-label="Source 9: saved workflow and tool inventory">[9]</a></p>
+              </figure>
+              <details class="workflow-details"><summary>Which tools does this workflow expose?</summary>
+                <dl class="loop-tool-list">
+                  <div><dt>Discover the skills</dt><dd><code>list_skills</code>, <code>load_skill</code>, <code>list_skill_resources</code> and <code>load_skill_resource</code>.</dd></div>
+                  <div><dt>Operate the sandbox</dt><dd><code>run_skill_script</code> dispatches the allowed scripts: <code>sandbox_start.py</code>, <code>sandbox_read.py</code>, <code>sandbox_write_file.py</code>, <code>sandbox_apply_patch.py</code>, <code>sandbox_exec.py</code> and <code>sandbox_finalize.py</code>.</dd></div>
+                  <div><dt>Load the input</dt><dd><code>load_job_listing_fixture_to_workspace</code> supplies the frozen HTML and acceptance contract.</dd></div>
+                  <div><dt>Check and store</dt><dd><code>validate_job_extraction_file</code>, <code>validate_and_persist_job_extraction</code> and <code>query_workflow_jobs</code> validate, save and independently read back results.</dd></div>
+                </dl>
+                <p class="figure-note">Tools are exposed as relevant skills activate. The diagram groups capabilities, not separate read/write/run function tools. <a class="citation" href="#source-9" aria-label="Source 9: saved workflow tool inventory">[9]</a></p>
+              </details>
+
+              <figure class="harness-figure">
+                <figcaption><span class="visual-label">Fresh demonstration · September 23, 2026</span>One goal. An agent-chosen method. An automatically checked result.</figcaption>
+                <div class="article-recording-showcase">
+                  <video controls playsinline preload="none" poster="./current-autonomous-run-poster.jpg" aria-label="Agent extraction run and independent inspection of saved results" aria-describedby="scraper-recording-caption">
+                    <source src="https://media.aienthusiastdaily.com/current-autonomous-run-demo.mp4" type="video/mp4" />
+                    <a href="https://media.aienthusiastdaily.com/current-autonomous-run-demo.mp4">Open the demonstration.</a>
+                  </video>
+                </div>
+                <p class="source-note" id="scraper-recording-caption">A 33-second edit of one frozen-fixture run. The host validated and saved 20 jobs; a read-only query matched the saved fields to the extractor’s output. One success, not a reliability test. <a href="https://media.aienthusiastdaily.com/current-autonomous-run-demo.mp4">Open the video ↗</a> <a class="citation" href="#source-13" aria-label="Source 13: fresh demonstration audit summary">[13]</a></p>
+              </figure>
+
+              <h2 id="lessons">Three lessons from building it</h2>
+              <p>Getting it to work taught me three things about context, model capability and delegation.</p>
+
+              <h3 id="large-context">1. Give access, not everything</h3>
+              <p>My first attempt put the entire page’s HTML in the prompt. It exceeded the context window. Borrowing the context-as-a-variable idea from <em>Recursive Language Models</em>, I stored the HTML in a Python variable outside the prompt instead of feeding equal, overlapping chunks. <a class="citation" href="#source-10" aria-label="Source 10: Recursive Language Models">[10]</a> The agent could inspect it incrementally—choosing what to read until it understood the structure and could write an extractor.</p>
+              <figure class="harness-figure lesson-diagram">
+                <figcaption><span class="visual-label">Saved run · events 21–22</span>Give the agent access to the file, not every chunk of it.</figcaption>
+                <div class="inspection-contrast" role="group" aria-label="Illustrative brute-force chunking would feed 496,280 characters of HTML to the agent. In the saved run, the agent chose a targeted read that returned 9,501 characters, about 1.9 percent of the file. Both bars use the full file length as their scale.">
+                  <div><strong>Brute-force option</strong><p>Feed every HTML chunk into the prompt</p><div class="document-bar" aria-hidden="true"></div><span>Illustrative · 496,280 characters total</span></div>
+                  <div><strong>What the agent chose · events 21–22</strong><p>Find a marker; return only its surrounding HTML</p><div class="document-bar sample-bar" aria-hidden="true"><span></span></div><span>Observed · 9,501 characters, about 1.9%</span></div>
+                </div>
+                <p class="figure-note">Both bars use the full file’s character length as the scale. The left is an illustrative chunk-everything alternative; the right is one agent-chosen return from the saved run—not the agent’s total reading or a measured token saving.</p>
+                <p class="figure-note">The fixture loader first gave the model an automatic <a href="current-html-first-preview-event-10.png">2,000-character preview (event 10)</a>, mostly the document head. The agent then <a href="current-html-first-inspection-event-19.png">counted candidate markers (event 19)</a> without returning the HTML. To inspect a promising match, it chose this narrower read:</p>
+                <a class="evidence-image" href="current-html-read-event-21.png" aria-label="Open the saved ADK event 21 tool call at full size"><img src="current-html-read-event-21.png" alt="Saved ADK Web UI at event 21: the agent calls the sandbox with Python that reads page.html, finds job-card, and prints only the surrounding HTML." width="1280" height="720" loading="lazy" /></a>
+                <p class="figure-note">Event 21 — the agent wrote this sandbox command to inspect the HTML around <code>job-card</code>; the full file remained outside the model’s prompt. The <a href="current-html-read-event-22.png">event-22 response</a> returned 9,501 characters, including a terminal newline. The agent then sampled two cards to check the inferred structure (event 23), before inspecting more fields and writing the extractor. <a class="citation" href="#source-9" aria-label="Source 9: HTML inspection lengths and event sequence">[9]</a></p>
+                <a class="evidence-image" href="current-html-sample-tool-call.png" aria-label="Open the recorded HTML-inspection tool call at full size"><img src="current-html-sample-tool-call.png" alt="ADK function-call panel showing the agent parsing page.html with BeautifulSoup, selecting div.job-card, then iterating over cards[:2]." width="800" height="341" loading="lazy" /></a>
+                <p class="figure-note">Event 23: a small structural check after reading the HTML, not the final extractor. Cropped from the saved run’s ADK view; not the original context-overflow experiment.</p>
+              </figure>
+              <p>The agent recognized a repeated listing pattern and wrote a script to extract the jobs. The reusable part was access to the large object; the agent worked out how to inspect and process it. <em>Prime Agent</em> explored related persistent-environment ideas. <a class="citation" href="#source-11" aria-label="Source 11: Prime Agent">[11]</a></p>
+
+              <h3 id="model-capability">2. Don’t make the harness compensate for the model</h3>
+              <p>I chose GPT-5.4 mini to keep experiments cheap. One failure was especially revealing: it planned to run <code>extractor.py</code>, then inspected another file instead. Writing a sensible plan did not mean it would follow that plan. I kept adding checks and instructions—until the harness resembled the deterministic script I wanted the agent to write. That plan/action mismatch is my recollection; the recorded mini run below shows token growth and non-completion, not that specific mismatch.</p>
+              <figure class="harness-figure lesson-diagram">
+                <figcaption><span class="visual-label">Personal experiment · model and harness changed together · not a benchmark</span>I was coding the solution back into the harness</figcaption>
+                <div class="model-comparison">
+                  <div><strong>GPT-5.4 mini</strong><div class="scaffold-stack" aria-label="Author-reported plan and action mismatch"><span><b>Planned:</b> run <code>extractor.py</code></span><span><b>Did:</b> inspect another file</span><span><b>My response:</b> more procedural checks</span></div><span>My observation, not a captured transcript</span></div>
+                  <div><strong>GPT-5.6 Luna / full GPT-5.4</strong><div class="freedom-loop"><span>Inspect → decide → act ↺</span><strong>Permissions + acceptance</strong></div><span>More of the solution left to the model</span></div>
+                </div>
+              </figure>
+              <p>With those more capable models and much less scaffolding, the workflow became straightforward. The lesson: remove prescribed moves, not permissions or acceptance checks.</p>
+
+              <p>The earlier harness stopped without accepted completion with both GPT-5.4 mini and full GPT-5.4. With fewer procedural requirements and bookkeeping calls, the simplified harness completed the task with GPT-5.6 Terra and full GPT-5.4. The chart includes all four runs.</p>
+              <figure class="harness-figure lesson-diagram" id="token-growth">
+                <figcaption><span class="visual-label">Recorded usage · one run per line · not a controlled benchmark</span>Input per call across four recorded runs.</figcaption>
+                <div class="token-chart-scroll" tabindex="0" role="region" aria-label="Token and event comparison chart; scroll horizontally on narrow screens">
+                  <img class="token-event-chart" src="./current-token-event-four-run-comparison.svg" width="900" height="635" loading="lazy" alt="Input tokens per API call versus recorded events for four individual runs. The older full GPT-5.4 run, in rust, stops incomplete at event 211 and 147,633 input tokens. Older GPT-5.4 mini, in orange, has its last measured call at event 237 and 114,624 input tokens. The simplified harness completes with GPT-5.6 Terra in dark dashed at event 52 and 38,995 tokens, and full GPT-5.4 in blue dashed at event 40 and 45,427 tokens. Each completed run passed host checks, saved and reread 20 jobs. Not a controlled benchmark." />
+                </div>
+                <p class="figure-note">Each point is a model response; the event count also includes tool responses and other runtime events, excluding the initial user message. Event ordinals are not model-call counts across harnesses. Input includes cached tokens, so the axis is not a cost measure. The orange mini line ends at its last measured call (event 237); the session ended three events later with its sandbox still active. Both simplified-harness runs passed host checks, saved and reread 20 jobs.</p>
+              </figure>
+              <p>Full GPT-5.4 had also failed to finish with my earlier harness. When I tried it again with the simplified loop, it completed the task. That reinforced my lesson: give the model room to work instead of prescribing every move. <a href="./current-token-event-evidence.json">Earlier run evidence ↗</a> · <a href="./current-gpt54-simplified-run-evidence.json">Simplified run evidence ↗</a></p>
+
+              <h3 id="working-memory">3. Can delegation finish the job for less?</h3>
+              <p>Once I had a single-agent loop that could complete the workflow, I wanted to test another question: could an agent–subagent pattern still finish the job while reducing the cost? Instead of using the more expensive model for every step, I gave GPT-5.6 Terra a GPT-5.6 Luna worker to delegate execution to.</p>
+              <p>This experiment was inspired by <em>Prime Agent</em>, where subagents have their own contexts and execution environments. I borrowed the idea, not the full architecture: my parent calls one synchronous worker through a host-guarded tool, rather than orchestrating recursive, asynchronous agents. <a class="citation" href="#source-11" aria-label="Source 11: Prime Agent architecture">[11]</a></p>
+              <figure class="harness-figure lesson-diagram">
+                <figcaption><span class="visual-label">Conceptual illustration · the delegation boundary</span>Delegate the work. Return the result.</figcaption>
+                <div class="token-chart-scroll" tabindex="0" role="region" aria-label="Delegation diagram; scroll horizontally on narrow screens">
+                  <img class="token-event-chart" src="./current-delegation-flow.svg" width="840" height="460" loading="lazy" alt="Terra assigns a bounded task, selected context and allowed tools to Luna. Luna inspects, writes, runs and repairs in the sandbox, then returns a structured report and artifact references. Worker history remains separately available for audit. The host controls access, limits, validation, persistence and readback." />
+                </div>
+              </figure>
+              <p>Terra chooses the assignment; Luna can take several tool actions to complete it. The parent receives a structured report and artifact references, not the worker’s full transcript. That detailed history remains available for audit. Neither an agent’s report nor its confidence replaces the host’s acceptance checks.</p>
+
+              <figure class="harness-figure lesson-diagram" id="delegation-cost">
+                <figcaption><span class="visual-label">Recorded experiments · September 19, 2026 · five runs per approach · not a controlled benchmark</span>Lower cost, longer execution.</figcaption>
+                <div class="token-chart-scroll" id="delegation-time" tabindex="0" role="region" aria-label="Five-run cost and execution-span comparison; scroll horizontally on narrow screens">
+                  <img class="token-event-chart" src="./current-delegation-comparison.svg" width="900" height="900" loading="lazy" alt="One chart with separate cost and execution-time panels. For each run number, a dark Terra-alone column sits beside a rust Terra-plus-Luna column; the attempts are independent, not matched pairs. Median estimated cost is $0.220 versus $0.072; median first-to-last ADK event span is 103 versus 184 seconds. All ten attempts, including blocked and flagged runs, are included. Delegated costs and spans include the worker." />
+                </div>
+                <p class="figure-note">Across all five attempts, median estimated cost fell from <strong>$0.220 to $0.072</strong>—about 67% lower with delegation, including parent and worker. Median recorded execution span rose from <strong>103 to 184 seconds</strong>. Both approaches passed every recorded check in three of five runs. The delegated “flagged” run saved and reread 20 jobs but failed the repair-limit check; it is not a clean pass.</p>
+              </figure>
+
+              <figure class="harness-figure lesson-diagram" id="delegation-tokens">
+                <figcaption><span class="visual-label">Parent + worker · cumulative input across all model calls · not a controlled benchmark</span>Most of the tokens went to the cheaper worker.</figcaption>
+                <div class="token-chart-scroll" tabindex="0" role="region" aria-label="Parent and worker input-token breakdown; scroll horizontally on narrow screens">
+                  <img class="token-event-chart" src="./current-delegation-tokens.svg" width="840" height="455" loading="lazy" alt="Stacked input-token totals for all five delegated runs. Across the sample, Terra received 181,808 input tokens and Luna received 3,414,898: about 95% went to the worker. Cached input is included. This is cumulative input across calls, not context size per call." />
+                </div>
+                <p class="figure-note">Across the five delegated runs, the parent received <strong>181,808 input tokens</strong> and the worker received <strong>3,414,898</strong>. About 95% of the input went to Luna. Delegation used more cumulative input overall—3.60 million versus 1.88 million for the single agent—but less estimated money. Token volume and cost are different measures when the work runs on differently priced models.</p>
+                <details class="workflow-details">
+                  <summary>Input, output and cost by agent</summary>
+                  <div class="comparison-table-scroll" tabindex="0" role="region" aria-label="Agent accounting totals; scroll horizontally on narrow screens">
+                    <table class="comparison-table">
+                      <caption>Totals across all five attempts per approach, including failed and flagged runs</caption>
+                      <thead><tr><th scope="col">Agent</th><th scope="col">Input tokens</th><th scope="col">Output tokens</th><th scope="col">Estimated cost</th></tr></thead>
+                      <tbody>
+                        <tr><th scope="row">Single agent · Terra</th><td>1,876,566</td><td>23,839</td><td>$1.0863</td></tr>
+                        <tr><th scope="row">Delegated parent · Terra</th><td>181,808</td><td>4,924</td><td>$0.2492</td></tr>
+                        <tr><th scope="row">Delegated worker · Luna</th><td>3,414,898</td><td>43,863</td><td>$0.1765</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="source-note">Input includes cached tokens. Output is the recorded ADK candidate-token count; reasoning counts are retained separately in the linked data. Cost follows the historical run estimator’s convention of pricing candidate and reasoning counts separately. The blocked delegated run has no success manifest, so its usage and cost come from the persisted parent and worker sessions. <a href="./current-delegation-results.json">Per-run breakdown and definitions ↗</a></p>
+                </details>
+              </figure>
+              <p>For this fixture, delegation could finish the job at lower cost. It also introduced more coordination, and one worker exhausted its call limit without finishing. My takeaway is to test the cost of the whole agent family, including failed attempts—not just the parent’s smaller context or a single successful run. <a class="citation" href="#source-12" aria-label="Source 12: five-run extraction comparison">[12]</a></p>
+
+              <h2 id="next-step">A working loop to experiment with</h2>
+              <p>I now have a loop that can complete this extraction task and check its output automatically. Getting there meant giving the agent selective access to data, simplifying the instructions, and testing delegation’s cost and time tradeoff. It is a starting point: I still need to test reliability and reuse on other workflows, but I can now change the loop and measure what happens.</p>
+              <details class="workflow-details"><summary>Next: SKILL.state</summary>
+                <p>I want to test whether the loop can use a structured execution state and the latest observation instead of replaying its full conversation, drawing on the <a href="https://arxiv.org/html/2608.26263v3">SKILL.state paper</a>. That is a planned experiment, not a result shown here. The hidden-contracts article remains a later follow-up.</p>
+              </details>
+              <section class="article-sources" aria-labelledby="sources-heading">
+                <h2 id="sources-heading">Sources</h2>
+                <p class="source-note">Sources distinguish recorded results from my observations and research inspiration. Citation numbers are retained for existing links.</p>
+                <ol class="source-list" start="6">
+                  <li id="source-6">OpenAI — <a href="https://learn.chatgpt.com/docs/hooks">Codex hooks</a> and <a href="https://learn.chatgpt.com/docs/app-server">app-server</a>. Existing programmatic controls.</li>
+                  <li id="source-7">Anthropic — <a href="https://code.claude.com/docs/en/agent-sdk/hooks">Claude Agent SDK hooks</a>. Existing lifecycle controls.</li>
+                  <li id="source-8">Google ADK — <a href="https://adk.dev/callbacks/types-of-callbacks/">Callback types</a> and <a href="https://adk.dev/agents/custom-agents/">custom orchestration</a>. Agent, model and tool intervention points.</li>
+                  <li id="source-9"><a href="../engineering-the-agent-loop/assets/current-recorded-run-evidence.json">Recorded-run manifest</a> and <a href="current-html-sample-evidence.json">Tool inventory, HTML lengths, inspection sequence and screenshot provenance</a> · September 14, 2026 run. Model, counts, events and synthetic-fixture limits; events 10 and 19 captured from saved history on September 23, events 21–22 on September 20, and event 23 on September 18.</li>
+                  <li id="source-10"><a href="https://arxiv.org/html/2512.24601v2">Recursive Language Models</a> · v2, §2. Input as an environment variable.</li>
+                  <li id="source-11"><a href="https://arxiv.org/html/2608.23552v1">Prime Agent</a> · v1, §2.2–2.4. Persistent state, separate subagent contexts and recursive orchestration; inspiration, not a reproduction.</li>
+                  <li id="source-12"><a href="./current-delegation-results.json">Five-run extraction comparison</a> · September 19, 2026. Distilled recorded usage for single-agent and delegated approaches; all attempts included, with outcomes and accounting definitions.</li>
+                  <li id="source-13"><a href="./current-autonomous-demo-evidence.json">Fresh demonstration audit summary</a> · September 23, 2026. One successful frozen-fixture run and a separate read-only database comparison; this source is distinct from the September 14 saved run.</li>
+                </ol>
+              </section>
+            </div>
+          </div>
+          <section class="article-cta">
+            <div class="container article-cta-inner">
+              <div><p class="eyebrow">Bring one workflow</p><h2>What would make its result trustworthy?</h2><p>Start with the task, the acceptance rules, and the evidence you need to call it complete.</p></div>
+              <div class="article-cta-actions"><a class="button" href="../../book-a-call/?service=agent-harness-build&amp;source=custom_harness_motivation">Discuss an agent workflow</a><a class="button button-ghost" href="../">Back to Notes</a></div>
+            </div>
+          </section>
+        </article>
+      </main>
+      <footer class="home-footer"><div class="container home-footer-inner"><a class="brand home-brand" href="/" aria-label="AI Enthusiast Daily, home"><img class="brand-mark" src="../../assets/brand-mark-curious-a.png" alt="" width="28" height="30" /><span>AI Enthusiast Daily</span></a><span class="home-footer-tagline">Practical AI systems</span><nav aria-label="Footer"><a href="/#services">Services</a><a href="/#selected-work">Work</a><a href="/articles/">Notes</a><a href="/#about">About</a></nav><small>© 2026 Tung Nguyen</small></div></footer>
+    </div>
+    <script src="../../script.js"></script>
+  </body>
+</html>
