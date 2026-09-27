@@ -1,0 +1,278 @@
+{
+  "title": "Single-agent and delegated extraction: five runs per approach",
+  "recorded_date": "2026-09-19",
+  "fixture": "Frozen synthetic ITviec HTML, 20 expected jobs; identical fixture SHA-256 f29423c48f253dd819412605f93380ed8ea17a7e376b6331ef0a6ca49054a093",
+  "method": {
+    "sample": "One prior accepted run plus four additional independent runs for each approach. Not paired runs or a randomized benchmark.",
+    "input": "Cumulative prompt_token_count across model calls, including cached input; not unique text or per-call context size.",
+    "output": "candidates_token_count as recorded by ADK. thoughts_token_count retained separately, not added to the output-token column.",
+    "cost": "Estimated USD from the saved run evidence, not an invoice. The blocked delegated run is reconstructed from its persisted root and child usage with the same estimator. Estimator: uncached input, cached input, candidates and thoughts priced separately. Rates per million: Terra 2 / 0.2 / 12 / 12; Luna 0.2 / 0.02 / 1.2 / 1.2. These are historical estimator conventions, not current pricing guidance.",
+    "elapsed_time": "First-to-last persisted ADK event span in milliseconds, including worker execution within each delegated parent run. AGE-76 values come from the archived five-run summary; AGE-80 run 1 comes from its archived evidence manifest, and runs 2-5 from timestamped ADK events retained in the archived task output. These spans exclude pre-run setup and post-run evidence processing. They are not model-only latency. The original child-session databases are no longer available, so independent worker wall time cannot be recovered; do not add worker time to the parent span.",
+    "model_ids": "Single agent and delegated parent: openai/responses/gpt-5.6-terra. Delegated worker: openai/responses/gpt-5.6-luna. Configured routes are corroborated by recorded parent modelVersion values and worker provider-call logs; the unavailable child databases prevent an event-by-event modelVersion audit of every worker run.",
+    "limits": "Different model allocation and harness policies; no isolated causal estimate. Flagged means results saved and reread but repair_limit_respected=false. Do not count as a clean pass.",
+    "accounting": "All recorded root and child model-usage events in each isolated session database, grouped by author. Costs checked against four delegated and three single-agent evidence JSONs plus failed-run metrics; no new inference."
+  },
+  "totals": {
+    "single": {
+      "input": 1876566,
+      "cached": 1684996,
+      "output": 23839,
+      "thoughts": 6675,
+      "calls": 109,
+      "cost": 1.0863072
+    },
+    "parent": {
+      "input": 181808,
+      "cached": 101267,
+      "output": 4924,
+      "thoughts": 732,
+      "calls": 32,
+      "cost": 0.24920740000000002
+    },
+    "worker": {
+      "input": 3414898,
+      "cached": 3179730,
+      "output": 43863,
+      "thoughts": 11070,
+      "calls": 129,
+      "cost": 0.17654779999999998
+    }
+  },
+  "runs": [
+    {
+      "approach": "single",
+      "run": 1,
+      "session_id": "age76-terra-live-20260919T120800Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 334934,
+      "estimated_cost_usd": 0.2198174,
+      "agents": [
+        {
+          "calls": 26,
+          "input": 438214,
+          "cached": 397857,
+          "output": 3850,
+          "thoughts": 1111,
+          "role": "single",
+          "cost": 0.2198174
+        }
+      ]
+    },
+    {
+      "approach": "single",
+      "run": 2,
+      "session_id": "age76-terra-quantile-02-20260919T155840Z",
+      "outcome": "blocked",
+      "adk_event_span_ms": 103125,
+      "estimated_cost_usd": 0.1940232,
+      "agents": [
+        {
+          "calls": 21,
+          "input": 292452,
+          "cached": 264116,
+          "output": 5385,
+          "thoughts": 1659,
+          "role": "single",
+          "cost": 0.1940232
+        }
+      ]
+    },
+    {
+      "approach": "single",
+      "run": 3,
+      "session_id": "age76-terra-quantile-03-20260919T160300Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 97051,
+      "estimated_cost_usd": 0.2230332,
+      "agents": [
+        {
+          "calls": 23,
+          "input": 420420,
+          "cached": 377506,
+          "output": 3986,
+          "thoughts": 1156,
+          "role": "single",
+          "cost": 0.2230332
+        }
+      ]
+    },
+    {
+      "approach": "single",
+      "run": 4,
+      "session_id": "age76-terra-quantile-04-20260919T160800Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 89285,
+      "estimated_cost_usd": 0.2388272,
+      "agents": [
+        {
+          "calls": 19,
+          "input": 399544,
+          "cached": 353236,
+          "output": 5023,
+          "thoughts": 1274,
+          "role": "single",
+          "cost": 0.2388272
+        }
+      ]
+    },
+    {
+      "approach": "single",
+      "run": 5,
+      "session_id": "age76-terra-quantile-05-20260919T161000Z",
+      "outcome": "blocked",
+      "adk_event_span_ms": 118392,
+      "estimated_cost_usd": 0.2106062,
+      "agents": [
+        {
+          "calls": 20,
+          "input": 325936,
+          "cached": 292281,
+          "output": 5595,
+          "thoughts": 1475,
+          "role": "single",
+          "cost": 0.2106062
+        }
+      ]
+    },
+    {
+      "approach": "delegated",
+      "run": 1,
+      "session_id": "age80-fresh-live-20260919T115324Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 204442,
+      "estimated_cost_usd": 0.0724086,
+      "agents": [
+        {
+          "calls": 6,
+          "input": 32131,
+          "cached": 14501,
+          "output": 807,
+          "thoughts": 87,
+          "role": "parent",
+          "cost": 0.0488882
+        },
+        {
+          "calls": 20,
+          "input": 437288,
+          "cached": 400280,
+          "output": 5430,
+          "thoughts": 1331,
+          "role": "worker",
+          "cost": 0.0235204
+        }
+      ]
+    },
+    {
+      "approach": "delegated",
+      "run": 2,
+      "session_id": "age80-quantile-r1-20260919T160100Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 150357,
+      "estimated_cost_usd": 0.06925794,
+      "agents": [
+        {
+          "calls": 6,
+          "input": 30909,
+          "cached": 13536,
+          "output": 729,
+          "thoughts": 49,
+          "role": "parent",
+          "cost": 0.0467892
+        },
+        {
+          "calls": 20,
+          "input": 354831,
+          "cached": 324417,
+          "output": 6495,
+          "thoughts": 1753,
+          "role": "worker",
+          "cost": 0.02246874
+        }
+      ]
+    },
+    {
+      "approach": "delegated",
+      "run": 3,
+      "session_id": "age80-quantile-r2-20260919T160400Z",
+      "outcome": "passed",
+      "adk_event_span_ms": 166891,
+      "estimated_cost_usd": 0.07144132,
+      "agents": [
+        {
+          "calls": 6,
+          "input": 30975,
+          "cached": 19399,
+          "output": 775,
+          "thoughts": 93,
+          "role": "parent",
+          "cost": 0.0374478
+        },
+        {
+          "calls": 25,
+          "input": 705227,
+          "cached": 660546,
+          "output": 7654,
+          "thoughts": 2218,
+          "role": "worker",
+          "cost": 0.03399352
+        }
+      ]
+    },
+    {
+      "approach": "delegated",
+      "run": 4,
+      "session_id": "age80-quantile-r3-20260919T160700Z",
+      "outcome": "flagged",
+      "adk_event_span_ms": 184433,
+      "estimated_cost_usd": 0.07880336,
+      "agents": [
+        {
+          "calls": 6,
+          "input": 31057,
+          "cached": 16085,
+          "output": 778,
+          "thoughts": 67,
+          "role": "parent",
+          "cost": 0.043301
+        },
+        {
+          "calls": 24,
+          "input": 688278,
+          "cached": 644198,
+          "output": 9307,
+          "thoughts": 2195,
+          "role": "worker",
+          "cost": 0.03550236
+        }
+      ]
+    },
+    {
+      "approach": "delegated",
+      "run": 5,
+      "session_id": "age80-quantile-r4-20260919T161000Z",
+      "outcome": "blocked",
+      "adk_event_span_ms": 344995,
+      "estimated_cost_usd": 0.13384398,
+      "agents": [
+        {
+          "calls": 8,
+          "input": 56736,
+          "cached": 37746,
+          "output": 1835,
+          "thoughts": 436,
+          "role": "parent",
+          "cost": 0.0727812
+        },
+        {
+          "calls": 40,
+          "input": 1229274,
+          "cached": 1150289,
+          "output": 14977,
+          "thoughts": 3573,
+          "role": "worker",
+          "cost": 0.06106278
+        }
+      ]
+    }
+  ]
+}
