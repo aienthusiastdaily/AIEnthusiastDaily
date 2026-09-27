@@ -100,6 +100,8 @@
                 The goal is reusable solutions, with evidence that the work is actually complete.
               </p>
 
+              <p>For the experiment behind this work—giving the agent more freedom while my code checks the result—read <a href="../why-i-built-an-agent-harness-with-adk/">Lessons in building an autonomous agent loop</a>. That companion piece explores a reusable harness and the lessons from implementing it.</p>
+
               <h2>How the loop works</h2>
               <p>
                 The agent first loads a skill: the task knowledge, tools, and rules its output
@@ -376,10 +378,11 @@
                 <div>
                   <article data-series-id="part-2" data-series-status="planned">
                     <span>Part 2 · Planned</span>
-                    <strong data-series-title>When hidden contracts break the repair loop</strong>
+                    <strong data-series-title>What should an agent remember between steps?</strong>
                     <p>
-                      The required-versus-actual mismatch, why an earlier run stopped, and how I
-                      moved validator-owned rules into the loaded skill.
+                      A SKILL.state-inspired look at replacing growing conversation history with
+                      structured execution state and the latest observation—then checking whether
+                      the agent still reaches a host-verified result.
                     </p>
                   </article>
                   <article data-series-id="part-3" data-series-status="planned">
@@ -399,6 +402,7 @@
                     </p>
                   </article>
                 </div>
+                <p class="source-note">Also planned: a deeper look at hidden acceptance contracts and why an earlier run stopped when its required fields were not clear to the agent.</p>
               </section>
 
               <section class="article-evidence-note" aria-labelledby="evidence-note-title">
