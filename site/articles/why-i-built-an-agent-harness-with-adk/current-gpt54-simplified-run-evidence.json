@@ -1,0 +1,64 @@
+{
+  "kind": "single_fresh_simplified_harness_trial",
+  "recorded_on": "2026-09-23",
+  "fixture": "frozen synthetic ITviec AI Engineer Hanoi page",
+  "harness_commit": "c747b3d364ad68e8c35075b16525b887d91d5544",
+  "session_id": "age76-gpt54-20260923T090834Z",
+  "audit_id": "sandbox_run_20260923_090932_cc37bbb2",
+  "model": "gpt-5.4",
+  "reasoning_effort": "high",
+  "outcome": "host validation, persistence and independent stored-row readback passed",
+  "counts": {
+    "fixture_jobs": 20,
+    "validated": 20,
+    "persisted": 20,
+    "stored_readback": 20,
+    "distinct_stored_jobs": 20,
+    "extracted_to_stored_field_mismatches": 0,
+    "model_calls": 20,
+    "recorded_events_including_initial_user": 41,
+    "extractor_runs": 1,
+    "repair_attempts": 0
+  },
+  "field_comparison": ["title", "company_name", "job_url", "location_raw"],
+  "chart_axes": {
+    "x": "ADK usage_metadata.prompt_token_count per model response, including cached input",
+    "y": "One-based ordinal of non-user ADK events; initial user message excluded"
+  },
+  "points": [
+    {"event":2,"event_id":"3b88ffa6-d02c-4f9f-a55a-78e1e657ef31","input_tokens":1133,"cached_input_tokens":0},
+    {"event":4,"event_id":"f51c3d0a-209e-4fa1-afe5-e623cdebc674","input_tokens":1275,"cached_input_tokens":0},
+    {"event":6,"event_id":"0ae74e7b-09cc-4af5-a701-f93d5a14be4d","input_tokens":3383,"cached_input_tokens":0},
+    {"event":8,"event_id":"c746adc1-9178-4760-901b-13785b2e4882","input_tokens":3781,"cached_input_tokens":2560},
+    {"event":10,"event_id":"71a3337f-b945-43f0-834e-6daa231fe8d0","input_tokens":4072,"cached_input_tokens":3584},
+    {"event":12,"event_id":"9f53d76d-361d-4c10-b151-c1b4af632f94","input_tokens":9129,"cached_input_tokens":3584},
+    {"event":14,"event_id":"702f2c39-09cc-48f2-9937-becbc5548e9d","input_tokens":9526,"cached_input_tokens":8704},
+    {"event":16,"event_id":"f173df20-5aee-4cd4-bb73-ea5ab85cadc4","input_tokens":11160,"cached_input_tokens":8704},
+    {"event":18,"event_id":"6e48bf35-93b0-4016-9694-7b80a742fd64","input_tokens":13191,"cached_input_tokens":10752},
+    {"event":20,"event_id":"da93d1d3-90b2-4d0c-b903-60fbee019421","input_tokens":15538,"cached_input_tokens":12800},
+    {"event":22,"event_id":"26f3f19e-a6b4-418d-8108-abeea9e401a5","input_tokens":17612,"cached_input_tokens":14848},
+    {"event":24,"event_id":"633dc5c0-bbda-4d0d-a573-b137f4bc8a95","input_tokens":19044,"cached_input_tokens":16896},
+    {"event":26,"event_id":"27c05016-359c-494c-bac8-b50c95f46c6c","input_tokens":28152,"cached_input_tokens":18944},
+    {"event":28,"event_id":"c1a353ac-0d10-4325-939e-8d33c2a3898e","input_tokens":31608,"cached_input_tokens":27136},
+    {"event":30,"event_id":"bbaf3b87-7e8d-44bc-866b-d2a9d1c76814","input_tokens":32867,"cached_input_tokens":31232},
+    {"event":32,"event_id":"b69e0723-f5e0-4573-84da-a82d9da99463","input_tokens":33862,"cached_input_tokens":32256},
+    {"event":34,"event_id":"1d53debc-e2ae-4fff-8c38-5f284235903e","input_tokens":34490,"cached_input_tokens":33280},
+    {"event":36,"event_id":"7abd68ab-e35b-4981-8f5a-b93f20ce4c2a","input_tokens":35425,"cached_input_tokens":34304},
+    {"event":38,"event_id":"03aaa8ba-29f9-4acd-b0b5-892d2d233b2c","input_tokens":36145,"cached_input_tokens":35328},
+    {"event":40,"event_id":"253f1347-32d2-4f6c-8b5d-59fe045228ce","input_tokens":45427,"cached_input_tokens":35328}
+  ],
+  "usage": {
+    "total_input_tokens_across_model_calls": 386820,
+    "cached_input_tokens": 330240,
+    "maximum_input_tokens_on_one_call": 45427,
+    "estimated_cost_usd": 0.46734,
+    "workflow_wall_ms": 145375
+  },
+  "source": "One fresh local ADK session, deterministic workflow manifest and separate read-only comparison of extracted JSON with a clean temporary SQLite database; raw session and database remain local.",
+  "limits": [
+    "One selected frozen-fixture trial is not a reliability estimate or a live-site test.",
+    "The estimated cost uses the run's LiteLLM pricing snapshot and historical workflow estimator; it is not an invoice.",
+    "The extracted-to-stored field comparison establishes storage fidelity, not independent accuracy against the source page.",
+    "This result is not a controlled comparison with the older full GPT-5.4 or GPT-5.4 mini traces."
+  ]
+}

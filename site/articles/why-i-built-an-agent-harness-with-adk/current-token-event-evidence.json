@@ -1,0 +1,852 @@
+{
+  "kind": "historical_single_agent_run_comparison",
+  "extracted_on": "2026-09-19",
+  "x": "ADK usage_metadata.prompt_token_count, including cached input",
+  "y": "One-based ordinal of non-user ADK events in the session, ordered by timestamp then id; includes tool responses and other runtime events",
+  "point": "One model response with recorded prompt_token_count; connected in event order, no extrapolation beyond last recorded response",
+  "limits": [
+    "Different models, harnesses, dates and task contracts; not a controlled memory ablation.",
+    "AGE-76 context still grows; earlier completion is not evidence of constant context.",
+    "The separate AGE-76 job_extraction_workflow app does not enable the general job_scraper app's SandboxNoteRefinementPlugin; these traces do not measure that plugin's effect.",
+    "One selected success does not establish reliability; a separate five-run AGE-76 sample had three successes.",
+    "Historical session order is retained; event counts are not model-call counts.",
+    "Costs are deliberately omitted; token counts are not billing estimates."
+  ],
+  "context_management_source_check": {
+    "checked_on": "2026-09-19",
+    "repository": "agentic_job_scraping",
+    "ref": "codex/feature_age-76-sol-first-companion-harness",
+    "commit": "c747b3d364ad68e8c35075b16525b887d91d5544",
+    "retrieval": "Read-only local source inspection; no provider evaluation",
+    "general_app": {
+      "source": "src/job_scraper/agent.py",
+      "plugin": "src/job_scraper/adk_plugin_modules/note_refinement.py",
+      "eligibility_and_pruning": "src/job_scraper/adk_plugin_modules/sandbox_guard/compaction.py",
+      "mechanism": "Default interval 5 per note group: arrival of a sixth eligible tool result triggers a summary of the previous five; remaining results stay unsummarized. Before model calls, compact notes are injected and older response bodies are replaced with placeholders. This is not wholesale transcript replacement.",
+      "working_memory": "SESSION_EXTRACTION_CONTEXT, maintained with update_extraction_context; runtime notes are supporting evidence, not workflow authority."
+    },
+    "age76_app": {
+      "source": "src/job_extraction_workflow/agent.py",
+      "plugins": ["GlobalRepairBudgetPlugin"],
+      "startup_callback_source": "src/job_scraper/job_extraction_workflow.py:prepare_workflow_before_agent",
+      "distinction": "No SandboxNoteRefinementPlugin or App events-compaction configuration in this entrypoint; startup prepares sandbox and pricing dependencies."
+    },
+    "related_paper": {
+      "url": "https://arxiv.org/html/2608.26263v1",
+      "section": "3 and 3.2",
+      "distinction": "SKILL.state reconstructs input from immutable skill specification, structured execution state and latest observation; it does not use this periodic rolling-summary mechanism."
+    }
+  },
+  "runs": [
+    {
+      "key": "earlier",
+      "session": "codex-test-sandbox-read-gpt54-20260512-131705",
+      "label": "Earlier single-agent run",
+      "date": "2026-05-12",
+      "model": "gpt-5.4-2026-03-05",
+      "outcome": "Stopped before successful validation/finalization",
+      "points": [
+        {
+          "event": 1,
+          "event_id": "00a9e25a-500c-4dd4-b39e-dad471817a85",
+          "input_tokens": 3745,
+          "cached_input_tokens": 0
+        },
+        {
+          "event": 3,
+          "event_id": "a8b8a9d0-e665-4c71-b70c-699b87c0e142",
+          "input_tokens": 5449,
+          "cached_input_tokens": 3968
+        },
+        {
+          "event": 5,
+          "event_id": "4fde4b52-fc84-4615-8323-4a99c367d67e",
+          "input_tokens": 9215,
+          "cached_input_tokens": 3712
+        },
+        {
+          "event": 7,
+          "event_id": "979eb198-2cc5-41bd-a400-ef94fd38e470",
+          "input_tokens": 6275,
+          "cached_input_tokens": 3712
+        },
+        {
+          "event": 9,
+          "event_id": "bc9fbd76-b3c3-4785-91e5-2a779515a3a1",
+          "input_tokens": 9141,
+          "cached_input_tokens": 2688
+        },
+        {
+          "event": 11,
+          "event_id": "49017456-b742-4270-bb93-db9a5c887ea9",
+          "input_tokens": 8218,
+          "cached_input_tokens": 5760
+        },
+        {
+          "event": 13,
+          "event_id": "957aecca-c57b-4cc1-aee7-f6a6dbd71396",
+          "input_tokens": 9704,
+          "cached_input_tokens": 5760
+        },
+        {
+          "event": 15,
+          "event_id": "f7bd9f86-a028-492d-addb-1c6782d06d5a",
+          "input_tokens": 10175,
+          "cached_input_tokens": 7808
+        },
+        {
+          "event": 17,
+          "event_id": "9cbfc58a-aefb-4eae-90ea-3f85f6dbd2bf",
+          "input_tokens": 11227,
+          "cached_input_tokens": 7808
+        },
+        {
+          "event": 19,
+          "event_id": "bc12a738-d97f-4ccc-a345-ce5489ed5971",
+          "input_tokens": 10653,
+          "cached_input_tokens": 7808
+        },
+        {
+          "event": 21,
+          "event_id": "b269e269-164f-493a-89e1-3b9e4e2100b2",
+          "input_tokens": 11843,
+          "cached_input_tokens": 8832
+        },
+        {
+          "event": 23,
+          "event_id": "0c7fcda9-6d6e-4855-b37a-06343e028b4d",
+          "input_tokens": 12115,
+          "cached_input_tokens": 9856
+        },
+        {
+          "event": 25,
+          "event_id": "598a036e-a997-4784-b3d7-650d3ed0fec4",
+          "input_tokens": 13071,
+          "cached_input_tokens": 9856
+        },
+        {
+          "event": 27,
+          "event_id": "c325622c-e4aa-4228-a1c3-5dae24899272",
+          "input_tokens": 12800,
+          "cached_input_tokens": 9856
+        },
+        {
+          "event": 29,
+          "event_id": "fec1ed37-367e-42b2-bd4d-5b4212d93b52",
+          "input_tokens": 13808,
+          "cached_input_tokens": 10880
+        },
+        {
+          "event": 31,
+          "event_id": "7826bba2-1eea-440a-8bce-49b0a542a009",
+          "input_tokens": 13328,
+          "cached_input_tokens": 10880
+        },
+        {
+          "event": 33,
+          "event_id": "52d7ffe5-c2cf-4fc3-8eec-046caa07be56",
+          "input_tokens": 15004,
+          "cached_input_tokens": 10880
+        },
+        {
+          "event": 35,
+          "event_id": "1e41c4c0-f7d4-4f35-8bd3-1c4365f44dff",
+          "input_tokens": 16453,
+          "cached_input_tokens": 12928
+        },
+        {
+          "event": 37,
+          "event_id": "fd6d23a4-5a4f-4d2e-82f2-01db40ac8978",
+          "input_tokens": 17031,
+          "cached_input_tokens": 13952
+        },
+        {
+          "event": 39,
+          "event_id": "ba446cdd-52e9-4161-80e9-572b72d23ae5",
+          "input_tokens": 17957,
+          "cached_input_tokens": 13952
+        },
+        {
+          "event": 41,
+          "event_id": "e336eabb-3dac-461f-8787-09aa4b75e080",
+          "input_tokens": 19996,
+          "cached_input_tokens": 14976
+        },
+        {
+          "event": 43,
+          "event_id": "c89583b1-a208-44b2-9a97-09759360b8b6",
+          "input_tokens": 19430,
+          "cached_input_tokens": 14976
+        },
+        {
+          "event": 45,
+          "event_id": "9f869b2f-3605-4004-b18f-d888479bb37f",
+          "input_tokens": 21620,
+          "cached_input_tokens": 16000
+        },
+        {
+          "event": 47,
+          "event_id": "05476a83-a7f4-4753-bfb3-88f7f194cd8a",
+          "input_tokens": 21852,
+          "cached_input_tokens": 18048
+        },
+        {
+          "event": 49,
+          "event_id": "c75a0aa7-f521-469e-995e-4edf14f17c85",
+          "input_tokens": 22704,
+          "cached_input_tokens": 19072
+        },
+        {
+          "event": 51,
+          "event_id": "634191c3-f1c0-48aa-b0a5-82905f42e8ec",
+          "input_tokens": 23402,
+          "cached_input_tokens": 19072
+        },
+        {
+          "event": 53,
+          "event_id": "33fa893f-b555-4c2a-aa75-76ad1fd27aad",
+          "input_tokens": 24879,
+          "cached_input_tokens": 20096
+        },
+        {
+          "event": 55,
+          "event_id": "b0fa4ec1-36eb-4e31-9e20-7bfc38741959",
+          "input_tokens": 25551,
+          "cached_input_tokens": 21120
+        },
+        {
+          "event": 57,
+          "event_id": "cd9b1553-ee85-437c-8de6-ede3d970f103",
+          "input_tokens": 27513,
+          "cached_input_tokens": 22144
+        },
+        {
+          "event": 59,
+          "event_id": "d9f78ede-b732-49de-9c50-0195c3055c82",
+          "input_tokens": 30358,
+          "cached_input_tokens": 24192
+        },
+        {
+          "event": 61,
+          "event_id": "420c35c1-977b-4f3e-adc8-fd53fe755c4d",
+          "input_tokens": 32191,
+          "cached_input_tokens": 26240
+        },
+        {
+          "event": 63,
+          "event_id": "d66a35df-8f81-47cd-964b-88b0ec220613",
+          "input_tokens": 33587,
+          "cached_input_tokens": 27264
+        },
+        {
+          "event": 65,
+          "event_id": "c7c7f37b-15d7-4775-af59-0f34836b348e",
+          "input_tokens": 35415,
+          "cached_input_tokens": 29312
+        },
+        {
+          "event": 67,
+          "event_id": "e77ab918-1a94-4529-a01e-fded2e87f3b5",
+          "input_tokens": 37256,
+          "cached_input_tokens": 31360
+        },
+        {
+          "event": 69,
+          "event_id": "411f4b11-0716-4a38-8901-155d29fc8f86",
+          "input_tokens": 39513,
+          "cached_input_tokens": 33408
+        },
+        {
+          "event": 71,
+          "event_id": "d6dfb134-7cb8-4fb6-94b2-b52e4d0cd260",
+          "input_tokens": 41048,
+          "cached_input_tokens": 34432
+        },
+        {
+          "event": 73,
+          "event_id": "ff96321e-597b-46dd-bb6c-59d288c808b8",
+          "input_tokens": 44231,
+          "cached_input_tokens": 36480
+        },
+        {
+          "event": 75,
+          "event_id": "99566028-ee60-4122-96e8-082a0f4be83b",
+          "input_tokens": 46017,
+          "cached_input_tokens": 39552
+        },
+        {
+          "event": 77,
+          "event_id": "fc75ed54-7b39-42a3-8fec-347140a158b4",
+          "input_tokens": 45053,
+          "cached_input_tokens": 22144
+        },
+        {
+          "event": 79,
+          "event_id": "837727a2-e7a5-45eb-8ad3-ea40ce08f98f",
+          "input_tokens": 46252,
+          "cached_input_tokens": 39552
+        },
+        {
+          "event": 81,
+          "event_id": "b6ec0e0e-8337-4a9d-9721-08017c5350cb",
+          "input_tokens": 47595,
+          "cached_input_tokens": 41600
+        },
+        {
+          "event": 83,
+          "event_id": "09044e83-1463-4ec7-b1e2-e3c797df417b",
+          "input_tokens": 52058,
+          "cached_input_tokens": 42624
+        },
+        {
+          "event": 85,
+          "event_id": "ffdb0ab9-61ff-42b0-94b1-b287a0b85e45",
+          "input_tokens": 55669,
+          "cached_input_tokens": 47744
+        },
+        {
+          "event": 87,
+          "event_id": "977d4b73-8dcd-4399-8739-91de98d2ee97",
+          "input_tokens": 57062,
+          "cached_input_tokens": 50816
+        },
+        {
+          "event": 89,
+          "event_id": "a830796f-ab42-4cfe-a139-65a592227de9",
+          "input_tokens": 59117,
+          "cached_input_tokens": 52864
+        },
+        {
+          "event": 91,
+          "event_id": "833c502b-f05f-421e-8de2-f4756c0b4261",
+          "input_tokens": 60148,
+          "cached_input_tokens": 53888
+        },
+        {
+          "event": 93,
+          "event_id": "d1906a1d-7365-4d25-b3eb-1bd6cfe5a2ce",
+          "input_tokens": 62053,
+          "cached_input_tokens": 55936
+        },
+        {
+          "event": 95,
+          "event_id": "3f3b306e-2975-422f-b9f1-ec2a3e91f8bf",
+          "input_tokens": 62423,
+          "cached_input_tokens": 56960
+        },
+        {
+          "event": 97,
+          "event_id": "6ff3cc84-2736-4e88-8d34-d4d4257b9992",
+          "input_tokens": 64322,
+          "cached_input_tokens": 56960
+        },
+        {
+          "event": 99,
+          "event_id": "117953fa-ed3b-4644-933a-fc479cd49c6a",
+          "input_tokens": 68733,
+          "cached_input_tokens": 59008
+        },
+        {
+          "event": 101,
+          "event_id": "ddbcd134-f72e-4d43-ab17-17774e8b74ee",
+          "input_tokens": 66353,
+          "cached_input_tokens": 59008
+        },
+        {
+          "event": 103,
+          "event_id": "8bd76b15-54cd-4674-a871-ae7b7c253a21",
+          "input_tokens": 67663,
+          "cached_input_tokens": 61056
+        },
+        {
+          "event": 105,
+          "event_id": "908610db-50c6-454b-bfe8-ac189878794f",
+          "input_tokens": 68608,
+          "cached_input_tokens": 62080
+        },
+        {
+          "event": 107,
+          "event_id": "781bd771-655d-4ee5-a2b0-cee20455c2d2",
+          "input_tokens": 70288,
+          "cached_input_tokens": 63104
+        },
+        {
+          "event": 109,
+          "event_id": "e40a2bc4-4cfb-4727-b65d-a650a5302d84",
+          "input_tokens": 71934,
+          "cached_input_tokens": 65152
+        },
+        {
+          "event": 111,
+          "event_id": "4bc10033-aa46-44aa-aec3-1679cc0aa34d",
+          "input_tokens": 73777,
+          "cached_input_tokens": 67200
+        },
+        {
+          "event": 113,
+          "event_id": "3a27eb90-1a51-4097-89f1-768dcf59a1f7",
+          "input_tokens": 75572,
+          "cached_input_tokens": 68224
+        },
+        {
+          "event": 115,
+          "event_id": "0660cf1b-f242-4960-b62e-a11eb1332df7",
+          "input_tokens": 77419,
+          "cached_input_tokens": 70272
+        },
+        {
+          "event": 117,
+          "event_id": "1a82cb49-148a-4634-976e-2eccdc1082e7",
+          "input_tokens": 79276,
+          "cached_input_tokens": 72320
+        },
+        {
+          "event": 119,
+          "event_id": "9338ff60-a1b6-424e-84f3-6071ad29f89a",
+          "input_tokens": 81887,
+          "cached_input_tokens": 74368
+        },
+        {
+          "event": 121,
+          "event_id": "7329fa2b-3bbb-4699-a1b8-a507be230b69",
+          "input_tokens": 83057,
+          "cached_input_tokens": 76416
+        },
+        {
+          "event": 123,
+          "event_id": "d83fd1ca-9b6e-4f59-bc72-9bae72f46344",
+          "input_tokens": 85007,
+          "cached_input_tokens": 78464
+        },
+        {
+          "event": 125,
+          "event_id": "92e3a07d-888f-4344-bc2c-8fcfac29e1f6",
+          "input_tokens": 86497,
+          "cached_input_tokens": 79488
+        },
+        {
+          "event": 127,
+          "event_id": "d93bfe7f-f051-4bf9-aa8e-60ed06468715",
+          "input_tokens": 88056,
+          "cached_input_tokens": 81536
+        },
+        {
+          "event": 129,
+          "event_id": "a163bf06-cf2c-4db0-99cd-98d4f3d41b49",
+          "input_tokens": 90562,
+          "cached_input_tokens": 82560
+        },
+        {
+          "event": 131,
+          "event_id": "95c0e058-721f-4cdd-bd59-b234141660a5",
+          "input_tokens": 92056,
+          "cached_input_tokens": 85632
+        },
+        {
+          "event": 133,
+          "event_id": "ea65f069-60f1-4930-acfe-6b0140b7a0ae",
+          "input_tokens": 93597,
+          "cached_input_tokens": 86656
+        },
+        {
+          "event": 135,
+          "event_id": "715e09d7-db93-4069-beb5-07ddcd72bf07",
+          "input_tokens": 95770,
+          "cached_input_tokens": 88704
+        },
+        {
+          "event": 137,
+          "event_id": "e12567d3-0a07-4c27-bfd9-611b4298f6dd",
+          "input_tokens": 95916,
+          "cached_input_tokens": 89728
+        },
+        {
+          "event": 139,
+          "event_id": "eeeaf43c-3023-402c-a99e-4fa0db5bfbe2",
+          "input_tokens": 97603,
+          "cached_input_tokens": 90752
+        },
+        {
+          "event": 141,
+          "event_id": "04bd447e-1be6-4395-99cb-1893c154f9c8",
+          "input_tokens": 98323,
+          "cached_input_tokens": 92800
+        },
+        {
+          "event": 143,
+          "event_id": "e5ebc464-1e2d-44ab-a0c3-8ed0f840fad4",
+          "input_tokens": 99875,
+          "cached_input_tokens": 92800
+        },
+        {
+          "event": 145,
+          "event_id": "f651d78c-0b6d-4710-9056-1967005be4eb",
+          "input_tokens": 101670,
+          "cached_input_tokens": 94848
+        },
+        {
+          "event": 147,
+          "event_id": "14562fff-6426-4e2c-9682-6e400401757e",
+          "input_tokens": 103751,
+          "cached_input_tokens": 95872
+        },
+        {
+          "event": 149,
+          "event_id": "f83d1857-dd79-41ea-b9fc-8c91308888aa",
+          "input_tokens": 101434,
+          "cached_input_tokens": 22144
+        },
+        {
+          "event": 151,
+          "event_id": "c53085ec-0432-4f1a-be5e-53898bf3db83",
+          "input_tokens": 103096,
+          "cached_input_tokens": 94848
+        },
+        {
+          "event": 153,
+          "event_id": "918fe368-2bfa-423a-bddb-2b30817e9147",
+          "input_tokens": 103805,
+          "cached_input_tokens": 97920
+        },
+        {
+          "event": 155,
+          "event_id": "092484ef-f689-454d-9b15-18c7bf28d54d",
+          "input_tokens": 105476,
+          "cached_input_tokens": 97920
+        },
+        {
+          "event": 157,
+          "event_id": "995d19a3-de7f-4e02-b4d2-606ec2f8c4fe",
+          "input_tokens": 107663,
+          "cached_input_tokens": 99968
+        },
+        {
+          "event": 159,
+          "event_id": "8543422c-86b5-40e1-8f2a-053b863d9925",
+          "input_tokens": 108762,
+          "cached_input_tokens": 102016
+        },
+        {
+          "event": 161,
+          "event_id": "8e6c5800-09fc-4a47-839e-3aba11702f8a",
+          "input_tokens": 110557,
+          "cached_input_tokens": 103040
+        },
+        {
+          "event": 163,
+          "event_id": "4c4520d3-337a-403e-8436-4c4ce5c03c41",
+          "input_tokens": 112116,
+          "cached_input_tokens": 104064
+        },
+        {
+          "event": 165,
+          "event_id": "7a249e74-6624-4990-8258-cb0d1f3ea475",
+          "input_tokens": 114115,
+          "cached_input_tokens": 106112
+        },
+        {
+          "event": 167,
+          "event_id": "d8cc14b0-7014-4ec4-b89b-cb6a9ded5b23",
+          "input_tokens": 115884,
+          "cached_input_tokens": 108160
+        },
+        {
+          "event": 169,
+          "event_id": "9ae0a0a2-2e1f-4d31-9414-bfbf905a59a4",
+          "input_tokens": 116596,
+          "cached_input_tokens": 110208
+        },
+        {
+          "event": 171,
+          "event_id": "4b4d5fce-d784-4036-820d-7293b02163b1",
+          "input_tokens": 118171,
+          "cached_input_tokens": 111232
+        },
+        {
+          "event": 173,
+          "event_id": "e97518d5-c825-4970-85c8-957ce7185f6a",
+          "input_tokens": 120350,
+          "cached_input_tokens": 113280
+        },
+        {
+          "event": 175,
+          "event_id": "3bb1a84c-a65f-4f6a-8d1c-1675a3bfa377",
+          "input_tokens": 121547,
+          "cached_input_tokens": 114304
+        },
+        {
+          "event": 177,
+          "event_id": "1348e138-fe21-4474-a67b-59c10b7f2948",
+          "input_tokens": 123337,
+          "cached_input_tokens": 116352
+        },
+        {
+          "event": 179,
+          "event_id": "e2a4003e-d398-4afa-b0c9-341694c4dab0",
+          "input_tokens": 125394,
+          "cached_input_tokens": 117376
+        },
+        {
+          "event": 181,
+          "event_id": "343ebf67-fa4a-4619-9b51-fb288deed766",
+          "input_tokens": 126905,
+          "cached_input_tokens": 119424
+        },
+        {
+          "event": 183,
+          "event_id": "b846e22e-4d90-4cc2-9d5b-4a91294bf970",
+          "input_tokens": 128648,
+          "cached_input_tokens": 121472
+        },
+        {
+          "event": 185,
+          "event_id": "67be2432-da92-4e1b-ac21-27aedf628ed3",
+          "input_tokens": 130645,
+          "cached_input_tokens": 122496
+        },
+        {
+          "event": 187,
+          "event_id": "58c5483c-ce2d-479c-8e2d-c1b502a9f324",
+          "input_tokens": 133271,
+          "cached_input_tokens": 124544
+        },
+        {
+          "event": 189,
+          "event_id": "fbbf5d2d-717d-4e2b-a0ad-31961e387ec3",
+          "input_tokens": 134425,
+          "cached_input_tokens": 127616
+        },
+        {
+          "event": 191,
+          "event_id": "aebb0c11-e321-4c35-97f4-64e4403a2149",
+          "input_tokens": 136003,
+          "cached_input_tokens": 128640
+        },
+        {
+          "event": 193,
+          "event_id": "a9be5b70-980f-4d1c-bcaf-1f68c152d035",
+          "input_tokens": 138180,
+          "cached_input_tokens": 130688
+        },
+        {
+          "event": 195,
+          "event_id": "1f8222df-c1ea-48fb-9951-e1c6144ae5db",
+          "input_tokens": 139328,
+          "cached_input_tokens": 131712
+        },
+        {
+          "event": 197,
+          "event_id": "52b20120-7dfe-4484-b0e4-30a434497c80",
+          "input_tokens": 140345,
+          "cached_input_tokens": 133760
+        },
+        {
+          "event": 199,
+          "event_id": "dfd821b6-a065-48be-a0ef-8e74890e9f3e",
+          "input_tokens": 141751,
+          "cached_input_tokens": 134784
+        },
+        {
+          "event": 201,
+          "event_id": "3d358894-2189-4649-8da1-57e72edb6fd9",
+          "input_tokens": 144065,
+          "cached_input_tokens": 135808
+        },
+        {
+          "event": 203,
+          "event_id": "356343d1-b63e-4eee-af6c-80c330d393b5",
+          "input_tokens": 144723,
+          "cached_input_tokens": 137856
+        },
+        {
+          "event": 205,
+          "event_id": "7fb259f0-9152-4be9-850f-7d80bac240ee",
+          "input_tokens": 145128,
+          "cached_input_tokens": 138880
+        },
+        {
+          "event": 209,
+          "event_id": "d419bd6a-e505-4c68-9ae8-8b361a6672c1",
+          "input_tokens": 147224,
+          "cached_input_tokens": 140928
+        },
+        {
+          "event": 211,
+          "event_id": "25a8b0c4-cce6-441f-aaae-1b26d83872ea",
+          "input_tokens": 147633,
+          "cached_input_tokens": 140928
+        }
+      ],
+      "source_table": "events",
+      "source_snapshot": "Historical source session database inspected read-only from job_scraping main working checkout at 80902ead4c343b108fedb6937a3bd761732c817d"
+    },
+    {
+      "key": "age76",
+      "session": "age76-terra-live-20260919T120800Z",
+      "label": "AGE-76 single-agent run",
+      "date": "2026-09-19",
+      "model": "gpt-5.6-terra",
+      "outcome": "20 jobs validated, persisted and independently reread",
+      "points": [
+        {
+          "event": 2,
+          "event_id": "93bb52ab-678d-4fd4-9e0a-47a345f53f44",
+          "input_tokens": 1148,
+          "cached_input_tokens": 0
+        },
+        {
+          "event": 4,
+          "event_id": "0af51501-4c3a-43b8-82a0-a3c93c8cb3e4",
+          "input_tokens": 1290,
+          "cached_input_tokens": 1145
+        },
+        {
+          "event": 6,
+          "event_id": "ad0bcffc-27e5-4532-be59-fde6b0fb178a",
+          "input_tokens": 3398,
+          "cached_input_tokens": 0
+        },
+        {
+          "event": 8,
+          "event_id": "52b9301c-2e52-42c4-9672-b2f0bc1e8856",
+          "input_tokens": 3796,
+          "cached_input_tokens": 3395
+        },
+        {
+          "event": 10,
+          "event_id": "7e0d2ca3-6bcc-480f-9c68-33d16df7465c",
+          "input_tokens": 5461,
+          "cached_input_tokens": 3793
+        },
+        {
+          "event": 12,
+          "event_id": "540ba7b3-33de-4083-a164-63dcf065220a",
+          "input_tokens": 5752,
+          "cached_input_tokens": 5458
+        },
+        {
+          "event": 14,
+          "event_id": "778b5a11-459c-40b8-83f9-a3f7fc8420ee",
+          "input_tokens": 7068,
+          "cached_input_tokens": 5749
+        },
+        {
+          "event": 16,
+          "event_id": "2cfd9dbc-0f2d-44ec-a0ae-0b24afe938a5",
+          "input_tokens": 7455,
+          "cached_input_tokens": 7065
+        },
+        {
+          "event": 18,
+          "event_id": "58d13589-760a-4bf3-ab37-3244994bf1a2",
+          "input_tokens": 8071,
+          "cached_input_tokens": 7452
+        },
+        {
+          "event": 20,
+          "event_id": "d595b349-0cf8-4ca7-82f7-71f8be14e703",
+          "input_tokens": 9140,
+          "cached_input_tokens": 8068
+        },
+        {
+          "event": 22,
+          "event_id": "516af799-acd5-4715-8288-fb4ae25c0231",
+          "input_tokens": 12095,
+          "cached_input_tokens": 9137
+        },
+        {
+          "event": 24,
+          "event_id": "1ed886fc-13e7-4502-af2f-f57c690b649a",
+          "input_tokens": 13269,
+          "cached_input_tokens": 12092
+        },
+        {
+          "event": 26,
+          "event_id": "c3d83f49-b046-4551-84a6-89403e7096e9",
+          "input_tokens": 14988,
+          "cached_input_tokens": 13266
+        },
+        {
+          "event": 28,
+          "event_id": "519b529c-b0ec-496f-8bc0-5c730b5c16d7",
+          "input_tokens": 19646,
+          "cached_input_tokens": 14985
+        },
+        {
+          "event": 30,
+          "event_id": "26974141-0722-4681-b81c-c480afc80bac",
+          "input_tokens": 22485,
+          "cached_input_tokens": 19643
+        },
+        {
+          "event": 32,
+          "event_id": "facf51d5-ae36-48ad-b6d2-f962b0270e07",
+          "input_tokens": 22984,
+          "cached_input_tokens": 22482
+        },
+        {
+          "event": 34,
+          "event_id": "8bdb73f8-d4f4-4dff-8074-9a82ef09d37c",
+          "input_tokens": 23797,
+          "cached_input_tokens": 22981
+        },
+        {
+          "event": 36,
+          "event_id": "d662a159-988d-4a86-b6cc-eef8cd7adc28",
+          "input_tokens": 24605,
+          "cached_input_tokens": 23794
+        },
+        {
+          "event": 38,
+          "event_id": "4e036a1d-b208-49a6-a013-c2fc28064bb6",
+          "input_tokens": 25626,
+          "cached_input_tokens": 24602
+        },
+        {
+          "event": 40,
+          "event_id": "756c28ec-9cd8-4fe7-a801-bf9c91233731",
+          "input_tokens": 26090,
+          "cached_input_tokens": 25623
+        },
+        {
+          "event": 42,
+          "event_id": "11582b8a-6f7a-4cd7-a296-f963ea516db1",
+          "input_tokens": 26863,
+          "cached_input_tokens": 26087
+        },
+        {
+          "event": 44,
+          "event_id": "038451ee-9977-433b-b526-709e0f3cfe16",
+          "input_tokens": 27497,
+          "cached_input_tokens": 26860
+        },
+        {
+          "event": 46,
+          "event_id": "e73135eb-621d-4996-b830-fe725b6d09f0",
+          "input_tokens": 28007,
+          "cached_input_tokens": 27494
+        },
+        {
+          "event": 48,
+          "event_id": "7f4bd668-b3e8-4c06-88b1-ac910f727d40",
+          "input_tokens": 28975,
+          "cached_input_tokens": 28004
+        },
+        {
+          "event": 50,
+          "event_id": "21c06e07-92ae-4cbd-a323-de77286b170a",
+          "input_tokens": 29713,
+          "cached_input_tokens": 28972
+        },
+        {
+          "event": 52,
+          "event_id": "7ed7b76b-1b1f-4972-bf05-80d87d8e7cb3",
+          "input_tokens": 38995,
+          "cached_input_tokens": 29710
+        }
+      ],
+      "source_table": "events",
+      "source_snapshot": "Retained AGE-76 experiment session database; harness branch c747b3d364ad68e8c35075b16525b887d91d5544"
+    }
+  ]
+}

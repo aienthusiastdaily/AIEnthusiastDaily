@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="455" viewBox="0 0 840 455" role="img" aria-labelledby="title desc">
+<title id="title">Parent and worker input tokens</title><desc id="desc">Five delegated runs. Totals: Terra parent 181808 input tokens, Luna worker 3414898 input tokens. Cached input included. Larger worker token volume does not imply higher cost because different models have different rates.</desc><rect width="840" height="455" fill="white"/><g font-family="Manrope, Arial, sans-serif" fill="#102728" font-size="18"><text x="0" y="25" font-size="22" font-weight="700">Cumulative input tokens per delegated run</text>
+<rect x="0" y="46" width="16.000" height="16" fill="#102728"/>
+<text x="25" y="60" >Terra parent</text>
+<rect x="220" y="46" width="16.000" height="16" fill="#b9432d"/>
+<text x="245" y="60" >Luna worker</text>
+<path d="M180 90V345" stroke="#e1e3e2"/><text x="180" y="377" text-anchor="middle">0</text>
+<path d="M316.25 90V345" stroke="#e1e3e2"/><text x="316.25" y="377" text-anchor="middle">0.35m</text>
+<path d="M452.5 90V345" stroke="#e1e3e2"/><text x="452.5" y="377" text-anchor="middle">0.7m</text>
+<path d="M588.75 90V345" stroke="#e1e3e2"/><text x="588.75" y="377" text-anchor="middle">1.05m</text>
+<path d="M725 90V345" stroke="#e1e3e2"/><text x="725" y="377" text-anchor="middle">1.4m</text>
+<text x="0" y="118" >Run 1 · pass</text>
+<rect x="180" y="100" width="12.508" height="26" fill="#102728"/>
+<rect x="192.5081392857143" y="100" width="170.230" height="26" fill="#b9432d"/>
+<text x="372.7381107142857" y="119" >0.469m</text>
+<text x="0" y="169" >Run 2 · pass</text>
+<rect x="180" y="151" width="12.032" height="26" fill="#102728"/>
+<rect x="192.03243214285715" y="151" width="138.131" height="26" fill="#b9432d"/>
+<text x="340.16307142857147" y="170" >0.386m</text>
+<text x="0" y="220" >Run 3 · pass</text>
+<rect x="180" y="202" width="12.058" height="26" fill="#102728"/>
+<rect x="192.058125" y="202" width="274.535" height="26" fill="#b9432d"/>
+<text x="476.59292142857146" y="221" >0.736m</text>
+<text x="0" y="271" >Run 4 · flagged</text>
+<rect x="180" y="253" width="12.090" height="26" fill="#102728"/>
+<rect x="192.09004642857144" y="253" width="267.937" height="26" fill="#b9432d"/>
+<text x="470.0268392857143" y="272" >0.719m</text>
+<text x="0" y="322" >Run 5 · blocked</text>
+<rect x="180" y="304" width="22.087" height="26" fill="#102728"/>
+<rect x="202.0865142857143" y="304" width="478.539" height="26" fill="#b9432d"/>
+<text x="690.6253214285715" y="323" >1.286m</text>
+<text x="0" y="425" font-size="17">Includes cached input and every parent/worker call; not tokens per call.</text>
+</g></svg>

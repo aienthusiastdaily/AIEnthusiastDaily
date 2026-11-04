@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="603" viewBox="0 0 900 603" role="img" aria-labelledby="title desc">
+<title id="title">Input tokens per call versus recorded events across three individual runs</title>
+<desc id="desc">An older GPT-5.4 mini run has its last measured call at event 237 and 114,624 input tokens, then stops without accepted completion. Two simplified-harness runs each passed host checks, saved and reread 20 jobs: GPT-5.6 Terra at event 52 and 38,995 input tokens, and one fresh full GPT-5.4 trial at event 40 and 45,427 input tokens. These are individual runs with different models, harnesses and task contracts, not a controlled benchmark or reliability estimate.</desc>
+<rect width="900" height="635" fill="#ffffff"/>
+<g font-family="Manrope, Arial, sans-serif" fill="#102728" font-size="18">
+<path d="M100 29H138" stroke="#d96c1f" stroke-width="3"/>
+<path d="M119 23L125 29L119 35L113 29Z" fill="#d96c1f"/>
+<text x="150" y="36">Older harness · GPT-5.4 mini</text>
+<path d="M100 61H138" stroke="#102728" stroke-width="3" stroke-dasharray="8 5"/>
+<rect x="115" y="57" width="8" height="8" fill="#102728"/>
+<text x="150" y="68">Simplified harness · GPT-5.6 Terra</text>
+<path d="M100 93H138" stroke="#2868b5" stroke-width="3" stroke-dasharray="8 5"/>
+<rect x="115" y="89" width="8" height="8" fill="#2868b5"/>
+<text x="150" y="100">Simplified harness · GPT-5.4</text>
+<text x="100" y="137" font-weight="700">Events so far ↑</text>
+<g transform="translate(0 -32)">
+<path d="M100 522.00H800" stroke="#e1e3e2"/><text x="84" y="528.00" text-anchor="end">0</text>
+<path d="M100 454.80H800" stroke="#e1e3e2"/><text x="84" y="460.80" text-anchor="end">50</text>
+<path d="M100 387.60H800" stroke="#e1e3e2"/><text x="84" y="393.60" text-anchor="end">100</text>
+<path d="M100 320.40H800" stroke="#e1e3e2"/><text x="84" y="326.40" text-anchor="end">150</text>
+<path d="M100 253.20H800" stroke="#e1e3e2"/><text x="84" y="259.20" text-anchor="end">200</text>
+<path d="M100 186.00H800" stroke="#e1e3e2"/><text x="84" y="192.00" text-anchor="end">250</text>
+<path d="M100.00 186V522" stroke="#e1e3e2"/><text x="100.00" y="552" text-anchor="middle">0</text>
+<path d="M275.00 186V522" stroke="#e1e3e2"/><text x="275.00" y="552" text-anchor="middle">30k</text>
+<path d="M450.00 186V522" stroke="#e1e3e2"/><text x="450.00" y="552" text-anchor="middle">60k</text>
+<path d="M625.00 186V522" stroke="#e1e3e2"/><text x="625.00" y="552" text-anchor="middle">90k</text>
+<path d="M800.00 186V522" stroke="#e1e3e2"/><text x="800.00" y="552" text-anchor="middle">120k</text>
+<path d="M100 186V522H800" stroke="#102728" stroke-width="1.5" fill="none"/>
+<g transform="matrix(1.333333 0 0 1 -33.3333 0)">
+<polyline points="118.28,520.66 126.95,517.97 144.50,515.28 129.84,512.59 142.40,509.90 137.34,507.22 143.64,504.53 141.54,501.84 148.04,499.15 150.19,496.46 155.41,493.78 152.83,491.09 161.75,488.40 161.80,485.71 167.01,483.02 169.12,480.34 171.61,477.65 175.91,474.96 180.84,472.27 186.05,469.58 196.51,466.90 198.38,464.21 196.93,461.52 203.62,458.83 208.95,456.14 215.99,453.46 214.62,450.77 219.51,448.08 220.15,445.39 222.83,442.70 227.35,440.02 229.72,437.33 234.90,434.64 251.05,431.95 248.79,429.26 262.78,426.58 264.71,423.89 272.70,421.20 273.99,418.51 278.40,415.82 279.87,413.14 288.27,410.45 295.26,407.76 309.46,405.07 317.06,402.38 333.53,399.70 333.59,397.01 337.62,394.32 306.40,391.63 309.02,388.94 314.90,386.26 314.69,383.57 317.17,380.88 319.49,378.19 327.42,375.50 328.79,372.82 336.95,370.13 339.54,367.44 345.28,364.75 344.75,362.06 351.58,359.38 353.91,356.69 357.67,354.00 360.56,351.31 362.48,348.62 365.71,345.94 384.41,343.25 388.08,340.56 402.42,337.87 405.61,335.18 406.77,332.50 412.79,329.81 414.90,327.12 430.38,324.43 442.84,321.74 445.50,319.06 453.51,316.37 460.48,313.68 469.13,310.99 469.92,308.30 478.25,305.62 481.39,302.93 482.93,300.24 483.92,297.55 487.70,294.86 490.81,292.18 495.64,289.49 499.31,286.80 502.39,284.11 506.87,281.42 483.23,278.74 484.13,276.05 491.96,273.36 494.49,270.67 497.70,267.98 500.57,265.30 505.84,262.61 512.56,259.92 516.67,257.23 524.54,254.54 527.81,251.86 537.57,249.17 541.14,246.48 549.37,243.79 553.25,241.10 556.45,238.42 559.31,235.73 567.81,233.04 573.46,230.35 576.11,227.66 579.25,224.98 580.17,222.29 580.57,219.60 583.35,216.91 586.50,214.22 590.81,211.54 592.94,208.85 597.35,206.16 601.48,203.47" fill="none" stroke="#d96c1f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M601.48 195.47L609.48 203.47L601.48 211.47L593.48 203.47Z" fill="#fff" stroke="#d96c1f" stroke-width="3"/>
+<polyline points="105.02,519.31 105.64,516.62 114.87,513.94 116.61,511.25 123.89,508.56 125.16,505.87 130.92,503.18 132.62,500.50 135.31,497.81 139.99,495.12 152.92,492.43 158.05,489.74 165.57,487.06 185.95,484.37 198.37,481.68 200.56,478.99 204.11,476.30 207.65,473.62 212.11,470.93 214.14,468.24 217.53,465.55 220.30,462.86 222.53,460.18 226.77,457.49 229.99,454.80 270.60,452.11" fill="none" stroke="#102728" stroke-width="3" stroke-dasharray="8 5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="264.60" y="446.11" width="12" height="12" fill="#fff" stroke="#102728" stroke-width="3"/>
+<polyline points="104.96,519.31 105.58,516.62 114.80,513.94 116.54,511.25 117.81,508.56 139.94,505.87 141.68,503.18 148.82,500.50 157.71,497.81 167.98,495.12 177.05,492.43 183.32,489.74 223.17,487.06 238.28,484.37 243.79,481.68 248.15,478.99 250.89,476.30 254.98,473.62 258.13,470.93 298.74,468.24" fill="none" stroke="#2868b5" stroke-width="3" stroke-dasharray="8 5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="292.74" y="462.24" width="12" height="12" fill="#fff" stroke="#2868b5" stroke-width="3"/>
+</g>
+</g>
+<text x="450" y="560" text-anchor="middle" font-weight="700">Input tokens per API call →</text>
+<text x="450" y="590" text-anchor="middle" font-size="16">Includes cached input · Three individual runs, not a benchmark</text>
+</g>
+</svg>
