@@ -1,0 +1,100 @@
+{
+  "kind": "cropped_native_adk_tool_call_screenshot",
+  "run_date": "2026-09-14",
+  "capture_date": "2026-09-18",
+  "source_session": "fd8d944f-ff30-4d53-8ad1-6f337634092d",
+  "event_number": 23,
+  "event_id": "961803bb-c6bd-45c6-b5f5-bacef0279741",
+  "html_read_snapshots": {
+    "capture_date": "2026-09-20",
+    "capture_method": "Unmodified viewport screenshots of the native ADK 2.4.0 Web UI reading the retained session database. No model invocation or agent rerun.",
+    "request": {
+      "event_number": 21,
+      "event_id": "9bebdf46-c9b6-4d4c-b573-e62292f40c9e",
+      "screenshot": "current-html-read-event-21.png",
+      "sha256": "c8e34cc9a08d2b266de3a8e6a660ee563a4c3ef120e82b655ab36a32edaa1cc2",
+      "visible_evidence": "Function-call popup reads page.html into s, locates job-card, and prints s[i-1500:i+8000]."
+    },
+    "response": {
+      "event_number": 22,
+      "event_id": "52f8d75b-14a3-4c92-9b22-bb8c3984666f",
+      "screenshot": "current-html-read-event-22.png",
+      "sha256": "b418b42e98c86a8e723d83889ef40912f1c53572dbb6a9ad7f6a148f57079b2a",
+      "visible_evidence": "Native raw-event panel scrolled to job-card markup and the h3 job title within the returned HTML; escaped newlines are part of the serialized response."
+    },
+    "limits": "The response screenshot shows a scrolled portion, not all 9,501 returned characters. Adjacent events remain visible in the native timeline. These are current captures of saved history, not screenshots taken during the original execution."
+  },
+  "first_html_exposure_and_inspection": {
+    "capture_date": "2026-09-23",
+    "capture_method": "Read-only copy of the retained session opened in ADK 2.4.0 Web UI; native screenshots, with event 19 cropped to its function-call popup. No model invocation or agent rerun.",
+    "loader_preview": {
+      "event_number": 10,
+      "event_id": "8659c739-62fb-4479-bf23-9b45cdc71c1d",
+      "screenshot": "current-html-first-preview-event-10.png",
+      "sha256": "41ef9cedf92a4fe2bde58a88f9bf36b37e822cf9b9b05c8f5c061c2dbe6cc994",
+      "html_preview_characters": 2000,
+      "visible_evidence": "Fixture-loader response includes html_preview beginning with the document type and head, before the agent's own file inspection."
+    },
+    "first_agent_chosen_file_inspection": {
+      "event_number": 19,
+      "event_id": "a369904f-6774-4f41-8715-1a05ccd08c13",
+      "screenshot": "current-html-first-inspection-event-19.png",
+      "sha256": "ef01bd4316ee8a730fd37e04e8b71bd10b23f80fad2b1b3d004ea11d756b1b25",
+      "visible_evidence": "Agent-written Python reads page.html, counts seven candidate markers, and prints counts rather than the source HTML."
+    },
+    "inspection_response": {
+      "event_number": 20,
+      "event_id": "129808f5-d329-44e8-9dfb-732109130386",
+      "visible_evidence": "Tool response returns marker counts from the event 19 command."
+    },
+    "limits": "Event 10 is the model's first exposure to HTML, not an agent-chosen inspection; its screenshot shows the beginning, not the entire 2,000-character preview. Event 19 is the first agent-chosen read of the stored file but returns counts, not an HTML excerpt. The old event 21 screenshot remains available as the later targeted-read request."
+  },
+  "inspection_lengths": {
+    "full_html_characters": 496280,
+    "full_html_length_event": 10,
+    "one_returned_excerpt_characters": 9501,
+    "excerpt_response_event": 22,
+    "excerpt_stdout_truncated": false,
+    "rounded_excerpt_percentage": 1.9,
+    "limits": "Character counts, not token counts. The excerpt includes a terminal newline. This is one inspection, not the agent's total reading or a measured context/token saving. The feed-every-chunk alternative is illustrative, not a measured comparison run."
+  },
+  "inspection_sequence": [
+    {"event": 9, "action": "Request the stored fixture and its metadata"},
+    {"event": 10, "action": "Receive fixture metadata and the first 2,000 characters of HTML as html_preview"},
+    {"event": 19, "action": "Search the stored HTML for structural markers"},
+    {"event": 20, "action": "Receive counts for those candidate markers"},
+    {"event": 21, "action": "Request HTML from 1500 characters before the job-card marker to 8000 after it"},
+    {"event": 22, "action": "Receive the HTML excerpt"},
+    {"event": 23, "action": "Parse the HTML and sample two job cards"},
+    {"event": 25, "action": "Inspect additional field selectors"},
+    {"event": 29, "action": "Write output/extractor.py"}
+  ],
+  "tool": "run_skill_script",
+  "starting_brief_illustration": {
+    "asset": "current-agent-host-boundaries.png",
+    "previous_asset_local_only": "current-agent-starting-brief.png",
+    "repair_policy": {"source": "Author's September 19, 2026 browser annotation", "max_repair_attempts": 3, "on_exhaustion": "Host terminates the run if still invalid after repair attempt three", "evidence_limit": "Author-confirmed policy, not a retry-exhaustion test in the recorded run"},
+    "kind": "generated_conceptual_illustration_not_screenshot",
+    "fixture_sha256_verified": "f29423c48f253dd819412605f93380ed8ea17a7e376b6331ef0a6ca49054a093",
+    "excerpt_basis": "Job-card div and h3 job title visible in saved response event 22 and the hash-matching fixture. Attributes and intervening markup abbreviated with ellipses; title reflowed.",
+    "limits": "Illustration of the starting brief, not the literal initial prompt or a runtime capture. Sandbox scripts and task tools become available through skill activation. No prescribed steps refers to the extraction approach, not exemption from host workflow rules."
+  },
+  "workflow_tool_inventory": {
+    "source": "job_scraper/registry.py build_job_extraction_toolset and WORKFLOW_ALLOWED_TOOL_NAMES; saved session function calls",
+    "inspected_source_sha": "8343891727fd4a5b61b6a8304de98e5021b94972",
+    "skill_tools": ["list_skills", "load_skill", "list_skill_resources", "load_skill_resource", "run_skill_script"],
+    "allowed_sandbox_scripts": ["sandbox_start.py", "sandbox_read.py", "sandbox_write_file.py", "sandbox_apply_patch.py", "sandbox_exec.py", "sandbox_finalize.py"],
+    "task_tools": ["load_job_listing_fixture_to_workspace", "validate_job_extraction_file", "validate_and_persist_job_extraction", "query_workflow_jobs"],
+    "scope": "Frozen-fixture workflow; relevant skills activate task tools. The saved session records calls to all listed tools except load_skill_resource, which is provided by the inspected ADK SkillToolset. Memory in the loop illustration is conceptual and not established by this saved trace."
+  },
+  "screenshot": "current-html-sample-tool-call.png",
+  "screenshot_sha256": "98ded8407673b42264273f09264feeeeeb064ab0692617d53aa5e6ddf233387d",
+  "visible_evidence": [
+    "BeautifulSoup reads page.html outside the model prompt",
+    "cards=s.select('div.job-card') selects the repeated structure",
+    "for c in cards[:2] limits the inspected sample to two cards"
+  ],
+  "capture_method": "Native ADK Web UI showing a temporary copy of the retained session database; crop restricted to the function-call popup. No agent rerun or generated interface.",
+  "limits": "The crop ends at the loop header and omits later field-printing lines. It demonstrates an action from the retained synthetic-fixture run, not the author's original context-overflow experiment, model comparison, or a fresh execution.",
+  "related_run_manifest": "../engineering-the-agent-loop/assets/current-recorded-run-evidence.json"
+}

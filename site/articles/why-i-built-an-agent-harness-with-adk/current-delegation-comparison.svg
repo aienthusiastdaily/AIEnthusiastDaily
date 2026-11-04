@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Five-run cost and execution-time comparison</title>
+  <desc id="desc">Two panels group independent runs by ordinal, not as matched trials. In each group the dark column is Terra alone and the rust column is Terra plus a Luna worker. Estimated median cost is 0.220 versus 0.072 dollars; median first-to-last ADK event span is 103 versus 184 seconds. All five attempts per approach are included, including blocked and flagged runs.</desc>
+  <rect width="900" height="900" fill="#fff"/>
+  <g font-family="Manrope, Arial, sans-serif" fill="#102728">
+    <text x="0" y="27" font-size="23" font-weight="700">Five runs per approach</text>
+    <rect x="0" y="43" width="17" height="17" fill="#102728"/>
+    <text x="26" y="58" font-size="17">Terra alone</text>
+    <rect x="177" y="43" width="17" height="17" fill="#b9432d"/>
+    <text x="203" y="58" font-size="17">Terra + Luna worker</text>
+    <text x="0" y="85" font-size="15" fill="#506063">Independent attempts arranged by run number—not matched pairs</text>
+
+    <text x="0" y="118" font-size="21" font-weight="700">Estimated cost per run · USD</text>
+    <text x="490" y="118" font-size="15">Median $0.220 vs $0.072</text>
+    <g stroke="#dce2e1" stroke-width="1">
+      <path d="M95 130H855M95 180H855M95 230H855M95 280H855M95 330H855M95 380H855"/>
+    </g>
+    <g font-size="14" text-anchor="end" fill="#506063">
+      <text x="85" y="135">$0.25</text><text x="85" y="185">$0.20</text>
+      <text x="85" y="235">$0.15</text><text x="85" y="285">$0.10</text>
+      <text x="85" y="335">$0.05</text><text x="85" y="385">$0.00</text>
+    </g>
+    <g fill="#102728">
+      <rect x="153" y="160" width="24" height="220"/><rect x="303" y="186" width="24" height="194"/>
+      <rect x="453" y="157" width="24" height="223"/><rect x="603" y="141" width="24" height="239"/>
+      <rect x="753" y="169" width="24" height="211"/>
+    </g>
+    <g fill="#b9432d">
+      <rect x="183" y="308" width="24" height="72"/><rect x="333" y="311" width="24" height="69"/>
+      <rect x="483" y="309" width="24" height="71"/><rect x="633" y="301" width="24" height="79"/>
+      <rect x="783" y="246" width="24" height="134"/>
+    </g>
+    <g font-size="14" text-anchor="middle" font-weight="700">
+      <text x="165" y="153">.220</text><text x="195" y="301" fill="#9f3827">.072</text>
+      <text x="315" y="179">.194</text><text x="345" y="304" fill="#9f3827">.069</text>
+      <text x="465" y="150">.223</text><text x="495" y="302" fill="#9f3827">.071</text>
+      <text x="615" y="134">.239</text><text x="645" y="294" fill="#9f3827">.079</text>
+      <text x="765" y="162">.211</text><text x="795" y="239" fill="#9f3827">.134</text>
+    </g>
+    <g font-size="16" text-anchor="middle" font-weight="700">
+      <text x="180" y="405">Run 1</text><text x="330" y="405">Run 2</text>
+      <text x="480" y="405">Run 3</text><text x="630" y="405">Run 4</text>
+      <text x="780" y="405">Run 5</text>
+    </g>
+
+    <text x="0" y="470" font-size="21" font-weight="700">Recorded execution span · seconds</text>
+    <text x="490" y="470" font-size="15">Median 103 s vs 184 s</text>
+    <text x="0" y="494" font-size="15" fill="#506063">First to last ADK event; delegated spans include worker time</text>
+    <g stroke="#dce2e1" stroke-width="1">
+      <path d="M95 530H855M95 572H855M95 614H855M95 655H855M95 697H855M95 738H855M95 780H855"/>
+    </g>
+    <g font-size="14" text-anchor="end" fill="#506063">
+      <text x="85" y="535">360</text><text x="85" y="577">300</text>
+      <text x="85" y="619">240</text><text x="85" y="660">180</text>
+      <text x="85" y="702">120</text><text x="85" y="743">60</text>
+      <text x="85" y="785">0</text>
+    </g>
+    <g fill="#102728">
+      <rect x="153" y="547" width="24" height="233"/><rect x="303" y="708" width="24" height="72"/>
+      <rect x="453" y="713" width="24" height="67"/><rect x="603" y="718" width="24" height="62"/>
+      <rect x="753" y="698" width="24" height="82"/>
+    </g>
+    <g fill="#b9432d">
+      <rect x="183" y="638" width="24" height="142"/><rect x="333" y="676" width="24" height="104"/>
+      <rect x="483" y="664" width="24" height="116"/><rect x="633" y="652" width="24" height="128"/>
+      <rect x="783" y="540" width="24" height="240"/>
+    </g>
+    <g font-size="14" text-anchor="middle" font-weight="700">
+      <text x="165" y="540">335</text><text x="195" y="631" fill="#9f3827">204</text>
+      <text x="315" y="701">103</text><text x="345" y="669" fill="#9f3827">150</text>
+      <text x="465" y="706">97</text><text x="495" y="657" fill="#9f3827">167</text>
+      <text x="615" y="711">89</text><text x="645" y="645" fill="#9f3827">184</text>
+      <text x="765" y="691">118</text><text x="795" y="533" fill="#9f3827">345</text>
+    </g>
+    <g font-size="16" text-anchor="middle" font-weight="700">
+      <text x="180" y="805">Run 1</text><text x="330" y="805">Run 2</text>
+      <text x="480" y="805">Run 3</text><text x="630" y="805">Run 4</text>
+      <text x="780" y="805">Run 5</text>
+    </g>
+    <text x="0" y="848" font-size="15">Outcomes, Terra alone: pass · blocked · pass · pass · blocked</text>
+    <text x="0" y="872" font-size="15">Outcomes, Terra + Luna: pass · pass · pass · flagged · blocked</text>
+  </g>
+</svg>

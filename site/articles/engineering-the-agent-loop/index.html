@@ -49,7 +49,7 @@
         <article>
           <header class="article-hero">
             <div class="container article-hero-inner reveal">
-              <p class="eyebrow">Engineering a Reusable Custom Agent Loop · Series Preview</p>
+              <p class="eyebrow">Building a Custom Agent Harness · Series Preview</p>
               <h1>Engineering the Agent Loop</h1>
               <p class="article-deck">
                 A custom harness built on
@@ -99,6 +99,8 @@
                 to inspect inputs, write code, and test an approach inside a controlled sandbox.
                 The goal is reusable solutions, with evidence that the work is actually complete.
               </p>
+
+              <p>For the experiment behind this work—giving the agent more freedom while my code checks the result—read <a href="../why-i-built-an-agent-harness-with-adk/">Building a Custom Agent Harness — Part I: The Agentic Loop</a>. That companion piece explores a reusable harness and the lessons from implementing it.</p>
 
               <h2>How the loop works</h2>
               <p>
@@ -372,18 +374,21 @@
                 <p>
                   This preview shows the finished loop. The next articles will slow down and
                   explain the failures, tradeoffs, and implementation decisions behind it.
+                  Start with <a href="../why-i-built-an-agent-harness-with-adk/">Part I: The Agentic Loop</a>, then follow the planned articles below.
                 </p>
                 <div>
                   <article data-series-id="part-2" data-series-status="planned">
-                    <span>Part 2 · Planned</span>
-                    <strong data-series-title>When hidden contracts break the repair loop</strong>
+                    <span>Part II · Planned</span>
+                    <strong data-series-title>Building a Custom Agent Harness — Part II: Efficient Token Use</strong>
                     <p>
-                      The required-versus-actual mismatch, why an earlier run stopped, and how I
-                      moved validator-owned rules into the loaded skill.
+                      A planned exploration of efficient token use, inspired by SKILL.state: replacing
+                      growing conversation history with structured execution state and the latest
+                      observation, then checking whether the agent still reaches a host-verified
+                      result. This experiment has no results yet.
                     </p>
                   </article>
                   <article data-series-id="part-3" data-series-status="planned">
-                    <span>Part 3 · Planned</span>
+                    <span>Part III · Planned</span>
                     <strong data-series-title>Why the host owns “done”</strong>
                     <p>
                       Sandboxing generated code, deterministic acceptance, persistence gates, and
@@ -391,7 +396,7 @@
                     </p>
                   </article>
                   <article data-series-id="part-4" data-series-status="planned">
-                    <span>Part 4 · Planned</span>
+                    <span>Part IV · Planned</span>
                     <strong data-series-title>How the solution layer evolves across tasks</strong>
                     <p>
                       Turning accepted approaches into versioned task knowledge, then testing
@@ -399,6 +404,7 @@
                     </p>
                   </article>
                 </div>
+                <p class="source-note">Also planned: a deeper look at hidden acceptance contracts and why an earlier run stopped when its required fields were not clear to the agent.</p>
               </section>
 
               <section class="article-evidence-note" aria-labelledby="evidence-note-title">

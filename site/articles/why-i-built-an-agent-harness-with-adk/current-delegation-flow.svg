@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="460" viewBox="0 0 840 460" role="img" aria-labelledby="title desc">
+<title id="title">One goal. Bounded delegation. Host-owned acceptance.</title>
+<desc id="desc">Terra receives the goal and delegates an assignment, selected context and constraints to Luna. Luna uses sandbox tools to inspect, write, run and repair, then returns a structured report and artifact references. Its detailed event history stays in a separate audit session. Terra requests acceptance; the host validates, enforces limits, saves and reads back results. This is a conceptual diagram, not a trace.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#102728"/></marker></defs>
+<rect width="840" height="460" fill="white"/>
+<g font-family="Manrope, Arial, sans-serif" fill="#102728" font-size="18">
+<text x="420" y="30" text-anchor="middle" font-size="23" font-weight="700">Goal: extract valid jobs from HTML</text>
+<path d="M158 48V80" stroke="#102728" stroke-width="2" marker-end="url(#arrow)"/>
+<g fill="none" stroke="#102728" stroke-width="2.5"><circle cx="158" cy="113" r="20"/><circle cx="158" cy="113" r="7"/><path d="M158 84V92M158 134V142M129 113H137M179 113H187"/>
+<rect x="617" y="92" width="60" height="42" rx="3"/><path d="M617 103H677M628 112L636 119L628 126M643 126H657"/></g>
+<text x="158" y="170" text-anchor="middle" font-size="23" font-weight="700">Terra · parent</text>
+<text x="158" y="198" text-anchor="middle">Chooses the next task</text>
+<text x="647" y="170" text-anchor="middle" font-size="23" font-weight="700">Luna · worker</text>
+<text x="647" y="198" text-anchor="middle">Inspect → write → run → repair</text>
+<path d="M276 116H545" stroke="#102728" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="410" y="83" text-anchor="middle" font-size="16">Assignment + selected context</text>
+<text x="410" y="104" text-anchor="middle" font-size="16">Constraints + allowed tools</text>
+<path d="M545 232H276" stroke="#102728" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="410" y="257" text-anchor="middle" font-size="16">Report + artifact references</text>
+<path d="M647 220V290" stroke="#8b9695" stroke-dasharray="4 4" stroke-width="2"/>
+<text x="647" y="315" text-anchor="middle" font-size="17">Detailed history retained</text>
+<text x="647" y="340" text-anchor="middle" font-size="17">in a separate audit session</text>
+<path d="M158 220V352" stroke="#102728" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="175" y="307" font-size="16">Request acceptance</text>
+<path d="M20 370H820" stroke="#102728" stroke-width="2"/>
+<text x="25" y="401" font-weight="700">HOST CONTROLS</text>
+<text x="25" y="433">Access boundaries · repair limits · validation · save + read back</text>
+</g></svg>

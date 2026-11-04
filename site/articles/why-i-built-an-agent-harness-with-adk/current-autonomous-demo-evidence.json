@@ -1,0 +1,32 @@
+{
+  "status": "one successful recorded demonstration, not a controlled benchmark",
+  "recorded_on": "2026-09-23",
+  "video": {
+    "file": "current-autonomous-run-demo.mp4",
+    "hosted_url": "https://media.aienthusiastdaily.com/current-autonomous-run-demo.mp4",
+    "duration_seconds": 33,
+    "presentation": "accelerated edit of browser recording; silent; includes a final output inspection"
+  },
+  "run": {
+    "model": "GPT-5.6 Terra",
+    "fixture": "frozen ITviec HTML",
+    "expected_jobs": 20,
+    "extractor_runs": 1,
+    "validated_jobs": 20,
+    "persisted_jobs": 20,
+    "stored_verified_jobs": 20,
+    "status": "success"
+  },
+  "independent_readback": {
+    "method": "separate read-only SQLite query after the workflow",
+    "database_rows": 20,
+    "fields_compared_to_extracted_output": ["title", "company_name", "job_url", "location_raw"],
+    "mismatch_count": 0
+  },
+  "limits": [
+    "This is one selected successful run, not an estimate of success rate.",
+    "The input was a frozen fixture, not a live-site scrape.",
+    "The recording does not prove general sandbox security or production readiness.",
+    "This run is distinct from the September 14 repair sequence cited elsewhere in the article."
+  ]
+}
