@@ -291,3 +291,8 @@
   .article-detail-page .illustrated-hero { grid-template-columns: minmax(0, 1fr); }
   .hero-art { max-width: 54rem; }
 }
+
+/* Keep the longer series title balanced with the existing hero illustration. */
+@media (min-width: 901px) {
+  .article-detail-page .illustrated-hero h1 { font-size: clamp(2.8rem, 4vw, 4rem); }
+}

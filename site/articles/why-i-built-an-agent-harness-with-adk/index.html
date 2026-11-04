@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lessons in building an autonomous agent loop | AI Enthusiast Daily</title>
+    <title>Building a Custom Agent Harness — Part I: The Agentic Loop | AI Enthusiast Daily</title>
     <meta name="description" content="Why I built a custom autonomous agent loop to experiment with context, compaction and delegation—and what I learned getting it to complete a task." />
     <link rel="canonical" href="https://aienthusiastdaily.com/articles/why-i-built-an-agent-harness-with-adk/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../styles.css?v=8071c2389caf" />
     <link rel="stylesheet" href="../articles.css?v=46b479f98811" />
     <link rel="stylesheet" href="../engineering-the-agent-loop/styles.css?v=24bfb1f8ddd3" />
-    <link rel="stylesheet" href="./styles.css?v=a414bfa465f5" />
+    <link rel="stylesheet" href="./styles.css?v=8272d5ea21d7" />
   </head>
   <body class="consulting-site studio-site article-detail-page">
     <div class="site-shell">
@@ -30,10 +30,10 @@
           <header class="article-hero">
             <div class="container article-hero-inner illustrated-hero">
               <div class="hero-copy">
-              <p class="eyebrow">Field notes · A personal companion to Engineering the Agent Loop</p>
-              <h1>Lessons in building an autonomous agent loop</h1>
+              <p class="eyebrow">Building a Custom Agent Harness · Part I</p>
+              <h1>Building a Custom Agent Harness — Part I: The Agentic Loop</h1>
               <p class="article-deck">I wanted a loop I could change: what the agent sees, what gets compacted, and how its work is checked. First, I had to get it to finish a task.</p>
-              <div class="article-meta" aria-label="Article details"><span>By Tung Nguyen</span><span>Updated September 27, 2026</span></div>
+              <div class="article-meta" aria-label="Article details"><span>By Tung Nguyen</span><span>Updated November 4, 2026</span></div>
               </div>
               <figure class="hero-art">
                 <a href="./current-agent-workflow.png" aria-label="View the agent workflow illustration at full size"><img src="./current-agent-workflow.png" width="1536" height="1024" alt="An application-owned workflow contains a goal-directed cycle of context, model, skills and tools, and observations. Candidate output passes through validation; passing completes the work, failure returns to the loop, and exhausted retry budget stops it." fetchpriority="high" /></a>
@@ -51,8 +51,10 @@
             <div class="article-body">
               <p class="article-lede">I’m building a custom autonomous agent loop because I want to experiment with the loop itself.</p>
               <p>For most of my work, Codex or Claude Code would be the easier starting point. They already provide capable harnesses and extension points. <a class="citation" href="#source-6" aria-label="Source 6: Codex programmatic controls">[6]</a> <a class="citation" href="#source-7" aria-label="Source 7: Claude Agent SDK controls">[7]</a> But I wanted deeper control over context: what reaches the model, what gets compacted, and what survives between turns. I wanted to change those policies directly, without having to fit each experiment around an existing harness’s choices.</p>
-              <p>Building my own means more work, and it may be less capable. I accepted that tradeoff to have a place to try new ideas. First, though, I needed a loop that could finish a task. This article covers that baseline and the lessons from building it; experimenting with compaction comes next.</p>
+              <p>Building my own means more work, and it may be less capable. I accepted that tradeoff to have a place to try new ideas. First, though, I needed a loop that could finish a task. This article covers that baseline and the lessons from building it; experimenting with compaction and token use comes next in Part II.</p>
 
+
+              <p>For a recorded walkthrough, see the unnumbered series preview, <a href="../engineering-the-agent-loop/">Engineering the Agent Loop</a>.</p>
 
               <h2 id="why-a-harness">First, a working loop</h2>
               <p>I give the agent a goal, tools and a sandbox. It chooses how to inspect the data, write code and solve the task. My code sets the access boundaries and validates the output, returning feedback for repair or stopping when the repair limit is reached.</p>
@@ -182,8 +184,8 @@
 
               <h2 id="next-step">A working loop to experiment with</h2>
               <p>I now have a loop that can complete this extraction task and check its output automatically. Getting there meant giving the agent selective access to data, simplifying the instructions, and testing delegation’s cost and time tradeoff. It is a starting point: I still need to test reliability and reuse on other workflows, but I can now change the loop and measure what happens.</p>
-              <details class="workflow-details"><summary>Next: SKILL.state</summary>
-                <p>I want to test whether the loop can use a structured execution state and the latest observation instead of replaying its full conversation, drawing on the <a href="https://arxiv.org/html/2608.26263v3">SKILL.state paper</a>. That is a planned experiment, not a result shown here. The hidden-contracts article remains a later follow-up.</p>
+              <details class="workflow-details"><summary>Planned Part II: Efficient Token Use</summary>
+                <p>In Part II, I plan to explore more efficient token use: whether the loop can use a structured execution state and the latest observation instead of replaying its full conversation, drawing on the <a href="https://arxiv.org/html/2608.26263v3">SKILL.state paper</a>. SKILL.state is inspiration for that planned experiment; I have not demonstrated token savings from it here. The hidden-contracts article remains a later follow-up.</p>
               </details>
               <section class="article-sources" aria-labelledby="sources-heading">
                 <h2 id="sources-heading">Sources</h2>
